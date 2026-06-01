@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- این قسمت سایت مربوط به هدر وبالای سایت می باشد -->
     <header class="site-header">
         <nav class="main-nav">
             <a href="#about">درباره ما</a>
@@ -18,35 +18,175 @@
         <p>اینجا جاییه که خودمونو رو معرفی می‌کنم.</p>
     </section>
 
-        <img src="images/Mozouni.ico" alt="لوگوی سایت" class="logo">
+        <img src="Mozouni.ico" alt="لوگوی سایت" class="logo">
     </header>
+<!-- این قسمت مربوط به منوی سایت می باشد  -->
 
-    
-   
-
-    <section id="skills" class="section">
-        <h2>مهارت‌ها</h2>
-        <ul>
-            <li>HTML</li>
+   <section id="skills">
+    <div class="menoo">
+         <div class="skills-content">
+          <h2>مطالب آموزشی</h2>
+           <ul>
+            <li>
+                <h5>
+                آموزش ساخت سایت با GitHub
+                </h5> 
+            </li>
             <li>CSS</li>
             <li>WordPress</li>
-        </ul>
-    </section>
-<nav class="footer-nav">
-     <section id="about" class="section">
-        <h2>درباره ما</h2>
-        <p>اینجا بعداً متن کامل‌تری دربارهٔ خودت می‌نویسیم.</p>
-    </section>
+           </ul>
+         </div>
+       <div class="skills-content1">
+         <h3>⭐ آموزش کامل ساخت و انتشار سایت با GitHub و GitHub Pages</h3>
+         <br>
+         <h5>
+            ⭐ آموزش کامل ساخت و انتشار سایت با GitHub و GitHub Pages<br>
+مقدمه<br>
+<br>GitHub Pages یکی از بهترین و ساده‌ترین روش‌ها برای ساخت و انتشار سایت‌های شخصی است. با استفاده از آن می‌توانید بدون نیاز به هاست، سایت خود را فقط با HTML و CSS منتشر کنید و حتی دامنهٔ شخصی خود را نیز به آن متصل کنید. در این آموزش، تمام مراحل را از صفر تا صد توضیح می‌دهیم.
+<br>________________________________________
+<br>۱) ساخت پروژهٔ سایت روی کامپیوتر
+<br>ابتدا یک پوشه برای سایت خود بسازید و فایل‌های زیر را داخل آن قرار دهید:
+<br>•	فایل اصلی: index.html
+<br>•	فایل استایل: style.css
+<br>•	پوشهٔ تصاویر: images/
+<br>•	آیکون سایت (اختیاری): favicon.ico
+<br>________________________________________
+<br>۲) ساخت حساب GitHub
+<br>اگر حساب GitHub ندارید، یک حساب جدید بسازید. نام کاربری شما در آدرس سایت استفاده می‌شود.
+<br>________________________________________
+<br>۳) ساخت ریپازیتوری برای سایت
+<br>در GitHub روی New Repository کلیک کنید و یک ریپازیتوری جدید بسازید:
+<br>•	نام ریپازیتوری: مثلاً mozouni
+<br>•	حالت: Public
+<br>•	سپس Create Repository را بزنید.
+<br>________________________________________
+<br>۴)آپلود فایل‌های سایت
+<br>پس از ساخت ریپازیتوری:
+<br>•	وارد آن شوید
+<br>•	روی Add file → Upload files کلیک کنید
+<br>•	فایل‌های سایت خود را آپلود کنید
+<br>•	Commit کنید
+<br>________________________________________
+<br>۵) فعال‌سازی GitHub Pages
+<br>برای انتشار سایت:
+<br>•	وارد Settings → Pages شوید
+<br>•	در بخش Build and deployment: 
+<br>o	Source: گزینهٔ Deploy from branch
+<br>o	Branch: main
+<br>o	Folder: /root
+<br>•	ذخیره کنید
+<br>پس از چند دقیقه سایت شما روی آدرس زیر بالا می‌آید:
+<br>https://USERNAME.github.io/REPO-NAME/
+<br>________________________________________
+<br>⭐ اتصال دامنهٔ شخصی : مثل mozouni.ir))
+<br>۶) ساخت فایل CNAME
+<br>در ریپازیتوری یک فایل جدید بسازید:
+<br>نام فایل:
+<br>CNAME
+<br>محتوا:
+<br>mozouni.ir
+<br>Commit کنید.
+<br>________________________________________
+<br>۷)اتصال دامنه به Cloudflare
+<br>ابتدا وارد Cloudflare شو و از منوی بالا روی Add a domain بزن.
+<br>•	دامنه‌ت رو وارد کن: 
+<br>•	mozouni.ir
+<br>•	روی Continue بزن.
+<br>Cloudflare شروع می‌کنه DNSهای فعلی دامنه‌ت رو اسکن کردن.
+<br>•	Cloudflare چند پلن نشون می‌ده.
+<br>تو فقط گزینهٔ Free رو انتخاب کن و ادامه بده.
+<br>پلن رایگان برای GitHub Pages کاملاً کافی و عالیه.
+<br>در این مرحله Cloudflare رکوردهای قبلی دامنه‌ت رو نمایش می‌ده.
+<br>تو فقط روی Continue بزن چون بعداً خودمون رکوردهای درست رو می‌سازیم.
+<br>•	Cloudflare بهت دو Name Server می‌ده. مثلاً:
+<br>dax.ns.cloudflare.com
+<br>gemma.ns.cloudflare.com
+<br>این‌ها رو باید در پنل دامنه (ایرانیک) وارد کنی.
+<br>________________________________________
+<br>به پنل دامنه‌ت در NIC.ir برو:
+<br>•	وارد بخش Nameservers شو
+<br>•	دو Name Server Cloudflare رو وارد کن
+<br>•	ذخیره کن
+<br>بعد از ذخیره، ایرانیک معمولاً ۳۰ دقیقه تا چند ساعت طول می‌کشه تا Name Serverها رو تغییر بده.
+<br>________________________________________
+<br>وقتی Name Serverها درست تنظیم بشن، Cloudflare به‌طور خودکار دامنه‌ت رو فعال می‌کنه و یک تیک سبز می‌گیری.
+<br>________________________________________
+<br>⭐ مرحلهٔ مهم بعدی: تنظیم رکوردهای DNS
+<br>وقتی دامنه در Cloudflare فعال شد:
+<br>رفتن به بخش       DNS → Records
+<br>در داشبورد  Cloudflare:
+<br>•	روی دامنه‌ت کلیک کن
+<br>•	از منوی بالا DNS رو انتخاب کن
+<br>•	وارد بخش Records شو
+<br>________________________________________<br> ساخت رکوردهای A برای  GitHub Pages 
+<br>چهار رکورد A بساز:
+<br>Type: A
+<br>Name: mozouni.ir
+<br>Content: 185.199.108.153
+<br>Proxy: DNS only
+<br>همین رو با سه آی‌پی دیگر تکرار کن:
+<br>185.199.109.153
+<br>185.199.110.153
+<br>185.199.111.153
+<br>________________________________________<br>ساخت رکورد CNAME برای  www
+<br>یک رکورد CNAME بساز:
+<br>Type: CNAME
+<br>Name: www
+<br>Content: mahood7m-hub.github.io
+<br>Proxy: DNS only
+<br>________________________________________<br>فعال‌سازی دامنه در GitHub Pages
+<br>در ریپازیتوری:
+<br>•	Settings → Pages
+<br>•	در بخش Custom domain بنویس: 
+<br>•	mozouni.ir
+<br>•	Save
+<br>•	بعد از صدور SSL گزینهٔ Enforce HTTPS رو فعال کن (معمولاً ۳۰ دقیقه تا چند ساعت طول می‌کشه)
+<br>________________________________________
+<br>⭐ نتیجه
+<br>بعد از انتشار DNS، سایتت با دامنهٔ شخصی بالا میاد:
+<br>https://mozouni.ir
 
-    <section id="contact" class="section">
-        <h2>تماس</h2>
-        <p>ایمیل: mahmood7m@gmail.com</p>
-    </section>
-    
-</nav>
+         </h5>
+         
+       </div>
+      <div class="skills-content">
+          <h2>مطالب آموزشی</h2>
+          <ul>
+            <li>hTML</li>
+            <li>CSS</li>
+            <li>WordPress</li>
+         </ul>
+         </div>
+    </div>
+</section>
+
+
+
+
+     
+    <!-- این قسمت پایین صفحه قرار دارد -->
     <footer class="site-footer">
-        <p>© همه حقوق برای محمود موزونی محفوظ است.</p>
-    </footer>
+
+    <div class="footer-sections">
+
+        <div class="footer-section" id="about">
+            <h2>درباره ما</h2>
+            <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+        </div>
+
+        <div class="footer-section" id="contact">
+            <h2>تماس با ما</h2>
+            <p>ایمیل: mahmood7m@gmail.com</p>
+        </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:20px;">
+        همه حقوق برای محمود موزونی محفوظ است ©
+    </p>
+
+</footer>
+
 
 </body>
 </html>
