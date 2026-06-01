@@ -54,23 +54,68 @@ body {
      color: #fff;
 }
 
-.section {
-    background: #ffffff;
-    margin: 15px auto;
-    padding: 25px 20px;
-    max-width: 800px;
-    border-radius: 8px;
-     text-align:right
+/* این قسمت مربوط به منو اصلی می باشد -----------------------------------------*/
+
+.menoo {
+    border: 5px solid rgb(0, 255, 76);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    direction: rtl; /* چون سایت فارسی است */
+    margin-top: 20px;
+}
+.skills-content {
+    color: blue;
+    border: 3px solid rgb(74, 118, 138);
+    width: 300px;
+    padding-right: 30px;
 }
 
-.section h2 {
-    margin-bottom: 10px;
+.skills-content1 {
+    color: rgba(12, 12, 12, 0.884);
+    border: 3px solid rgb(74, 118, 138);
+    width: 1000px;
+    padding-right: 30px;
+
+
+}
+.skills-content2 {
+    color: rgba(12, 12, 12, 0.884);
+    border: 3px solid rgb(74, 118, 138);
+    width: 300px;
+    padding-right: 30px;
+
+
 }
 
+
+
+
+
+
+/* این قسمت مربوط به فودر سایت می باشد---------------------------------------------------------- */
 .site-footer {
     text-align: center;
     padding: 15px;
     font-size: 13px;
     color: #666;
+   border: 3px solid rgb(55, 0, 255);
+   margin-top: 20px;
+
+
 }
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    direction: rtl; /* چون سایت فارسی است */
+    
+}
+
+.footer-section {
+    width: 25%;
+}
+
 
