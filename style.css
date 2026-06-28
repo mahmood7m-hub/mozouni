@@ -10,6 +10,7 @@ body {
     color: #222;
     line-height: 1.7;
     direction: rtl;
+    font-family: "Vazirmatn", sans-serif;
 }
 
 /* هدر درست و استاندارد */
@@ -20,7 +21,7 @@ body {
     background: #222;
     color: #fff;
     padding: 15px 20px;
-    border: 3px solid red;
+    border: 3px solid rgb(8, 1, 1);
 }
 
 /* لوگو */
@@ -57,7 +58,7 @@ body {
 /* این قسمت مربوط به منو اصلی می باشد -----------------------------------------*/
 
 .menoo {
-    border: 5px solid rgb(0, 255, 76);
+    border: 3px solid rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -99,9 +100,10 @@ body {
     text-align: center;
     padding: 15px;
     font-size: 13px;
-    color: #666;
+    color: #f1efef;
    border: 3px solid rgb(55, 0, 255);
    margin-top: 20px;
+   background: #222
 
 
 }
