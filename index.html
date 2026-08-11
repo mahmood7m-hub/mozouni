@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موزونی</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -41,119 +40,750 @@
                 </ul>
             </div>
             <div class="skills-content1">
-                <h3> آموزش کامل ساخت و انتشار سایت با GitHub و GitHub Pages</h3>
-                <br>
-                <h5>
-                    آموزش کامل ساخت و انتشار سایت با GitHub و GitHub Pages<br> مقدمه
-                    <br>
-                    <br>GitHub Pages یکی از بهترین و ساده‌ترین روش‌ها برای ساخت و انتشار سایت‌های شخصی است. با استفاده از آن می‌توانید بدون نیاز به هاست، سایت خود را فقط با HTML و CSS منتشر کنید و حتی دامنهٔ شخصی خود را نیز به آن متصل کنید. در این آموزش،
-                    تمام مراحل را از صفر تا صد توضیح می‌دهیم.
 
-                    <br>۱) ساخت پروژهٔ سایت روی کامپیوتر
-                    <br>ابتدا یک پوشه برای سایت خود بسازید و فایل‌های زیر را داخل آن قرار دهید:
-                    <br>• فایل اصلی: index.html
-                    <br>• فایل استایل: style.css
-                    <br>• پوشهٔ تصاویر: images/
-                    <br>• آیکون سایت (اختیاری): favicon.ico
-                    <br>________________________________________
-                    <br>۲) ساخت حساب GitHub
-                    <br>اگر حساب GitHub ندارید، یک حساب جدید بسازید. نام کاربری شما در آدرس سایت استفاده می‌شود.
-                    <br>________________________________________
-                    <br>۳) ساخت ریپازیتوری برای سایت
-                    <br>در GitHub روی New Repository کلیک کنید و یک ریپازیتوری جدید بسازید:
-                    <br>• نام ریپازیتوری: مثلاً mozouni
-                    <br>• حالت: Public
-                    <br>• سپس Create Repository را بزنید.
-                    <br>________________________________________
-                    <br>۴)آپلود فایل‌های سایت
-                    <br>پس از ساخت ریپازیتوری:
-                    <br>• وارد آن شوید
-                    <br>• روی Add file → Upload files کلیک کنید
-                    <br>• فایل‌های سایت خود را آپلود کنید
-                    <br>• Commit کنید
-                    <br>________________________________________
-                    <br>۵) فعال‌سازی GitHub Pages
-                    <br>برای انتشار سایت:
-                    <br>• وارد Settings → Pages شوید
-                    <br>• در بخش Build and deployment:
-                    <br>o Source: گزینهٔ Deploy from branch
-                    <br>o Branch: main
-                    <br>o Folder: /root
-                    <br>• ذخیره کنید
-                    <br>پس از چند دقیقه سایت شما روی آدرس زیر بالا می‌آید:
-                    <br>https://USERNAME.github.io/REPO-NAME/
-                    <br>________________________________________
-                    <br> اتصال دامنهٔ شخصی : مثل mozouni.ir))
-                    <br>۶) ساخت فایل CNAME
-                    <br>در ریپازیتوری یک فایل جدید بسازید:
-                    <br>نام فایل:
-                    <br>CNAME
-                    <br>محتوا:
-                    <br>mozouni.ir
-                    <br>Commit کنید.
-                    <br>________________________________________
-                    <br>۷)اتصال دامنه به Cloudflare
-                    <br>ابتدا وارد Cloudflare شو و از منوی بالا روی Add a domain بزن.
-                    <br>• دامنه‌ت رو وارد کن:
-                    <br>• mozouni.ir
-                    <br>• روی Continue بزن.
-                    <br>Cloudflare شروع می‌کنه DNSهای فعلی دامنه‌ت رو اسکن کردن.
-                    <br>• Cloudflare چند پلن نشون می‌ده.
-                    <br>تو فقط گزینهٔ Free رو انتخاب کن و ادامه بده.
-                    <br>پلن رایگان برای GitHub Pages کاملاً کافی و عالیه.
-                    <br>در این مرحله Cloudflare رکوردهای قبلی دامنه‌ت رو نمایش می‌ده.
-                    <br>تو فقط روی Continue بزن چون بعداً خودمون رکوردهای درست رو می‌سازیم.
-                    <br>• Cloudflare بهت دو Name Server می‌ده. مثلاً:
-                    <br>dax.ns.cloudflare.com
-                    <br>gemma.ns.cloudflare.com
-                    <br>این‌ها رو باید در پنل دامنه (ایرانیک) وارد کنی.
-                    <br>________________________________________
-                    <br>به پنل دامنه‌ت در NIC.ir برو:
-                    <br>• وارد بخش Nameservers شو
-                    <br>• دو Name Server Cloudflare رو وارد کن
-                    <br>• ذخیره کن
-                    <br>بعد از ذخیره، ایرانیک معمولاً ۳۰ دقیقه تا چند ساعت طول می‌کشه تا Name Serverها رو تغییر بده.
-                    <br>________________________________________
-                    <br>وقتی Name Serverها درست تنظیم بشن، Cloudflare به‌طور خودکار دامنه‌ت رو فعال می‌کنه و یک تیک سبز می‌گیری.
-                    <br>________________________________________
-                    <br> مرحلهٔ مهم بعدی: تنظیم رکوردهای DNS
-                    <br>وقتی دامنه در Cloudflare فعال شد:
-                    <br>رفتن به بخش DNS → Records
-                    <br>در داشبورد Cloudflare:
-                    <br>• روی دامنه‌ت کلیک کن
-                    <br>• از منوی بالا DNS رو انتخاب کن
-                    <br>• وارد بخش Records شو
-                    <br>________________________________________<br> ساخت رکوردهای A برای GitHub Pages
-                    <br>چهار رکورد A بساز:
-                    <br>Type: A
-                    <br>Name: mozouni.ir
-                    <br>Content: 185.199.108.153
-                    <br>Proxy: DNS only
-                    <br>همین رو با سه آی‌پی دیگر تکرار کن:
-                    <br>185.199.109.153
-                    <br>185.199.110.153
-                    <br>185.199.111.153
-                    <br>________________________________________<br>ساخت رکورد CNAME برای www
-                    <br>یک رکورد CNAME بساز:
-                    <br>Type: CNAME
-                    <br>Name: www
-                    <br>Content: mahood7m-hub.github.io
-                    <br>Proxy: DNS only
-                    <br>________________________________________<br>فعال‌سازی دامنه در GitHub Pages
-                    <br>در ریپازیتوری:
-                    <br>• Settings → Pages
-                    <br>• در بخش Custom domain بنویس:
-                    <br>• mozouni.ir
-                    <br>• Save
-                    <br>• بعد از صدور SSL گزینهٔ Enforce HTTPS رو فعال کن (معمولاً ۳۰ دقیقه تا چند ساعت طول می‌کشه)
-                    <br>________________________________________
-                    <br> نتیجه
-                    <br>بعد از انتشار DNS، سایتت با دامنهٔ شخصی بالا میاد:
-                    <br>https://mozouni.ir
+                <article class="article github-pages-guide" dir="rtl">
 
-                </h5>
+                    <!-- عنوان مقاله -->
+                    <header class="article-header">
 
+                        <h1>آموزش انتشار سایت با GitHub Pages و اتصال دامنه شخصی</h1>
+
+                        <p class="article-intro">
+                            اگر یک سایت HTML و CSS روی کامپیوتر خود ساخته‌اید و می‌خواهید آن را به‌صورت رایگان روی اینترنت منتشر کنید، GitHub Pages یکی از ساده‌ترین روش‌ها برای این کار است.
+                        </p>
+
+                        <p>
+                            در این آموزش، از ساخت پروژه و آپلود فایل‌ها در GitHub شروع می‌کنیم و سپس GitHub Pages را فعال کرده و در نهایت دامنه شخصی خودمان را به سایت متصل می‌کنیم.
+                        </p>
+
+                        <div class="article-info">
+                            <strong>سطح آموزش:</strong> مقدماتی تا متوسط
+                            <br>
+                            <strong>مناسب برای:</strong> سایت‌های HTML و CSS
+                        </div>
+
+                    </header>
+
+
+                    <!-- فهرست مطالب -->
+                    <nav class="table-of-contents">
+
+                        <h2>📚 فهرست مطالب</h2>
+
+                        <ol>
+                            <li><a href="#project">ساخت پروژه سایت</a></li>
+                            <li><a href="#github-account">ساخت حساب GitHub</a></li>
+                            <li><a href="#repository">ساخت Repository</a></li>
+                            <li><a href="#upload">آپلود فایل‌های سایت</a></li>
+                            <li><a href="#github-pages">فعال‌سازی GitHub Pages</a></li>
+                            <li><a href="#cname-file">ساخت فایل CNAME</a></li>
+                            <li><a href="#cloudflare">اتصال دامنه به Cloudflare</a></li>
+                            <li><a href="#nameservers">تنظیم Name Server</a></li>
+                            <li><a href="#dns">تنظیم DNS</a></li>
+                            <li><a href="#a-records">ساخت رکوردهای A</a></li>
+                            <li><a href="#www-record">ساخت رکورد CNAME برای www</a></li>
+                            <li><a href="#custom-domain">فعال‌سازی دامنه در GitHub Pages</a></li>
+                            <li><a href="#result">نتیجه نهایی</a></li>
+                        </ol>
+
+                    </nav>
+
+
+                    <!-- مرحله 1 -->
+                    <section id="project">
+
+                        <h2>۱. ساخت پروژه سایت روی کامپیوتر</h2>
+
+                        <p>
+                            ابتدا یک پوشه برای پروژه سایت خود در کامپیوتر ایجاد کنید. سپس فایل‌ها و پوشه‌های اصلی سایت را داخل آن قرار دهید.
+                        </p>
+
+                        <h3>ساختار پیشنهادی پروژه</h3>
+
+                        <pre><code>my-website/
+│
+├── index.html
+├── style.css
+│
+├── images/
+│
+└── favicon.ico</code></pre>
+
+                        <ul>
+                            <li>
+                                <strong>index.html</strong> — فایل اصلی سایت
+                            </li>
+
+                            <li>
+                                <strong>style.css</strong> — فایل مربوط به طراحی و ظاهر سایت
+                            </li>
+
+                            <li>
+                                <strong>images/</strong> — پوشه تصاویر سایت
+                            </li>
+
+                            <li>
+                                <strong>favicon.ico</strong> — آیکون سایت؛ اختیاری است
+                            </li>
+                        </ul>
+
+                        <aside class="note">
+                            <strong>💡 نکته:</strong> بهتر است نام فایل اصلی سایت دقیقاً
+                            <code>index.html</code> باشد؛ زیرا GitHub Pages معمولاً این فایل را به‌عنوان صفحه اصلی سایت شناسایی می‌کند.
+                        </aside>
+
+                    </section>
+
+
+                    <!-- مرحله 2 -->
+                    <section id="github-account">
+
+                        <h2>۲. ساخت حساب GitHub</h2>
+
+                        <p>
+                            برای استفاده از GitHub Pages ابتدا به یک حساب GitHub نیاز دارید. اگر حساب ندارید، یک حساب جدید ایجاد کنید.
+                        </p>
+
+                        <p>
+                            نام کاربری GitHub شما در آدرس پیش‌فرض سایت استفاده خواهد شد.
+                        </p>
+
+                        <div class="example-box">
+
+                            <strong>مثال:</strong>
+
+                            <pre><code>https://USERNAME.github.io/</code></pre>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- مرحله 3 -->
+                    <section id="repository">
+
+                        <h2>۳. ساخت Repository برای سایت</h2>
+
+                        <p>
+                            پس از ورود به GitHub، یک Repository جدید برای پروژه سایت ایجاد کنید.
+                        </p>
+
+                        <ol>
+                            <li>روی <strong>New Repository</strong> کلیک کنید.</li>
+
+                            <li>
+                                برای Repository یک نام انتخاب کنید.
+                                <br> مثال:
+                                <code>mozouni</code>
+                            </li>
+
+                            <li>
+                                حالت Repository را روی
+                                <strong>Public</strong> قرار دهید.
+                            </li>
+
+                            <li>
+                                روی
+                                <strong>Create Repository</strong> کلیک کنید.
+                            </li>
+                        </ol>
+
+                        <aside class="note">
+                            <strong>💡 نکته:</strong> نام Repository بعداً می‌تواند در آدرس سایت شما دیده شود.
+                        </aside>
+
+                    </section>
+
+
+                    <!-- مرحله 4 -->
+                    <section id="upload">
+
+                        <h2>۴. آپلود فایل‌های سایت</h2>
+
+                        <p>
+                            پس از ساخت Repository، فایل‌های پروژه خود را در آن آپلود کنید.
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                وارد Repository شوید.
+                            </li>
+
+                            <li>
+                                روی
+                                <strong>Add file → Upload files</strong> کلیک کنید.
+                            </li>
+
+                            <li>
+                                فایل‌ها و پوشه‌های پروژه را انتخاب و آپلود کنید.
+                            </li>
+
+                            <li>
+                                در انتهای صفحه روی
+                                <strong>Commit changes</strong> کلیک کنید.
+                            </li>
+
+                        </ol>
+
+                        <aside class="warning">
+                            <strong>⚠️ توجه:</strong> مطمئن شوید فایل
+                            <code>index.html</code> در مسیر اصلی Repository قرار داشته باشد.
+                        </aside>
+
+                    </section>
+
+
+                    <!-- مرحله 5 -->
+                    <section id="github-pages">
+
+                        <h2>۵. فعال‌سازی GitHub Pages</h2>
+
+                        <p>
+                            اکنون می‌توانیم سایت را با استفاده از GitHub Pages منتشر کنیم.
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                وارد بخش
+                                <strong>Settings</strong> Repository شوید.
+                            </li>
+
+                            <li>
+                                از منوی سمت چپ وارد
+                                <strong>Pages</strong> شوید.
+                            </li>
+
+                            <li>
+                                در قسمت
+                                <strong>Build and deployment</strong> گزینه زیر را انتخاب کنید:
+                            </li>
+
+                        </ol>
+
+                        <div class="settings-box">
+
+                            <p>
+                                <strong>Source:</strong> Deploy from a branch
+                            </p>
+
+                            <p>
+                                <strong>Branch:</strong> main
+                            </p>
+
+                            <p>
+                                <strong>Folder:</strong> /(root)
+                            </p>
+
+                        </div>
+
+                        <p>
+                            سپس تنظیمات را ذخیره کنید.
+                        </p>
+
+                        <p>
+                            پس از مدتی GitHub Pages سایت شما را منتشر می‌کند.
+                        </p>
+
+                        <h3>آدرس پیش‌فرض سایت</h3>
+
+                        <pre><code>https://USERNAME.github.io/REPO-NAME/</code></pre>
+
+                        <p>
+                            برای مثال اگر نام کاربری شما
+                            <code>USERNAME</code> و نام Repository شما
+                            <code>mozouni</code> باشد:
+                        </p>
+
+                        <pre><code>https://USERNAME.github.io/mozouni/</code></pre>
+
+                    </section>
+
+
+                    <!-- مرحله 6 -->
+                    <section id="cname-file">
+
+                        <h2>۶. ساخت فایل CNAME برای دامنه شخصی</h2>
+
+                        <p>
+                            اگر می‌خواهید به‌جای آدرس GitHub از دامنه شخصی خودتان استفاده کنید، می‌توانید دامنه‌ای مانند
+                            <code>mozouni.ir</code> را به سایت متصل کنید.
+                        </p>
+
+                        <p>
+                            برای این کار یک فایل با نام زیر در Repository ایجاد کنید:
+                        </p>
+
+                        <pre><code>CNAME</code></pre>
+
+                        <p>
+                            محتوای فایل باید نام دامنه شما باشد:
+                        </p>
+
+                        <pre><code>mozouni.ir</code></pre>
+
+                        <p>
+                            سپس تغییرات را Commit کنید.
+                        </p>
+
+                        <aside class="note">
+                            <strong>💡 نکته:</strong> فایل CNAME باید بدون پسوند ساخته شود؛ یعنی نام فایل دقیقاً
+                            <code>CNAME</code> باشد، نه
+                            <code>CNAME.txt</code>.
+                        </aside>
+
+                    </section>
+
+
+                    <!-- مرحله 7 -->
+                    <section id="cloudflare">
+
+                        <h2>۷. اتصال دامنه به Cloudflare</h2>
+
+                        <p>
+                            برای مدیریت DNS دامنه می‌توانیم از Cloudflare استفاده کنیم. ابتدا وارد حساب Cloudflare شوید.
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                از منوی Cloudflare روی
+                                <strong>Add a domain</strong> کلیک کنید.
+                            </li>
+
+                            <li>
+                                دامنه خود را وارد کنید:
+                            </li>
+
+                        </ol>
+
+                        <pre><code>mozouni.ir</code></pre>
+
+                        <p>
+                            سپس روی
+                            <strong>Continue</strong> کلیک کنید.
+                        </p>
+
+                        <p>
+                            Cloudflare رکوردهای DNS فعلی دامنه را بررسی می‌کند.
+                        </p>
+
+                        <h3>انتخاب پلن</h3>
+
+                        <p>
+                            Cloudflare چند پلن مختلف نمایش می‌دهد. برای یک سایت شخصی که با GitHub Pages میزبانی می‌شود، پلن رایگان معمولاً کافی است.
+                        </p>
+
+                        <p>
+                            بنابراین می‌توانید گزینه
+                            <strong>Free</strong> را انتخاب کنید.
+                        </p>
+
+                    </section>
+
+
+                    <!-- Name Server -->
+                    <section id="nameservers">
+
+                        <h2>۸. تنظیم Name Server دامنه</h2>
+
+                        <p>
+                            پس از اضافه کردن دامنه به Cloudflare، Cloudflare دو Name Server به شما اختصاص می‌دهد.
+                        </p>
+
+                        <p>برای مثال:</p>
+
+                        <pre><code>dax.ns.cloudflare.com
+gemma.ns.cloudflare.com</code></pre>
+
+                        <p>
+                            این Name Serverها مخصوص دامنه شما هستند و باید دقیقاً همان مقادیری را که Cloudflare نمایش می‌دهد استفاده کنید.
+                        </p>
+
+                        <h3>تنظیم Name Server در پنل دامنه</h3>
+
+                        <p>
+                            وارد پنل مدیریت دامنه خود شوید و بخش
+                            <strong>Nameservers</strong> را پیدا کنید.
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                Name Serverهای قبلی را بررسی کنید.
+                            </li>
+
+                            <li>
+                                دو Name Server ارائه‌شده توسط Cloudflare را وارد کنید.
+                            </li>
+
+                            <li>
+                                تنظیمات را ذخیره کنید.
+                            </li>
+
+                        </ol>
+
+                        <aside class="warning">
+
+                            <strong>⚠️ توجه:</strong>
+
+                            <p>
+                                تغییر Name Server ممکن است فوراً اعمال نشود. انتشار تغییرات DNS می‌تواند از چند دقیقه تا چند ساعت زمان ببرد.
+                            </p>
+
+                        </aside>
+
+                        <p>
+                            پس از اینکه Cloudflare Name Serverهای جدید را شناسایی کرد، وضعیت دامنه در Cloudflare فعال می‌شود.
+                        </p>
+
+                    </section>
+
+
+                    <!-- DNS -->
+                    <section id="dns">
+
+                        <h2>۹. تنظیم رکوردهای DNS</h2>
+
+                        <p>
+                            پس از فعال شدن دامنه در Cloudflare، وارد بخش زیر شوید:
+                        </p>
+
+                        <pre><code>DNS → Records</code></pre>
+
+                        <p>
+                            در داشبورد Cloudflare:
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                دامنه خود را انتخاب کنید.
+                            </li>
+
+                            <li>
+                                وارد بخش
+                                <strong>DNS</strong> شوید.
+                            </li>
+
+                            <li>
+                                بخش
+                                <strong>Records</strong> را باز کنید.
+                            </li>
+
+                        </ol>
+
+                    </section>
+
+
+                    <!-- A Records -->
+                    <section id="a-records">
+
+                        <h2>۱۰. ساخت رکوردهای A برای GitHub Pages</h2>
+
+                        <p>
+                            برای اتصال دامنه اصلی به GitHub Pages، چهار رکورد A ایجاد کنید.
+                        </p>
+
+                        <h3>رکورد اول</h3>
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>گزینه</th>
+                                    <th>مقدار</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Type</td>
+                                    <td><code>A</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Name</td>
+                                    <td><code>@</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Content</td>
+                                    <td><code>185.199.108.153</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Proxy status</td>
+                                    <td><strong>DNS only</strong></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <h3>سه رکورد A دیگر</h3>
+
+                        <p>
+                            همین تنظیمات را برای IPهای زیر نیز ایجاد کنید:
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                <code>185.199.109.153</code>
+                            </li>
+
+                            <li>
+                                <code>185.199.110.153</code>
+                            </li>
+
+                            <li>
+                                <code>185.199.111.153</code>
+                            </li>
+
+                        </ul>
+
+                        <aside class="note">
+
+                            <strong>💡 نکته:</strong>
+
+                            <p>
+                                در Cloudflare برای دامنه اصلی معمولاً می‌توانید در قسمت Name از علامت
+                                <code>@</code> استفاده کنید که نشان‌دهنده خود دامنه است.
+                            </p>
+
+                        </aside>
+
+                    </section>
+
+
+                    <!-- CNAME www -->
+                    <section id="www-record">
+
+                        <h2>۱۱. ساخت رکورد CNAME برای www</h2>
+
+                        <p>
+                            برای اینکه آدرس
+                            <code>www.mozouni.ir</code> نیز به سایت متصل شود، یک رکورد CNAME ایجاد کنید.
+                        </p>
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>گزینه</th>
+                                    <th>مقدار</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Type</td>
+                                    <td><code>CNAME</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Name</td>
+                                    <td><code>www</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Target</td>
+                                    <td><code>USERNAME.github.io</code></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Proxy status</td>
+                                    <td><strong>DNS only</strong></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <p>
+                            به‌جای
+                            <code>USERNAME</code> نام کاربری واقعی GitHub خود را وارد کنید.
+                        </p>
+
+                    </section>
+
+
+                    <!-- Custom Domain -->
+                    <section id="custom-domain">
+
+                        <h2>۱۲. فعال‌سازی دامنه در GitHub Pages</h2>
+
+                        <p>
+                            اکنون باید دامنه شخصی خود را در GitHub Pages نیز ثبت کنید.
+                        </p>
+
+                        <ol>
+
+                            <li>
+                                وارد Repository شوید.
+                            </li>
+
+                            <li>
+                                به
+                                <strong>Settings → Pages</strong> بروید.
+                            </li>
+
+                            <li>
+                                در قسمت
+                                <strong>Custom domain</strong> دامنه خود را وارد کنید:
+                            </li>
+
+                        </ol>
+
+                        <pre><code>mozouni.ir</code></pre>
+
+                        <p>
+                            سپس روی
+                            <strong>Save</strong> کلیک کنید.
+                        </p>
+
+                        <h3>فعال کردن HTTPS</h3>
+
+                        <p>
+                            پس از اینکه GitHub گواهی SSL را برای دامنه صادر کرد، گزینه
+                            <strong>Enforce HTTPS</strong> را فعال کنید.
+                        </p>
+
+                        <aside class="warning">
+
+                            <strong>⚠️ توجه:</strong>
+
+                            <p>
+                                فعال شدن HTTPS ممکن است کمی زمان ببرد. اگر این گزینه بلافاصله قابل فعال‌سازی نبود، مدتی صبر کنید و دوباره صفحه را بررسی کنید.
+                            </p>
+
+                        </aside>
+
+                    </section>
+
+
+                    <!-- Result -->
+                    <section id="result">
+
+                        <h2>🎉 نتیجه نهایی</h2>
+
+                        <p>
+                            اگر تمام مراحل را به‌درستی انجام داده باشید، سایت شما باید از طریق دامنه شخصی در دسترس باشد.
+                        </p>
+
+                        <div class="success-box">
+
+                            <p>
+                                <strong>آدرس سایت:</strong>
+                            </p>
+
+                            <a href="https://mozouni.ir" target="_blank" rel="noopener noreferrer">
+                https://mozouni.ir
+            </a>
+
+                        </div>
+
+                        <p>
+                            همچنین آدرس نسخه
+                            <code>www</code> نیز می‌تواند به سایت شما متصل باشد:
+                        </p>
+
+                        <pre><code>https://www.mozouni.ir</code></pre>
+
+                    </section>
+
+
+                    <!-- جمع بندی -->
+                    <section class="article-summary">
+
+                        <h2>📌 جمع‌بندی مراحل</h2>
+
+                        <ol>
+
+                            <li>ساخت پروژه HTML و CSS روی کامپیوتر</li>
+
+                            <li>ساخت حساب GitHub</li>
+
+                            <li>ساخت Repository</li>
+
+                            <li>آپلود فایل‌های سایت</li>
+
+                            <li>فعال‌سازی GitHub Pages</li>
+
+                            <li>ساخت فایل CNAME</li>
+
+                            <li>اضافه کردن دامنه به Cloudflare</li>
+
+                            <li>تغییر Name Serverهای دامنه</li>
+
+                            <li>ساخت رکوردهای DNS</li>
+
+                            <li>ساخت رکوردهای A برای GitHub Pages</li>
+
+                            <li>ساخت رکورد CNAME برای www</li>
+
+                            <li>ثبت دامنه در GitHub Pages</li>
+
+                            <li>فعال‌سازی HTTPS</li>
+
+                        </ol>
+
+                        <p>
+                            به این ترتیب، یک سایت HTML ساده که ابتدا روی کامپیوتر شما قرار داشت، می‌تواند با استفاده از GitHub Pages روی اینترنت منتشر شود و با دامنه شخصی شما در دسترس کاربران قرار بگیرد.
+                        </p>
+
+                    </section>
+
+
+                    <!-- نکات پایانی -->
+                    <section class="final-notes">
+
+                        <h2>💡 نکات مهم قبل از انتشار</h2>
+
+                        <ul>
+
+                            <li>
+                                نام فایل اصلی سایت را
+                                <code>index.html</code> قرار دهید.
+                            </li>
+
+                            <li>
+                                مطمئن شوید فایل‌ها در مسیر صحیح Repository قرار دارند.
+                            </li>
+
+                            <li>
+                                Name Serverهای Cloudflare را دقیقاً همان‌طور که Cloudflare نمایش می‌دهد وارد کنید.
+                            </li>
+
+                            <li>
+                                برای رکوردهای DNS از مقادیر صحیح GitHub Pages استفاده کنید.
+                            </li>
+
+                            <li>
+                                بعد از تغییر DNS کمی زمان برای انتشار تنظیمات در نظر بگیرید.
+                            </li>
+
+                            <li>
+                                پس از فعال شدن SSL، استفاده از HTTPS را فعال کنید.
+                            </li>
+
+                            <li>
+                                تنظیمات GitHub و Cloudflare ممکن است در آینده تغییر کند؛ بنابراین ممکن است نام بعضی گزینه‌ها با نسخه فعلی متفاوت باشد.
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+                </article>
             </div>
+
             <div class="skills-content">
                 <h2>مطالب آموزشی</h2>
                 <ul>
