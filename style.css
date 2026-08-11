@@ -23,6 +23,14 @@ body {
     padding: 15px 20px;
     border: 3px solid rgb(8, 1, 1);
 }
+.learn-title {
+    color: #C7A24A;
+}
+
+.build-title {
+    color: #F2E8D2;
+}
+
 
 /* لوگو */
 .logo {
