@@ -22,7 +22,7 @@ footer {
 /* ------------------------------------------- */
 
 
-/* متغیرهای رنگی سایت -. اینجا رنگ‌ها رو یه بار تعریف می‌کنیم و همه جا استفاده می‌کنیم */
+/* متغیرهای رنگی سایت - اینجا رنگ‌ها رو یه بار تعریف می‌کنیم و همه جا استفاده می‌کنیم */
 
 :root {
     --color-bg-dark: #1A1710;
@@ -157,12 +157,18 @@ body {
     color: var(--color-gold-hover);
 }
 
+
+/* کادر و پس‌زمینه‌ی مشخص، مثل .article-card */
+
 .post-card {
     display: block;
     width: 100%;
-    background: var(--color-bg-medium);
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
     text-align: right;
-    padding: 10px 0;
+    padding: 20px;
+    max-width: 1000px;
 }
 
 .post-card a {
@@ -193,10 +199,10 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 60px;
+    gap: 75px;
     flex-wrap: wrap;
     background: var(--color-bg-medium);
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 20px;
 }
@@ -222,10 +228,38 @@ main pre {
     overflow-x: auto;
 }
 
+
+/* اصلاح شد: حالا مثل .article-card یه کادر، پس‌زمینه و لیست بدون بولت داره */
+
 .useful-links {
     width: 20%;
     min-width: 200px;
     flex: 1 1 200px;
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 16px;
+    max-width: 350px;
+}
+
+.useful-links h2 {
+    margin-bottom: 10px;
+}
+
+.useful-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.useful-links a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.useful-links a:hover {
+    color: var(--color-gold-hover);
 }
 
 .section-one {
