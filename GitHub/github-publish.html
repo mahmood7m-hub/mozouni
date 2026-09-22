@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="انتشار سایت با GitHub Pages، امنیت اکانت و احراز هویت دو مرحله‌ای (2FA)، و معرفی GitHub Actions.">
+    <title>انتشار و ابزارهای GitHub | Mozouni</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <a href="../HTML/html.html">HTML</a>
+        <span class="nav-item">
+            <a href="github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="github-practice.html">کار عملی با Git</a>
+                <a href="github-publish.html">انتشار و ابزارها</a>
+                <a href="agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a></li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>انتشار و ابزارهای GitHub</h2>
+                <p>این مقاله بخش سوم و آخر سه‌گانه‌ی GitHub ـه. تو <a href="github.html">بخش اول</a> با مفاهیم پایه و تو <a href="github-practice.html">بخش دوم</a> با دستورهای عملی Git آشنا شدی. حالا وقتشه پروژه‌ت رو منتشر کنی، اکانتت رو امن نگه داری و با
+                    یکی از قدرتمندترین ابزارهای GitHub آشنا بشی.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#pages-چیست">GitHub Pages چیست؟</a></li>
+                        <li><a href="#pages-راهاندازی">راه‌اندازی قدم‌به‌قدم</a></li>
+                        <li><a href="#pages-دامنه">دامنه‌ی اختصاصی (اختیاری)</a></li>
+                        <li><a href="#امنیت-اکانت">امنیت اکانت</a></li>
+                        <li><a href="#2fa">فعال کردن احراز هویت دو مرحله‌ای</a></li>
+                        <li><a href="#actions-چیست">GitHub Actions چیست؟</a></li>
+                        <li><a href="#actions-مثال">یه نمونه‌ی ساده از Actions</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="pages-چیست">GitHub Pages چیست؟</h3>
+                <p>GitHub Pages یه سرویس رایگانه که به هر ریپازیتوری اجازه می‌ده به‌عنوان یه سایت استاتیک منتشر بشه. «استاتیک» یعنی فایل‌های HTML، CSS و جاوااسکریپت ساده، بدون نیاز به دیتابیس یا سرور برنامه‌نویسی. همین سایتی که الان داری می‌خونی، دقیقاً
+                    با همین سرویس منتشر شده.</p>
+
+                <h3 id="pages-راهاندازی">راه‌اندازی قدم‌به‌قدم</h3>
+                <ol>
+                    <li>وارد ریپازیتوری‌ای بشو که می‌خوای منتشرش کنی.</li>
+                    <li>از بالای صفحه‌ی ریپازیتوری، وارد تب <strong>Settings</strong> بشو.</li>
+                    <li>از منوی سمت چپ، گزینه‌ی <strong>Pages</strong> رو بزن (زیر بخش «Code and automation»).</li>
+                    <li>زیر <strong>Build and deployment</strong>، از منوی <strong>Source</strong> گزینه‌ی «Deploy from a branch» رو انتخاب کن.</li>
+                    <li>از منوی <strong>Branch</strong>، برنچی که می‌خوای منتشر بشه رو انتخاب کن (معمولاً <code>main</code>)، و مشخص کن از کدوم پوشه منتشر بشه: ریشه‌ی ریپازیتوری (<code>/ (root)</code>) یا پوشه‌ی <code>/docs</code>.</li>
+                    <li>دکمه‌ی <strong>Save</strong> رو بزن.</li>
+                    <li>بعد از حدود یک دقیقه، همون صفحه رو رفرش کن؛ آدرس سایتت بالای صفحه با یه دکمه‌ی «Visit site» ظاهر می‌شه.</li>
+                </ol>
+                <p>آدرس پیش‌فرض سایتت به این شکله:</p>
+                <pre><code>https://username.github.io/repository-name/</code></pre>
+                <p>اگه اسم ریپازیتوری دقیقاً <code>username.github.io</code> باشه (یعنی همون اسم اکانتت به‌علاوه‌ی <code>.github.io</code>)، سایتت مستقیم روی <code>https://username.github.io</code> منتشر می‌شه، بدون هیچ پسوند اضافه.</p>
+                <p>هر بار که تغییری رو به برنچ منتخب push کنی، GitHub Pages خودش به‌طور خودکار سایت رو با نسخه‌ی جدید به‌روزرسانی می‌کنه؛ معمولاً چند ثانیه تا چند دقیقه طول می‌کشه.</p>
+
+                <h3 id="pages-دامنه">دامنه‌ی اختصاصی (اختیاری)</h3>
+                <p>اگه بخوای به‌جای آدرس <code>github.io</code>، از یه دامنه‌ی شخصی (مثل <code>mozouni.ir</code>) استفاده کنی، همون بخش Pages تو Settings یه فیلد به اسم <strong>Custom domain</strong> داره. دامنه رو اونجا وارد می‌کنی و بعد باید تو پنل مدیریت
+                    دامنه‌ت (جایی که دامنه رو خریدی) رکوردهای DNS مناسب (معمولاً از نوع <code>CNAME</code> یا <code>A</code>) رو به سمت GitHub تنظیم کنی. جزئیات دقیق این بخش بسته به ارائه‌دهنده‌ی دامنه فرق می‌کنه، پس بهتره مستندات رسمی GitHub درباره‌ی
+                    «Managing a custom domain» رو موقع انجامش کنار دست داشته باشی.</p>
+
+                <h3 id="امنیت-اکانت">امنیت اکانت</h3>
+                <p>وقتی کدی که سال‌ها روش کار کردی روی یه اکانت GitHub نگه‌داری می‌شه، امنیت همون اکانت اهمیت پیدا می‌کنه. چند تا عادت ساده:</p>
+                <ul>
+                    <li>یه رمز عبور قوی و یکتا برای اکانت GitHub‌ت استفاده کن، نه رمزی که جای دیگه هم داری.</li>
+                    <li>احراز هویت دو مرحله‌ای (2FA) رو فعال کن (بخش بعد).</li>
+                    <li>به‌جای رمز عبور برای دستورهای Git، از Personal Access Token یا SSH key استفاده کن؛ GitHub دیگه اجازه‌ی ورود با رمز عبور ساده رو برای عملیات Git نمی‌ده.</li>
+                    <li>دسترسی اپلیکیشن‌ها و سرویس‌های ثالثی که به اکانتت وصل کردی رو گاه‌به‌گاه از Settings مرور کن و مواردی که دیگه استفاده نمی‌کنی رو حذف کن.</li>
+                </ul>
+
+                <h3 id="2fa">فعال کردن احراز هویت دو مرحله‌ای</h3>
+                <p>با 2FA، حتی اگه رمز عبورت لو بره، یه نفر دیگه بدون دسترسی به گوشی یا اپلیکیشن احراز هویتت نمی‌تونه وارد اکانتت بشه. مراحل کلی:</p>
+                <ol>
+                    <li>وارد اکانتت شو و برو به <strong>Settings</strong> (روی عکس پروفایل خودت، نه ریپازیتوری).</li>
+                    <li>از منوی سمت چپ، <strong>Password and authentication</strong> رو بزن.</li>
+                    <li>کنار «Two-factor authentication»، روی <strong>Enable two-factor authentication</strong> بزن.</li>
+                    <li>یه روش انتخاب کن — معمولاً یه اپلیکیشن احراز هویت (مثل Google Authenticator یا Authy) که کد یک‌بارمصرف تولید می‌کنه، یا کلید امنیتی فیزیکی.</li>
+                    <li>مراحل تأیید رو طبق راهنمای خود GitHub تکمیل کن.</li>
+                    <li>کدهای بازیابی (Recovery codes) رو حتماً یه‌جای امن ذخیره کن؛ اگه دسترسیت به روش اصلی رو از دست بدی، این کدها تنها راه برگشتته.</li>
+                </ol>
+
+                <h3 id="actions-چیست">GitHub Actions چیست؟</h3>
+                <p>GitHub Actions ابزاریه برای خودکارسازی کارها، مستقیم داخل ریپازیتوری. با یه فایل تنظیمات (به فرمت YAML)، به GitHub می‌گی وقتی یه اتفاق خاص افتاد (مثلاً push به برنچ main، باز شدن یه Pull Request، یا حتی طبق زمان‌بندی) چه کاری انجام بده
+                    — مثلاً اجرای تست‌ها، ساخت (build) پروژه، یا حتی deploy کردن سایت.</p>
+                <p>فایل‌های تنظیمات Actions داخل پوشه‌ی <code>.github/workflows/</code> از ریپازیتوری قرار می‌گیرن. هر فایل یه workflow جداست.</p>
+                <p>برای همین سایت GitHub Pages، اگه توی تنظیمات Pages به‌جای «Deploy from a branch»، گزینه‌ی «GitHub Actions» رو انتخاب کنی، GitHub خودش یه workflow آماده پیشنهاد می‌ده که با هر push سایت رو build و منتشر می‌کنه.</p>
+
+                <h3 id="actions-مثال">یه نمونه‌ی ساده از Actions</h3>
+                <p>این یه نمونه‌ی خیلی ساده‌ست که فقط یه پیام چاپ می‌کنه، هر بار که کسی به برنچ main پوش کنه:</p>
+                <pre><code>name: Say Hello
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a message
+        run: echo "یه تغییر جدید به main اضافه شد!"</code></pre>
+                <p>این فایل رو به اسم مثلاً <code>hello.yml</code> داخل <code>.github/workflows/</code> ذخیره می‌کنی و commit می‌کنی. از این به بعد هر push به main باعث اجرای این workflow می‌شه؛ نتیجه‌ش رو می‌تونی از تب <strong>Actions</strong> بالای صفحه‌ی
+                    ریپازیتوری ببینی.</p>
+                <p>Actions کاربردهای خیلی بیشتری هم داره: اجرای خودکار تست‌ها، بررسی سبک کد (lint)، ساختن و publish کردن یه پکیج، یا حتی — همون‌طور که تو مقاله‌ی <a href="agentic-workflows.html">GitHub Agentic Workflows</a> خوندی — اجرای یه Agent هوش مصنوعی
+                    برای کارهای پیچیده‌تر.</p>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>با این سه مقاله، هم مفاهیم پایه‌ای GitHub رو یاد گرفتی، هم دستورهای روزمره‌ی Git رو تمرین کردی، و هم حالا می‌دونی چطور یه سایت رو با GitHub Pages منتشر کنی، اکانتت رو امن نگه داری و از GitHub Actions برای خودکارسازی کارها استفاده کنی.
+                    اگه دنبال یه قدم جلوتری، مقاله‌ی <a href="agentic-workflows.html">GitHub Agentic Workflows</a> نشونت می‌ده چطور همین Actions رو با کمک هوش مصنوعی و زبان ساده بنویسی.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
