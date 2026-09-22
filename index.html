@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Markdown چیست و چرا به وجود اومد؟ آموزش کامل نحوه‌ی نوشتن Markdown همراه با مقایسه با HTML.">
+    <meta name="description" content="موزونی، سایت آموزشی یاد بگیریم بسازیم: آموزش HTML، CSS، Markdown، GitHub و هوش مصنوعی.">
     <title>Mozouni</title>
     <link rel="stylesheet" href="style.css">
     <!-- فونت سایت -->
@@ -18,10 +18,13 @@
     <header class="site-header">
         <section class="hero">
             <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+            <p class="intro">
+                این یه سایت آموزشی هست که هرچیزی که یاد میگیرمو اینجا میزارم
+            </p>
         </section>
         <!-- لگوی سایت -->
         <section class="logo">
-            <a href="../index.html"><img src="Mozouni.ico" alt="لوگوی سایت"></a>
+            <a href="index.html"><img src="Mozouni.ico" alt="لوگوی سایت"></a>
         </section>
         <!-- قسمت چپ هدر -->
         <section class="header-actions">
@@ -35,9 +38,17 @@
     </header>
     <!-- ناوبر  -->
     <nav class="site-nav">
+        <a href="AI/ai.html">هوش مصنوعی</a>
         <a href="./CSS/css.html">CSS</a>
         <a href="./HTML/html.html">HTML</a>
-        <a href="./GitHub/github.html">Github</a>
+        <span class="nav-item">
+            <a href="./GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="./GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="./GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="./GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
         <a href="./Markdown/Markdown.html">Markdown</a>
     </nav>
     <!-- مطالب اصلی -->
@@ -51,41 +62,89 @@
             <ul>
                 <li><a href="HTML/html.html">HTML چیست؟</a></li>
                 <li><a href="CSS/css.html">CSS چیست؟</a></li>
-                <li><a href="GitHub/github.html">GitHub چیست؟</a></li>
+                <li><a href="GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
                 <li><a href="Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="AI/ai.html">هوش مصنوعی چیست؟</a></li>
             </ul>
         </aside>
         <!-- عنوان بخش اصلی -->
 
         <section class="section-one">
-            <article class="post-card">
-
+            <section class="post-card">
+                <section class="start-guide">
+                    <h2>از کجا شروع کنم؟</h2>
+                    <p>
+                        اگه کاملاً تازه‌کاری، پیشنهاد می‌کنم از <a href="HTML/html.html">HTML</a> شروع کنی چون پایه‌ی ساخت هر صفحه‌ی وبه، بعد بری سراغ <a href="CSS/css.html">CSS</a> برای استایل‌دهی. اگه می‌خوای کارت رو با گیت و گیت‌هاب مدیریت کنی یا با
+                        ابزارهای هوش مصنوعی روز آشنا بشی، بخش‌های <a href="GitHub/github.html">GitHub</a> و
+                        <a href="AI/ai.html">هوش مصنوعی</a> منتظرتن.
+                    </p>
+                </section>
                 <article class="article-card">
                     <h3><a href="./Markdown/Markdown.html">Markdown چیست؟</a></h3>
-                    <p>اگه تا حالا تو گیت‌هاب یه فایل README.md دیدی یا تو یه فروم متنی رو با ستاره‌ها بولد کردی، با Markdown آشنا شدی. تو این مقاله یاد می‌گیری Markdown چیه، چرا به وجود اومد و چطور می‌نویسیش.
+                    <p>اگه تا حالا تو گیت‌هاب یه فایل README.md دیدی یا تو یه فروم متنی رو با ستاره‌ها بولد کردی، با Markdown آشنا شدی. Markdown یه زبان نشانه‌گذاری سبکه که به‌جای تگ‌های پیچیده‌ی HTML، با چند تا کاراکتر ساده مثل <code>#</code> و <code>*</code>                        متن رو قالب‌بندی می‌کنی. تو این مقاله یاد می‌گیری Markdown چیه، چرا به وجود اومد، چطور تیتر و لیست و جدول بنویسی، و چه فرقی با HTML داره.
                     </p>
-                    <a class="read-more" href="./Markdown/Markdown.html">ادامه مطلب ←</a>
+                    <a class="read-more" href="./Markdown/Markdown.html">ادامه مطلب </a>
                 </article>
                 <article class="article-card">
                     <h3><a href="GitHub/github.html">GitHub چیست؟</a></h3>
-                    <p>GitHub جاییه که پروژه‌های کدنویسی ذخیره، نسخه‌بندی و به اشتراک گذاشته می‌شن. یاد بگیر ریپازیتوری، کامیت و برنچ یعنی چی، و چطور شروع کنی.</p>
-                    <a class="read-more" href="GitHub/github.html">ادامه مطلب ←</a>
+                    <p>GitHub جاییه که پروژه‌های کدنویسی ذخیره، نسخه‌بندی و به اشتراک گذاشته می‌شن. تو این مقاله یاد می‌گیری فرق Git و GitHub چیه، ریپازیتوری، کامیت و برنچ یعنی چی، و چطور یه اکانت بسازی و شروع کنی. این مقاله بخش اوله از یه سه‌گانه: بخش دوم
+                        دستورهای عملی Git رو یاد می‌ده و بخش سوم نحوه‌ی انتشار سایت با GitHub Pages، امنیت اکانت و آشنایی با GitHub Actions رو پوشش می‌ده.</p>
+                    <a class="read-more" href="GitHub/github.html">ادامه مطلب </a>
                 </article>
                 <article class="article-card">
                     <h3><a href="HTML/html.html">HTML چیست؟</a></h3>
-                    <p>هر صفحه‌ای که تو مرورگر باز می‌کنی، پایه و اسکلتش HTML‌ه. یاد بگیر ساختار یه سند HTML چیه، تگ و ویژگی یعنی چی، و چرا تگ‌های سمانتیک مهمن.</p>
-                    <a class="read-more" href="HTML/html.html">ادامه مطلب ←</a>
+                    <p>هر صفحه‌ای که تو مرورگر باز می‌کنی، پایه و اسکلتش HTML‌ه. HTML به‌جای طراحی ظاهر، ساختار محتوای صفحه رو مشخص می‌کنه: کجا تیتره، کجا پاراگرافه، کجا لینکه. تو این مقاله یاد می‌گیری ساختار یه سند HTML چیه، تگ و ویژگی (attribute) یعنی
+                        چی، و چرا تگ‌های سمانتیک مثل <code>header</code> و <code>article</code> به‌جای <code>div</code> ساده اهمیت دارن.</p>
+                    <a class="read-more" href="HTML/html.html">ادامه مطلب </a>
                 </article>
 
                 <article class="article-card">
                     <h3><a href="CSS/css.html">CSS چیست؟</a></h3>
-                    <p>رنگ، فونت و چیدمان هر سایتی کار CSS‌ه. یاد بگیر سینتکس پایه‌ی CSS چیه، سه روش اتصالش به HTML، و باکس مدل که پایه‌ی همه‌ی چیدمان‌هاست.</p>
-                    <a class="read-more" href="CSS/css.html">ادامه مطلب ←</a>
+                    <p>رنگ، فونت و چیدمان هر سایتی کار CSS‌ه. CSS به مرورگر می‌گه هر عنصر HTML چه شکلی نشون داده بشه و کجای صفحه قرار بگیره. تو این مقاله یاد می‌گیری سینتکس پایه‌ی CSS چیه، سه روش اتصالش به HTML (داخلی، درون‌خطی و فایل جدا)، و باکس مدل (Box
+                        Model) که پایه‌ی همه‌ی چیدمان‌های وبه.</p>
+                    <a class="read-more" href="CSS/css.html">ادامه مطلب </a>
                 </article>
 
+                <article class="article-card">
+                    <h3><a href="AI/ai.html">هوش مصنوعی</a></h3>
+                    <p>هوش مصنوعی (AI) امروز یکی از پرکاربردترین ابزارها برای نوشتن، برنامه‌نویسی، تحقیق و حل مسائل روزمره‌ست. تو این مقاله با چند تا از بهترین و کاربردی‌ترین هوش مصنوعی‌های موجود آشنا می‌شی و می‌فهمی هرکدوم برای چه کاری بیشتر به‌درد می‌خورن.</p>
+                    <a class="read-more" href="AI/ai.html">ادامه مطلب </a>
+                </article>
 
-            </article>
+            </section>
         </section>
+
+        <!-- ستون چپ: آپدیت هفتگی سایت -->
+        <aside class="side-panel">
+
+            <section class="side-card news-card" aria-labelledby="weekly-title">
+                <h2 id="weekly-title">این هفته تو موزونی</h2>
+                <p class="news-date">آخرین به‌روزرسانی: <time datetime="2026-09-21">۳۰ شهریور ۱۴۰۵</time></p>
+                <ul class="news-list">
+
+                    <!-- هر هفته یه <li> جدید اضافه کن؛ قدیمی‌ترها رو می‌تونی حذف کنی یا نگه داری -->
+                    <li class="news-item">
+                        <h3>سه‌گانه‌ی GitHub کامل شد</h3>
+                        <p>دو مقاله‌ی جدید اضافه شد: «کار عملی با Git» (دستورها، برنچ، Fork و Pull Request) و «انتشار و ابزارهای GitHub» (راه‌اندازی GitHub Pages، امنیت اکانت و GitHub Actions).</p>
+                        <a class="news-source" href="GitHub/github.html">مشاهده‌ی بخش GitHub</a>
+                    </li>
+
+                    <li class="news-item">
+                        <h3>مقاله‌ی GitHub Agentic Workflows اضافه شد</h3>
+                        <p>یه مقاله‌ی جدید و کامل درباره‌ی قابلیت جدید GitHub برای نوشتن اتوماسیون با Markdown و اجرای اون با Agent هوش مصنوعی.</p>
+                        <a class="news-source" href="GitHub/agentic-workflows.html">مطالعه‌ی مقاله</a>
+                    </li>
+
+                </ul>
+            </section>
+
+        </aside>
         <!-- تبلیغات  -->
         <!--
         <aside class="ads">
@@ -116,6 +175,20 @@
 
     </footer>
     <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 
 </html>
