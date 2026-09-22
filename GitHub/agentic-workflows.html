@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GitHub Agentic Workflows چیست؟ آموزش کامل: طرز کار، نصب، نمونه workflow، امنیت، هزینه و تاریخچه‌ی تغییرات تا شهریور ۱۴۰۵.">
+    <title>GitHub Agentic Workflows چیست؟ | Mozouni</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <a href="../HTML/html.html">HTML</a>
+        <span class="nav-item">
+            <a href="github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a></li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>GitHub Agentic Workflows چیست؟</h2>
+                <p>اگه تا حالا با GitHub Actions کار کرده باشی، می‌دونی نوشتن workflow با YAML گاهی دردسر داره. GitHub Agentic Workflows قابلیتیه که اجازه می‌ده به‌جای اون، هدفت رو با Markdown و به زبان ساده بنویسی و یه Agent هوش مصنوعی اجراش کنه. این مقاله
+                    همه‌چیز رو درباره‌ی این قابلیت جمع کرده، از تعریف و نصب تا امنیت، هزینه و تاریخچه‌ی تغییرات.</p>
+                <p><strong>آخرین به‌روزرسانی مقاله:</strong> ۳۰ شهریور ۱۴۰۵ (۲۱ سپتامبر ۲۰۲۶)</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#what-is">GitHub Agentic Workflows چیه؟</a></li>
+                        <li><a href="#vs-actions">جایگزین GitHub Actions می‌شه؟</a></li>
+                        <li><a href="#how-it-works">چطور کار می‌کنه؟</a></li>
+                        <li><a href="#requirements">پیش‌نیازها</a></li>
+                        <li><a href="#quickstart">اولین workflow: قدم‌به‌قدم</a></li>
+                        <li><a href="#use-cases">به چه کاری می‌آد؟</a></li>
+                        <li><a href="#engines">از چه Agentهایی پشتیبانی می‌کنه؟</a></li>
+                        <li><a href="#features">چه امکاناتی داره؟</a></li>
+                        <li><a href="#security">امنیتش چطوره؟</a></li>
+                        <li><a href="#cost">هزینه‌ش چقدره؟</a></li>
+                        <li><a href="#timeline">تاریخچه‌ی تغییرات</a></li>
+                        <li><a href="#status">الان تو چه مرحله‌ایه؟</a></li>
+                        <li><a href="#summary">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="what-is">GitHub Agentic Workflows چیه؟</h3>
+                <p>یه قابلیت از GitHub که با کمک هوش مصنوعی، کارهای تکراری یه Repository رو خودکار می‌کنه. تو هدف اتوماسیون رو به زبان طبیعی تو یه فایل Markdown می‌نویسی و یه Agent هوش مصنوعی داخل GitHub Actions اجراش می‌کنه.</p>
+                <p>فرقش با اتوماسیون سنتی اینه که اونجا قانون‌ها ثابته («اگه این اتفاق افتاد، این کار رو بکن»)، ولی اینجا Agent می‌تونه محتوا رو بخونه، بفهمه و تصمیم بگیره. خروجی معمولاً چیزی مثل یه Issue، کامنت یا Pull Request‌ه که خودت بررسیش می‌کنی و
+                    تأیید یا رد می‌کنی.</p>
+                <p>این پروژه متن‌باز (با مجوز MIT) و حاصل همکاری GitHub Next، Microsoft Research و Azure Core Upstream ـه. اگه هنوز با Markdown آشنا نیستی، اول مقاله‌ی <a href="../Markdown/Markdown.html">Markdown چیست؟</a> رو بخون.</p>
+
+                <h3 id="vs-actions">جایگزین GitHub Actions می‌شه؟</h3>
+                <p>نه. طبق توضیح خود پروژه، Agentic Workflows مکمل CI/CD ـه، نه جایگزین اون:</p>
+                <ul>
+                    <li><strong>برای کارهای قطعی و تکرارپذیر</strong> (build، تست، lint، deploy) همون GitHub Actions معمولی رو استفاده کن.</li>
+                    <li><strong>برای کارهایی که نیاز به فهم و تفسیر دارن</strong> (دسته‌بندی Issue، بررسی Pull Request، بررسی خطاهای CI، به‌روز نگه داشتن مستندات، تحلیل وابستگی‌ها، گزارش‌گیری) از Agentic Workflows استفاده کن.</li>
+                </ul>
+
+                <h3 id="how-it-works">چطور کار می‌کنه؟</h3>
+                <p>هر workflow یه فایل Markdown با دو بخشه:</p>
+                <ul>
+                    <li><strong>Frontmatter:</strong> یه بلوک YAML بین دو خط <code>---</code> که تنظیم می‌کنه workflow کِی اجرا بشه، چه دسترسی‌هایی داشته باشه و چه کارهای نوشتنی‌ای مجاز باشه.</li>
+                    <li><strong>بدنه‌ی Markdown:</strong> دستورالعمل‌هایی به زبان طبیعی که Agent دنبالشون می‌کنه.</li>
+                </ul>
+                <p>مراحل کار:</p>
+                <ol>
+                    <li>فایل <code>.md</code> رو با frontmatter و دستورالعمل‌ها می‌نویسی. این فایل تو پوشه‌ی <code>.github/workflows/</code> قرار می‌گیره.</li>
+                    <li>با افزونه‌ی <code>gh aw</code> فایل رو «کامپایل» می‌کنی تا یه فایل <code>.lock.yml</code> (یه workflow استاندارد و سخت‌شده‌ی GitHub Actions) تولید بشه.</li>
+                    <li>هر دو فایل رو commit و push می‌کنی.</li>
+                    <li>workflow مثل بقیه‌ی GitHub Actionsها اجرا می‌شه، با یه trigger یا دستی از صفحه‌ی Actions یا GitHub CLI.</li>
+                </ol>
+                <p>پس YAML کلاً حذف نشده؛ فقط پشت صحنه‌ست و لازم نیست خودت بنویسیش. این هم یه نمونه‌ی ساده از مستندات رسمی برای گزارش هفتگی Issueها:</p>
+                <pre><code>---
+on: weekly on monday
+
+permissions:
+  issues: read
+  copilot-requests: write
+
+network: defaults
+
+tools:
+  github:
+    toolsets: [issues]
+
+safe-outputs:
+  create-issue:
+
+---
+
+# Weekly issue activity report
+
+Review issue activity from the last 7 days in this repository.
+
+Create a GitHub issue that includes:
+
+- Total issues opened and closed this week.
+- The top recurring themes from issue titles and descriptions.
+- A short list of notable issues that still need attention.
+- Two or three actionable recommendations for maintainers.
+
+Keep the report concise and action-oriented.</code></pre>
+                <p>بخش بالای فایل (frontmatter) تنظیمات رو مشخص می‌کنه:</p>
+                <ul>
+                    <li><code>on</code>: trigger، مثل <code>weekly on monday</code>؛ سینتکسش شبیه triggerهای GitHub Actions ـه.</li>
+                    <li><code>permissions</code>: دسترسی‌های Agent به Repository. پیش‌فرضش <code>read-all</code> (فقط خواندن) ـه.</li>
+                    <li><code>safe-outputs</code>: کارهای نوشتنی‌ای که Agent اجازه‌ی انجامشون رو داره، مثل <code>create-issue</code>، <code>add-comment</code> یا <code>create-pull-request</code>. اینجا فقط ساختن Issue مجازه.</li>
+                    <li><code>engine</code>: Agent هوش مصنوعی. اگه ننویسی، پیش‌فرض <code>copilot</code> ـه.</li>
+                </ul>
+                <p>بخش پایین فایل (بدنه) هم دستورالعمل‌های Agent ـه. تو این نمونه، دستورالعمل‌ها به انگلیسی نوشته شدن.</p>
+
+                <h3 id="requirements">پیش‌نیازها</h3>
+                <ul>
+                    <li>یه Repository که GitHub Actions براش فعاله و دسترسی نوشتن بهش داری.</li>
+                    <li>یه حساب برای یکی از Agentهای هوش مصنوعی: GitHub Copilot، Anthropic Claude، OpenAI Codex یا Google Gemini.</li>
+                    <li>GitHub CLI (دستور <code>gh</code>) نصب و وارد شده به حسابت (نسخه‌ی ۲.۰.۰ یا بالاتر).</li>
+                </ul>
+
+                <h3 id="quickstart">اولین workflow: قدم‌به‌قدم</h3>
+                <p>روش پیشنهادی GitHub اینه که خود یه coding agent، workflow رو برات بنویسه. مراحل:</p>
+                <ol>
+                    <li>وارد حساب GitHub بشو:
+                        <pre><code>gh auth login --scopes repo,workflow</code></pre>
+                    </li>
+                    <li>افزونه‌ی Agentic Workflows رو نصب کن:
+                        <pre><code>gh extension install github/gh-aw</code></pre> اگه نسخه‌ی GitHub CLI ات ۲.۹۰.۰ یا بالاتره، اجرای هر دستور <code>gh aw</code> خودش پیشنهاد نصب افزونه رو می‌ده.
+                    </li>
+                    <li>Repository رو برای نوشتن workflow آماده کن (برای بار اول توصیه شده):
+                        <pre><code>gh aw init</code></pre> این دستور skill، دستورالعمل و یه custom agent اضافه می‌کنه تا coding agentها راحت‌تر workflow بنویسن.
+                    </li>
+                    <li>coding agent ات رو (مثلاً Copilot CLI یا حالت agent تو VS Code) توی پوشه‌ی پروژه باز کن و بگو چی می‌خوای:
+                        <pre><code>/agentic-workflows Create a new workflow that creates a daily report on recent activity in the repository, delivered as an issue.</code></pre>
+                    </li>
+                    <li>Agent فایل رو می‌سازه و کامپایل می‌کنه. تو نتیجه رو بررسی کن و بعد بخواه commit و push کنه.</li>
+                    <li>از تب Actions یا با این دستور اجراش کن:
+                        <pre><code>gh aw run YOUR-WORKFLOW-NAME</code></pre>
+                    </li>
+                </ol>
+                <p><strong>ویرایش یه workflow:</strong> فایل Markdown رو تغییر بده، با <code>gh aw compile</code> دوباره کامپایل کن، هر دو فایل رو commit کن و از یه Pull Request برای چک کردن Actions استفاده کن.</p>
+                <p><strong>استفاده از workflowهای آماده:</strong> می‌تونی workflow یه Repository دیگه رو وارد کنی. مثلاً:</p>
+                <pre><code>gh aw add-wizard githubnext/agentics/daily-repo-status</code></pre>
+                <p>بعداً با <code>gh aw update</code> می‌تونی نسخه‌ی جدیدش رو بگیری. فقط از منبع‌های مورد اعتماد وارد کن و قبلش ببین workflow دقیقاً چه کاری می‌کنه.</p>
+
+                <h3 id="use-cases">به چه کاری می‌آد؟</h3>
+                <p>مستندات رسمی این کاربردها رو مثال زده:</p>
+                <ul>
+                    <li>دسته‌بندی Issueهای جدید و برچسب‌زدن بر اساس نوع و اولویت</li>
+                    <li>بررسی خطاهای CI و پیشنهاد راه‌حل</li>
+                    <li>ساختن گزارش روزانه یا هفتگی از وضعیت Repository</li>
+                    <li>به‌روز نگه داشتن مستندات با تغییرات کد</li>
+                    <li>بهتر کردن پوشش تست‌ها</li>
+                </ul>
+                <p>GitHub از بررسی Pull Requestها، پایش رعایت الزامات (Compliance) و حتی «بالا بردن روحیه‌ی تیم» هم به‌عنوان مثال اسم برده.</p>
+                <p>برای نمونه‌ی آماده می‌تونی سراغ مخزن <a href="https://github.com/githubnext/agentics" target="_blank" rel="noopener noreferrer">githubnext/agentics</a> بری که workflowهای آماده برای دسته‌بندی، گزارش‌گیری و compliance داره. <a href="https://github.github.com/gh-aw/blog/2026-01-12-welcome-to-pelis-agent-factory/"
+                        target="_blank" rel="noopener noreferrer">Peli's Agent Factory</a> هم بیش از ۵۰ agentic workflow برای کاربردهای مختلف نشون می‌ده.</p>
+
+                <h3 id="engines">از چه Agentهایی پشتیبانی می‌کنه؟</h3>
+                <p>طبق مستندات، Agentهای زیر پشتیبانی می‌شن و با فیلد <code>engine</code> تو frontmatter انتخاب می‌شن:</p>
+                <ul>
+                    <li><strong>GitHub Copilot</strong> (پیش‌فرض؛ نیاز به پلن Copilot داره)</li>
+                    <li><strong>Anthropic Claude</strong></li>
+                    <li><strong>OpenAI Codex</strong></li>
+                    <li><strong>Google Gemini</strong></li>
+                </ul>
+                <p>هر Agent برای احراز هویت، secret مخصوص خودش رو تو Repository لازم داره. قالب workflow برای همه‌ی Agentها یکسانه. (تو README خود پروژه اسم Agent دیگه‌ای به نام Pi هم آمده.)</p>
+
+                <h3 id="features">چه امکاناتی داره؟</h3>
+                <ul>
+                    <li><strong>Triggerهای متنوع:</strong> رویدادهای Issue و Pull Request، زمان‌بندی، اجرای دستی یا دستور تو کامنت.</li>
+                    <li><strong>اتصال به GitHub:</strong> از طریق GitHub MCP Server به Repository، Issueها، Pull Requestها، Actions و امنیت دسترسی داره. ابزارهایی برای خودکارسازی مرورگر، جستجوی وب و MCPهای سفارشی هم داره.</li>
+                    <li><strong>نوشتن با کمک هوش مصنوعی:</strong> ساخت، ویرایش و دیباگ workflow با Agent تو VS Code، github.com یا coding agent دلخواهت.</li>
+                    <li><strong>ابزار بررسی هزینه و اجرا:</strong> دستورهای <code>gh aw logs</code> و <code>gh aw audit</code> (بخش هزینه رو ببین).</li>
+                    <li><strong>متن‌باز:</strong> با مجوز MIT تو مخزن <a href="https://github.com/github/gh-aw" target="_blank" rel="noopener noreferrer">github/gh-aw</a>.</li>
+                </ul>
+
+                <h3 id="security">امنیتش چطوره؟</h3>
+                <p>وقتی قراره یه Agent هوش مصنوعی تو Repository کار کنه، امنیت مهم‌ترین سؤاله. لایه‌های محافظتی که GitHub اعلام کرده:</p>
+                <ul>
+                    <li><strong>پیش‌فرض فقط‌خواندنی:</strong> Agent بدون اجازه‌ی صریح، دسترسی نوشتن نداره.</li>
+                    <li><strong>Safe Outputs:</strong> هر کار نوشتنی (ساختن Issue، کامنت، Pull Request) فقط از مسیر <code>safe-outputs</code> که خودت تو frontmatter تعریف کردی و بعد از اعتبارسنجی انجام می‌شه.</li>
+                    <li><strong>جدا بودن secretها:</strong> اطلاعات حساس تو jobهای جداگانه نگه داشته می‌شن و مستقیم در دسترس Agent نیستن.</li>
+                    <li><strong>تشخیص تهدید (Threat Detection):</strong> یه job مخصوص، تغییرات پیشنهادی رو قبل از اعمال برای موارد مشکوک اسکن می‌کنه.</li>
+                    <li><strong>اجرای ایزوله و فایروال:</strong> Agent داخل یه container ایزوله و پشت «Agent Workflow Firewall» اجرا می‌شه.</li>
+                    <li><strong>کنترل دسترسی نقش‌محور:</strong> می‌تونی مشخص کنی چه کسانی مجاز به اجرا یا تغییر workflow هستن.</li>
+                </ul>
+                <p>با این حال، مستندات خود پروژه صراحتاً می‌گه استفاده از Agentic Workflows نیاز به دقت امنیتی و نظارت انسانی داره و حتی با این کنترل‌ها هم ممکنه اشتباه پیش بیاد. پس با احتیاط و با مسئولیت خودت استفاده کن و قبل از انتشار، دسترسی‌ها و ابزارها
+                    رو مرور کن.</p>
+
+                <h3 id="cost">هزینه‌ش چقدره؟</h3>
+                <p>هزینه دو بخش داره:</p>
+                <ul>
+                    <li>دقیقه‌های GitHub Actions که jobها مصرف می‌کنن.</li>
+                    <li>هزینه‌ی مدل هوش مصنوعی (inference)، که با واحدی به نام AI Credits (به‌اختصار AIC) سنجیده می‌شه. هر ۱ AIC برابر ۰.۰۱ دلاره.</li>
+                </ul>
+                <p>با Agent پیش‌فرض (Copilot)، مصرف AIC توی صورت‌حساب AI credits مربوط به Copilot حساب می‌شه. با Agent شخص ثالث، هزینه رو همون شرکت حساب می‌کنه.</p>
+                <p>برای دیدن مصرف، <code>gh aw logs</code> اجراهای اخیر رو با مدت، مصرف token و تخمین AIC نشون می‌ده و <code>gh aw audit RUN-ID</code> یه اجرای مشخص رو با جزئیات بررسی می‌کنه. این اعداد فقط تخمینه و ممکنه با فاکتور واقعی کمی فرق داشته باشه.</p>
+                <p>می‌تونی با <code>max-ai-credits</code> تو frontmatter سقف مصرف هر اجرا رو تعیین کنی؛ مقدار پیش‌فرض ۱٬۰۰۰ AIC برای هر اجراست.</p>
+                <p><strong>نکته برای Repositoryهای سازمانی:</strong> اگه Repository مال یه سازمان با پلن Copilot باشه، GitHub استفاده از <code>GITHUB_TOKEN</code> داخلی Actions رو توصیه می‌کنه تا هزینه مستقیم به سازمان بخوره و نیازی به personal access token
+                    نباشه. برای این کار مدیر سازمان باید سیاست «Allow use of Copilot CLI billed to the organization» رو فعال کنه و تو هر workflow باید <code>copilot-requests: write</code> رو زیر <code>permissions</code> بنویسی. برای Repositoryهای شخصی
+                    و Agentهای دیگه، یه secret شامل personal access token یا API key لازمه (برای Copilot اسمش <code>COPILOT_GITHUB_TOKEN</code> ـه).</p>
+
+                <h3 id="timeline">تاریخچه‌ی تغییرات</h3>
+                <ul>
+                    <li><strong>۱۳ فوریه ۲۰۲۶ (۲۴ بهمن ۱۴۰۴):</strong> معرفی به‌صورت Technical Preview.</li>
+                    <li><strong>۲۶ مارس ۲۰۲۶ (۶ فروردین ۱۴۰۵):</strong> فایل Markdown هر workflow حالا تو خلاصه‌ی اجرای GitHub Actions هم نشون داده می‌شه.</li>
+                    <li><strong>۱۱ ژوئن ۲۰۲۶ (۲۱ خرداد ۱۴۰۵):</strong> ورود به مرحله‌ی <strong>Public Preview</strong>. GitHub همراهش از شرکت‌هایی مثل Carvana و Marks &amp; Spencer نقل‌قول منتشر کرد. همون روز اعلام شد که دیگه برای استفاده لازم نیست personal
+                        access token بسازی و می‌شه از <code>GITHUB_TOKEN</code> استفاده کرد (هزینه‌ی AI credits به سازمان می‌خوره).</li>
+                    <li><strong>۲۳ ژوئیه ۲۰۲۶ (۱ مرداد ۱۴۰۵):</strong> قابلیت‌های «دلیل، میزان اطمینان و تأیید» (rationale, confidence, approvals) برای اقدام‌های خودکار روی Issueها در Public Preview آمد. این قابلیت با Agentic Workflows هم کار می‌کنه؛ با <code>issue-intents: true</code>                        تو frontmatter می‌شه برای safe outputهایی مثل <code>add-labels</code> و <code>close-issue</code> فعالش کرد. GitHub توضیح داده که «تأیید» یه راحتی برای workflow ـه، نه یه کنترل امنیتی.</li>
+                    <li><strong>۷ سپتامبر ۲۰۲۶ (۱۶ شهریور ۱۴۰۵):</strong> تیم پروژه گزارش به‌روزرسانی هفتگی منتشر می‌کنه، یعنی توسعه‌ی فعاله. تو گزارش این هفته، از نسخه‌ی v0.88.4 نام برده شده که تمرکزش روی تقویت فایروال و لایه‌ی شبکه بود و ویژگی‌هایی مثل
+                        تولید خودکار سیاست‌های DIFC برای workflowهای GitHub App هم اضافه کرد.</li>
+                </ul>
+
+                <h3 id="status">الان تو چه مرحله‌ایه؟</h3>
+                <p>تا تاریخ به‌روزرسانی این مقاله (۲۱ سپتامبر ۲۰۲۶)، مستندات رسمی GitHub می‌گه Agentic Workflows در <strong>Public Preview</strong> ـه و ممکنه تغییر کنه. یعنی هنوز نسخه‌ی نهایی (GA) اعلام نشده. قبل از استفاده‌ی جدی تو پروژه‌های مهم، مستندات
+                    رو بخون و اول تو یه Repository آزمایشی امتحانش کن.</p>
+
+                <h3 id="summary">جمع‌بندی</h3>
+                <p>GitHub Agentic Workflows راهیه برای خودکار کردن کارهای نیازمند فهم، مثل دسته‌بندی Issue، بررسی خطاهای CI و گزارش‌گیری، با یه فایل Markdown ساده. امنیتش روی چند لایه محافظ ساخته شده، ولی هنوز Public Preview ـه و نظارت انسانی لازمه. هر وقت
+                    خبر یا تغییر جدیدی اومد، همین مقاله به‌روز می‌شه.</p>
+
+                <h4>منابع</h4>
+                <ul>
+                    <li><a href="https://docs.github.com/en/copilot/concepts/agents/about-github-agentic-workflows" target="_blank" rel="noopener noreferrer">GitHub Docs: About GitHub Agentic Workflows</a></li>
+                    <li><a href="https://docs.github.com/en/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows" target="_blank" rel="noopener noreferrer">GitHub Docs: Creating GitHub Agentic Workflows</a></li>
+                    <li><a href="https://github.com/github/gh-aw" target="_blank" rel="noopener noreferrer">مخزن github/gh-aw</a></li>
+                    <li><a href="https://github.github.com/gh-aw/" target="_blank" rel="noopener noreferrer">مستندات پروژه‌ی gh-aw</a></li>
+                    <li><a href="https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview/" target="_blank" rel="noopener noreferrer">Changelog: Technical Preview (۱۳ فوریه ۲۰۲۶)</a></li>
+                    <li><a href="https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary/" target="_blank" rel="noopener noreferrer">Changelog: نمایش تنظیمات در خلاصه‌ی اجرا (۲۶ مارس ۲۰۲۶)</a></li>
+                    <li><a href="https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/" target="_blank" rel="noopener noreferrer">Changelog: Public Preview (۱۱ ژوئن ۲۰۲۶)</a></li>
+                    <li><a href="https://github.blog/changelog/2026-06-11-agentic-workflows-no-longer-need-a-personal-access-token/" target="_blank" rel="noopener noreferrer">Changelog: بدون نیاز به personal access token (۱۱ ژوئن ۲۰۲۶)</a></li>
+                    <li><a href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/" target="_blank" rel="noopener noreferrer">Changelog: کنترل‌های اتوماسیون Issue (۲۳ ژوئیه ۲۰۲۶)</a></li>
+                    <li><a href="https://github.github.com/gh-aw/blog/2026-09-07-weekly-update/" target="_blank" rel="noopener noreferrer">gh-aw: به‌روزرسانی هفتگی ۷ سپتامبر ۲۰۲۶</a></li>
+                </ul>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: وضعیت فعلی + فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <section class="side-card news-card" aria-labelledby="status-title">
+                <h2 id="status-title">وضعیت فعلی</h2>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <h3>Public Preview</h3>
+                        <p>از ۱۱ ژوئن ۲۰۲۶ در مرحله‌ی Public Preview ـه و ممکنه تغییر کنه. هنوز نسخه‌ی نهایی (GA) اعلام نشده.</p>
+                        <p class="news-date">آخرین بررسی: ۳۰ شهریور ۱۴۰۵</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- فهرست مطالب: خودش با جاوااسکریپت از فهرست داخل مقاله پر می‌شه -->
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
