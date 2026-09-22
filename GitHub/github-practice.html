@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="کار عملی با Git و GitHub: دستورهای پایه، README و .gitignore، برنچ، Fork، Pull Request و حل Merge Conflict.">
+    <title>کار عملی با Git و GitHub | Mozouni</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <a href="../HTML/html.html">HTML</a>
+        <span class="nav-item">
+            <a href="github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="github-practice.html">کار عملی با Git</a>
+                <a href="github-publish.html">انتشار و ابزارها</a>
+                <a href="agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a></li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>کار عملی با Git و GitHub</h2>
+                <p>این مقاله بخش دومه از سه‌گانه‌ی GitHub. تو <a href="github.html">مقاله‌ی اول</a> با مفاهیم پایه‌ای مثل ریپازیتوری، کامیت و برنچ آشنا شدی. اینجا وقتشه که واقعاً دستت به کیبورد بره و با Git کار کنی: از ساختن یه ریپازیتوری تا حل یه تداخل
+                    ساده.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#نصب-git">نصب Git</a></li>
+                        <li><a href="#دستورهای-پایه">دستورهای پایه‌ی Git</a>
+                            <ul>
+                                <li><a href="#git-init">شروع یه پروژه جدید</a></li>
+                                <li><a href="#git-status">چک کردن وضعیت</a></li>
+                                <li><a href="#git-add-commit">اضافه کردن و کامیت</a></li>
+                                <li><a href="#git-push-pull">فرستادن و گرفتن تغییرات</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#readme">فایل README</a></li>
+                        <li><a href="#gitignore">فایل .gitignore</a></li>
+                        <li><a href="#برنچ-عملی">کار با برنچ</a></li>
+                        <li><a href="#فورک-پول-ریکوئست">Fork و Pull Request</a></li>
+                        <li><a href="#تداخل">حل Merge Conflict</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="نصب-git">نصب Git</h3>
+                <p>قبل از هر چیز باید Git رو روی کامپیوترت نصب کنی. از سایت <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer">git-scm.com</a> نسخه‌ی مناسب سیستم‌عاملت رو دانلود کن. بعد از نصب، توی ترمینال (یا Git Bash روی ویندوز) این
+                    دستور رو بزن تا مطمئن بشی درست نصب شده:</p>
+                <pre><code>git --version</code></pre>
+                <p>یه بار هم باید خودت رو به Git معرفی کنی، چون این اطلاعات کنار هر کامیتی که می‌زنی ذخیره می‌شه:</p>
+                <pre><code>git config --global user.name "اسم شما"
+git config --global user.email "ایمیل شما"</code></pre>
+
+                <h3 id="دستورهای-پایه">دستورهای پایه‌ی Git</h3>
+                <p>چند تا دستور هست که ۹۰ درصد کارهای روزمره‌ت باهاشون انجام می‌شه.</p>
+
+                <h4 id="git-init">شروع یه پروژه جدید</h4>
+                <p>برای اینکه یه پوشه رو تبدیل به یه پروژه‌ی Git کنی (یعنی Git شروع کنه تغییراتش رو ردیابی کنه)، داخل همون پوشه این دستور رو بزن:</p>
+                <pre><code>git init</code></pre>
+                <p>اگه ریپازیتوری از قبل روی GitHub ساخته شده، به‌جای <code>init</code> از <code>clone</code> استفاده می‌کنی تا یه کپی از اون رو روی کامپیوترت بیاری:</p>
+                <pre><code>git clone https://github.com/username/repository-name.git</code></pre>
+
+                <h4 id="git-status">چک کردن وضعیت</h4>
+                <p>هر وقت بخوای ببینی چه فایل‌هایی تغییر کردن یا هنوز کامیت نشدن، این دستور رو بزن:</p>
+                <pre><code>git status</code></pre>
+                <p>این دستور رو زیاد استفاده کن؛ قبل از هر کامیتی یه بار بزنیش تا دقیقاً بدونی چی داری کامیت می‌کنی.</p>
+
+                <h4 id="git-add-commit">اضافه کردن و کامیت</h4>
+                <p>وقتی یه فایل رو تغییر می‌دی، Git خودش به‌طور خودکار کامیتش نمی‌کنه. اول باید بهش بگی کدوم فایل‌ها رو می‌خوای تو کامیت بعدی بذاری:</p>
+                <pre><code>git add نام-فایل.html
+git add .</code></pre>
+                <p>دستور دوم (<code>git add .</code>) همه‌ی فایل‌های تغییریافته رو اضافه می‌کنه. بعد کامیت می‌کنی:</p>
+                <pre><code>git commit -m "توضیح کوتاه درباره‌ی این تغییر"</code></pre>
+                <p>پیام کامیت رو واضح بنویس؛ چند ماه دیگه که به تاریخچه نگاه می‌کنی، همین پیام‌هاست که بهت می‌گه هر تغییر برای چی بوده.</p>
+
+                <h4 id="git-push-pull">فرستادن و گرفتن تغییرات</h4>
+                <p>بعد از کامیت، تغییرات فقط روی کامپیوتر خودتن. برای اینکه به GitHub برسن:</p>
+                <pre><code>git push</code></pre>
+                <p>و اگه بخوای آخرین تغییراتی که روی GitHub انجام شده (مثلاً توسط یه هم‌تیمی) رو بگیری:</p>
+                <pre><code>git pull</code></pre>
+                <p>یه عادت خوب اینه که قبل از شروع کار روزانه، یه <code>git pull</code> بزنی تا مطمئن بشی از آخرین نسخه شروع می‌کنی.</p>
+
+                <h3 id="readme">فایل README</h3>
+                <p><code>README.md</code> اولین فایلیه که GitHub توی صفحه‌ی اصلی هر ریپازیتوری نشون می‌ده. معمولاً توش می‌نویسی این پروژه چیه، چطور نصبش کنن و چطور ازش استفاده کنن. چون پسوندش <code>.md</code>ه، با Markdown نوشته می‌شه؛ اگه یادت رفته، می‌تونی
+                    مقاله‌ی <a href="../Markdown/Markdown.html">Markdown چیست؟</a> رو یه نگاه بندازی.</p>
+                <p>یه README خوب معمولاً این بخش‌ها رو داره:</p>
+                <ul>
+                    <li>اسم و یه توضیح کوتاه درباره‌ی پروژه</li>
+                    <li>نحوه‌ی نصب یا اجرا</li>
+                    <li>یه مثال ساده از استفاده</li>
+                    <li>لایسنس، اگه پروژه متن‌بازه</li>
+                </ul>
+
+                <h3 id="gitignore">فایل .gitignore</h3>
+                <p>خیلی وقت‌ها تو پوشه‌ی پروژه‌ت فایل‌هایی هست که نمی‌خوای وارد ریپازیتوری بشن — مثلاً فایل‌های تنظیمات شخصی ادیتور، فایل‌های موقتی سیستم‌عامل، یا پوشه‌ی <code>node_modules</code> تو پروژه‌های جاوااسکریپتی. با ساختن یه فایل به اسم <code>.gitignore</code>                    تو ریشه‌ی پروژه، به Git می‌گی این فایل‌ها یا پوشه‌ها رو نادیده بگیره:</p>
+                <pre><code>.DS_Store
+node_modules/
+*.log</code></pre>
+                <p>هر خط یه الگوئه: می‌تونه اسم یه فایل، یه پوشه (با <code>/</code> آخرش)، یا یه الگوی کلی‌تر با <code>*</code> باشه.</p>
+
+                <h3 id="برنچ-عملی">کار با برنچ</h3>
+                <p>تو مقاله‌ی قبل با مفهوم برنچ آشنا شدی. حالا دستورهاش:</p>
+                <p>ساختن یه برنچ جدید و رفتن روش:</p>
+                <pre><code>git branch نام-برنچ
+git checkout نام-برنچ</code></pre>
+                <p>یا هر دو کار با یه دستور:</p>
+                <pre><code>git checkout -b نام-برنچ</code></pre>
+                <p>وقتی کارت روی برنچ تموم شد و مطمئن بودی درسته، برمی‌گردی به برنچ اصلی و اون رو ادغام (merge) می‌کنی:</p>
+                <pre><code>git checkout main
+git merge نام-برنچ</code></pre>
+
+                <h3 id="فورک-پول-ریکوئست">Fork و Pull Request</h3>
+                <p><strong>Fork</strong> یعنی یه کپی کامل از ریپازیتوری یکی دیگه رو زیر اکانت خودت بسازی. این کار وقتی به کار می‌آد که می‌خوای تو یه پروژه‌ی متن‌باز مشارکت کنی ولی دسترسی مستقیم نوشتن روی ریپازیتوری اصلی رو نداری.</p>
+                <p>مراحل مشارکت تو یه پروژه‌ی متن‌باز معمولاً این‌جوریه:</p>
+                <ol>
+                    <li>ریپازیتوری رو Fork می‌کنی (از دکمه‌ی «Fork» بالای صفحه‌ی ریپازیتوری روی GitHub)</li>
+                    <li>نسخه‌ی fork‌شده رو روی کامپیوترت clone می‌کنی</li>
+                    <li>یه برنچ جدید می‌سازی و تغییراتت رو توش انجام می‌دی</li>
+                    <li>تغییرات رو push می‌کنی به fork خودت</li>
+                    <li>از GitHub یه <strong>Pull Request</strong> می‌زنی که ازش خواسته می‌شه تغییراتت با ریپازیتوری اصلی ادغام بشه</li>
+                </ol>
+                <p>نگهدارنده‌ی پروژه Pull Request رو بررسی می‌کنه، ممکنه ازت بخواد چیزی رو اصلاح کنی، و اگه همه‌چیز اوکی بود، تغییراتت رو merge می‌کنه.</p>
+
+                <h3 id="تداخل">حل Merge Conflict</h3>
+                <p>گاهی وقتی می‌خوای دو برنچ رو ادغام کنی، Git نمی‌تونه خودش تصمیم بگیره کدوم نسخه از یه قسمت از فایل درسته — مثلاً چون تو و یه هم‌تیمی هم‌زمان یه خط از همون فایل رو تغییر دادین. به این می‌گن <strong>Merge Conflict</strong> (تداخل ادغام).</p>
+                <p>وقتی این اتفاق بیفته، Git توی فایل، هر دو نسخه رو با این علامت‌ها نشون می‌ده:</p>
+                <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+نسخه‌ی شما
+=======
+نسخه‌ی برنچ دیگه
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; نام-برنچ</code></pre>
+                <p>کاری که باید بکنی:</p>
+                <ol>
+                    <li>فایل رو باز کن و ببین کدوم نسخه (یا ترکیبی از هر دو) درسته</li>
+                    <li>علامت‌های <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>، <code>=======</code> و <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> رو پاک کن و فقط متن نهایی رو نگه دار</li>
+                    <li>فایل رو ذخیره کن، بعد <code>git add</code> و <code>git commit</code> بزن تا merge کامل بشه</li>
+                </ol>
+                <p>تداخل ترسناک نیست؛ فقط یعنی Git از تو می‌خواد خودت تصمیم نهایی رو بگیری.</p>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>با این دستورها (<code>init</code>، <code>clone</code>، <code>status</code>، <code>add</code>، <code>commit</code>، <code>push</code>، <code>pull</code>)، فایل‌های README و <code>.gitignore</code>، و کار با برنچ و Pull Request، دیگه می‌تونی
+                    روزمره با Git و GitHub کار کنی. بخش بعدی این سه‌گانه به انتشار سایتت با GitHub Pages و ابزارهای بیشتر GitHub می‌پردازه.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
