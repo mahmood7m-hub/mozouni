@@ -38,8 +38,16 @@
         <a href="../index.html">صفحه اصلی</a>
         <a href="../CSS/css.html">CSS</a>
         <a href="../HTML/html.html">HTML</a>
-        <a href="github.html">Github</a>
+        <span class="nav-item">
+            <a href="github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="github-practice.html">کار عملی با Git</a>
+                <a href="github-publish.html">انتشار و ابزارها</a>
+                <a href="agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
         <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
     </nav>
     <!-- مطالب اصلی -->
     <main>
@@ -47,10 +55,17 @@
         <aside class="useful-links">
             <h2>لینک‌های مفید</h2>
             <ul>
-                <li><a href="HTML/html.html">HTML چیست؟</a></li>
-                <li><a href="CSS/css.html">CSS چیست؟</a></li>
-                <li><a href="GitHub/github.html">GitHub چیست؟</a></li>
-                <li><a href="Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../HTML/html.html">HTML چیست؟</a></li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
             </ul>
         </aside>
 
@@ -63,25 +78,28 @@
                 <h2>GitHub چیست؟</h2>
                 <p>اگه تا حالا خواستی یه پروژه‌ی کدنویسی رو با بقیه به اشتراک بذاری، یا دنبال سورس یه ابزار متن‌باز گشتی، حتماً به GitHub خوردی. تو این مقاله یاد می‌گیری GitHub دقیقاً چیه، چه فرقی با Git داره، و مفاهیم پایه‌ای‌ای که برای کار باهاش لازمه.</p>
 
-                <h3>فهرست مطالب</h3>
-                <ul>
-                    <li><a href="#فرق-گیت-گیتهاب">فرق Git و GitHub چیه؟</a></li>
-                    <li><a href="#چرا-به-وجود-اومد">چرا GitHub به وجود اومد؟</a></li>
-                    <li><a href="#مفاهیم-پایه">مفاهیم پایه‌ای GitHub</a>
-                        <ul>
-                            <li><a href="#ریپازیتوری">ریپازیتوری (Repository)</a></li>
-                            <li><a href="#کامیت">کامیت (Commit)</a></li>
-                            <li><a href="#برنچ">برنچ (Branch)</a></li>
-                            <li><a href="#کلون-پوش-پول">کلون، پوش و پول</a></li>
-                            <li><a href="#ایشو-پول-ریکوئست">ایشو و پول ریکوئست</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#شروع-کار">چطور شروع کنیم؟</a></li>
-                    <li><a href="#کاربردها">کجاها از GitHub استفاده می‌شه؟</a></li>
-                    <li><a href="#جمعبندی">جمع‌بندی</a></li>
-                </ul>
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#فرق-گیت-گیتهاب">فرق Git و GitHub چیه؟</a></li>
+                        <li><a href="#چرا-به-وجود-اومد">چرا GitHub به وجود اومد؟</a></li>
+                        <li><a href="#مفاهیم-پایه">مفاهیم پایه‌ای GitHub</a>
+                            <ul>
+                                <li><a href="#ریپازیتوری">ریپازیتوری (Repository)</a></li>
+                                <li><a href="#کامیت">کامیت (Commit)</a></li>
+                                <li><a href="#برنچ">برنچ (Branch)</a></li>
+                                <li><a href="#کلون-پوش-پول">کلون، پوش و پول</a></li>
+                                <li><a href="#ایشو-پول-ریکوئست">ایشو و پول ریکوئست</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#شروع-کار">چطور شروع کنیم؟</a></li>
+                        <li><a href="#کاربردها">کجاها از GitHub استفاده می‌شه؟</a></li>
+                        <li><a href="#more-articles">مقاله‌های بیشتر درباره‌ی GitHub</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
 
-                <hr>
+                    <hr>
+                </div>
 
                 <h3 id="فرق-گیت-گیتهاب">فرق Git و GitHub چیه؟</h3>
                 <p>خیلی‌ها این دوتا رو با هم قاطی می‌کنن، ولی کاملاً چیزهای متفاوتی هستن:</p>
@@ -93,13 +111,14 @@
                 <p>خلاصه: Git ابزاره، GitHub جاییه که با اون ابزار کار می‌کنی و پروژه‌تو نگه می‌داری.</p>
 
                 <h3 id="چرا-به-وجود-اومد">چرا GitHub به وجود اومد؟</h3>
-                <p>قبل از Git و GitHub، تیم‌های برنامه‌نویسی معمولاً فایل‌های پروژه رو دستی جابه‌جا می‌کردن — مثلاً با ایمیل یا فلش‌مموری. این روش چند تا مشکل بزرگ داشت:</p>
+                <p>قبل از Git، تیم‌های برنامه‌نویسی معمولاً فایل‌های پروژه رو دستی جابه‌جا می‌کردن — مثلاً با ایمیل یا فلش‌مموری. این روش چند تا مشکل بزرگ داشت:</p>
                 <ul>
                     <li>هیچ تاریخچه‌ای از تغییرات نبود؛ اگه یه چیزی خراب می‌شد، برگردوندنش سخت بود</li>
                     <li>دو نفر نمی‌تونستن هم‌زمان روی یه فایل کار کنن بدون اینکه کار همدیگه رو پاک کنن</li>
-                    <li>هیچ جای مرکزی برای دیدن کل تاریخچه‌ی پروژه وجود نداشت</li>
                 </ul>
-                <p>GitHub این مشکلات رو حل کرد: هر تغییری ثبت می‌شه، چند نفر می‌تونن هم‌زمان و بدون تداخل کار کنن، و همه‌چیز یه‌جا و قابل مشاهده‌ست.</p>
+                <p><strong>Git</strong> دقیقاً برای حل همین مشکل ساخته شد: با ثبت هر تغییر به‌صورت یه کامیت، و امکان کار هم‌زمان چند نفر روی برنچ‌های جدا بدون از بین رفتن کار همدیگه.</p>
+                <p>ولی Git به‌تنهایی فقط روی کامپیوتر خودت اجرا می‌شه؛ هنوز یه جای مرکزی برای اشتراک‌گذاری و دیدن پروژه بین چند نفر لازم بود. اینجاست که <strong>GitHub</strong> وارد می‌شه: یه نسخه‌ی آنلاین از همون تاریخچه‌ای که Git می‌سازه، به‌علاوه‌ی امکاناتی
+                    مثل بررسی تغییرات دیگران، بحث درباره‌ی پروژه (Issue) و درخواست ادغام تغییرات (Pull Request) که تو ادامه‌ی این مقاله باهاشون آشنا می‌شی.</p>
 
                 <h3 id="مفاهیم-پایه">مفاهیم پایه‌ای GitHub</h3>
 
@@ -142,6 +161,14 @@
                     <li><strong>پروژه‌های متن‌باز (Open Source)</strong>: هزاران کتابخونه و ابزار معروف (مثل React، VS Code) روی GitHub میزبانی می‌شن</li>
                 </ul>
 
+                <h3 id="more-articles">مقاله‌های بیشتر درباره‌ی GitHub</h3>
+                <p>این مقاله بخش اول از یه سه‌گانه‌ست. بخش‌های بعدی:</p>
+                <ul>
+                    <li><a href="github-practice.html">کار عملی با Git و GitHub</a>: دستورهای پایه، README و .gitignore، برنچ، Fork و Pull Request، و حل Merge Conflict</li>
+                    <li><a href="github-publish.html">انتشار و ابزارهای GitHub</a>: راه‌اندازی GitHub Pages، امنیت اکانت و 2FA، و معرفی GitHub Actions</li>
+                    <li><a href="agentic-workflows.html">GitHub Agentic Workflows چیست؟</a>: نوشتن اتوماسیون GitHub با Markdown و اجرای اون با Agent هوش مصنوعی (بخش پیشرفته)</li>
+                </ul>
+
                 <h3 id="جمعبندی">جمع‌بندی</h3>
                 <p>GitHub یکی از پرکاربردترین ابزارهای دنیای برنامه‌نویسیه — هم برای ذخیره و نسخه‌بندی کد، هم برای همکاری با بقیه، و هم برای میزبانی پروژه‌هایی مثل همین سایت. یادگیری مفاهیم پایه‌ش (ریپازیتوری، کامیت، برنچ) کافیه تا بتونی شروع کنی؛ بقیه‌شو
                     با تمرین و استفاده‌ی مداوم یاد می‌گیری.</p>
@@ -150,12 +177,40 @@
 
             </article>
         </section>
-        <!-- تبلیغات  -->
-        <!--
-        <aside class="ads">
-            <h3>تبلیغات</h3>
+
+        <!-- ستون چپ: تازه‌ها + فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <section class="side-card news-card" aria-labelledby="news-title">
+                <h2 id="news-title">تازه‌های GitHub</h2>
+                <ul class="news-list">
+
+                    <!-- هر خبر یه <li> هست. برای خبر جدید، کل یه <li> رو کپی کن. ۳ تا ۵ خبر کافیه. -->
+                    <li class="news-item">
+                        <h3>GitHub Agentic Workflows وارد Public Preview شد</h3>
+                        <p>گیت‌هاب این قابلیت رو که تو فوریه ۲۰۲۶ به‌صورت پیش‌نمایش فنی معرفی شده بود، وارد مرحله‌ی Public Preview کرد. توش هدف اتوماسیون رو با Markdown و زبان ساده می‌نویسی و ابزار <code>gh aw</code> اون رو به یک workflow استاندارد GitHub
+                            Actions تبدیل می‌کنه.</p>
+                        <p class="news-date"><time datetime="2026-06-11">۲۱ خرداد ۱۴۰۵</time></p>
+                        <a class="news-source" href="https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/" target="_blank" rel="noopener noreferrer">مشاهده در سایت اصلی</a>
+                        <p><a class="news-source" href="agentic-workflows.html">مقاله‌ی کامل در همین سایت</a></p>
+                    </li>
+
+                    <li class="news-item">
+                        <h3>دلیل و میزان اطمینان برای اقدام‌های خودکار روی Issueها</h3>
+                        <p>گیت‌هاب برای اقدام‌های خودکار روی Issueها (مثل برچسب‌زدن، تعیین نوع، بستن یا واگذاری) قابلیتی در Public Preview معرفی کرد که برای هر اقدام دلیلش رو نشون می‌ده و می‌تونی قبل از اعمال تغییرها بررسیشون کنی.</p>
+                        <p class="news-date"><time datetime="2026-07-23">۱ مرداد ۱۴۰۵</time></p>
+                        <a class="news-source" href="https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview/" target="_blank" rel="noopener noreferrer">مشاهده در سایت اصلی</a>
+                    </li>
+
+                </ul>
+            </section>
+
+            <!-- فهرست مطالب: خودش با جاوااسکریپت از فهرست داخل مقاله پر می‌شه -->
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
         </aside>
-        -->
     </main>
 
     <footer class="site-footer">
@@ -180,6 +235,51 @@
 
     </footer>
     <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
