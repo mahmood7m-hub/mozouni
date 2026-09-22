@@ -410,3 +410,228 @@ main pre {
         text-align: center;
     }
 }
+
+
+/* ==========================================================
+   ستون چپ: تازه‌ها + فهرست مطالب چسبان
+   این بلوک رو بذار «آخر» فایل style.css (بعد از بخش @media)
+   ========================================================== */
+
+
+/* خود ستون: هم‌قد main می‌شه تا فهرست چسبان جا برای حرکت داشته باشه */
+
+.side-panel {
+    flex: 1 1 200px;
+    max-width: 350px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* کادر مشترک کارت‌های ستون (مثل .useful-links و .article-card) */
+
+.side-card {
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.side-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+
+/* کارت تازه‌ها */
+
+.news-list {
+    list-style: none;
+}
+
+.news-item+.news-item {
+    border-top: 1px solid var(--color-border);
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
+.news-item h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.news-card>.news-date {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.news-item .news-date {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.news-item .news-source {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.news-item .news-source:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* کارت فهرست مطالب: چسبان */
+
+
+/* بدون جاوااسکریپت یا زیر ۱۱۰۰ پیکسل مخفیه؛ اون موقع فهرست داخل خود مقاله دیده می‌شه */
+
+.toc-card {
+    display: none;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.toc-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.toc-card ul ul {
+    margin-top: 6px;
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid var(--color-border);
+}
+
+.toc-card a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.92rem;
+}
+
+.toc-card a:hover {
+    color: var(--color-gold-hover);
+}
+
+.toc-card a.active {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+
+/* حالت سه‌ستونه (صفحه‌ی عریض): فهرست کنار صفحه، فهرست داخل مقاله مخفی */
+
+@media (min-width: 1101px) {
+    .toc-ready .toc-card {
+        display: block;
+    }
+    .toc-ready .toc-inline {
+        display: none;
+    }
+}
+
+
+/* صفحه‌ی متوسط: ستون چپ می‌ره زیر مقاله و کل عرض رو می‌گیره */
+
+@media (max-width: 1100px) {
+    .side-panel {
+        flex: 1 1 100%;
+        max-width: none;
+        align-self: auto;
+    }
+}
+
+
+/* موبایل */
+
+@media (max-width: 768px) {
+    .side-panel {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================
+   زیرمنو در ناوبر + لیست تودرتو در «لینک‌های مفید»
+   این بلوک رو بذار «آخر» فایل style.css
+   ========================================================== */
+
+
+/* ---------- زیرمنوی ناوبر ---------- */
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* فلش کوچیک که نشون می‌ده این آیتم زیرمنو داره */
+
+.nav-item>a::after {
+    content: "▾";
+    margin-inline-start: 4px;
+    font-size: 0.75em;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: var(--color-bg-medium);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 6px 0;
+    z-index: 10;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 8px 15px;
+    white-space: nowrap;
+}
+
+
+/* با ماوس یا کیبورد (Tab) باز می‌شه */
+
+.nav-item:hover .nav-submenu,
+.nav-item:focus-within .nav-submenu {
+    display: block;
+}
+
+
+/* روی موبایل و صفحه‌های لمسی زیرمنو باز نمی‌شه؛ لینک اصلی به صفحه‌ی خودش می‌ره */
+
+@media (hover: none) {
+    .nav-item>a::after {
+        content: none;
+    }
+    .nav-submenu {
+        display: none !important;
+    }
+}
+
+
+/* ---------- لیست تودرتو در لینک‌های مفید ---------- */
+
+.useful-links ul ul {
+    margin-top: 8px;
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid var(--color-border);
+    font-size: 0.92rem;
+}
