@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معرفی چند ابزار هوش مصنوعی کاربردی مثل ChatGPT، Gemini، Claude، Copilot و Perplexity؛ چه کاری بلدن و از کجا شروع کنید.">
+    <title>هوش مصنوعی چیست؟ | Mozouni</title>
+    <link rel="icon" href="../Mozouni.ico">
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="ai.html">هوش مصنوعی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>هوش مصنوعی‌های کاربردی</h2>
+                <p>هوش مصنوعی (AI) امروز یکی از پرکاربردترین ابزارها برای نوشتن، برنامه‌نویسی، تحقیق و حل مسائل روزمره‌ست. تو این مقاله با چند تا از بهترین و کاربردی‌ترین ابزارهای هوش مصنوعی موجود آشنا می‌شی و می‌فهمی هرکدوم برای چه کاری مناسب‌تره.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#chatgpt">ChatGPT</a></li>
+                        <li><a href="#gemini">Google Gemini</a></li>
+                        <li><a href="#claude">Claude</a></li>
+                        <li><a href="#copilot">Microsoft Copilot</a></li>
+                        <li><a href="#perplexity">Perplexity</a></li>
+                        <li><a href="#جمعبندی">کدومو انتخاب کنم؟</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="chatgpt">ChatGPT</h3>
+                <p>
+                    محصول شرکت OpenAI و یکی از اولین و پرکاربردترین چت‌بات‌های هوش مصنوعی که در سطح گسترده در اختیار عموم قرار گرفت. ChatGPT رو می‌شه برای نوشتن متن، پاسخ به سوالات روزمره و تخصصی، برنامه‌نویسی، خلاصه‌سازی متن‌های طولانی و حتی برین‌استورمینگ ایده استفاده
+                    کرد. یکی از نقاط قوتش اینه که برای طیف خیلی وسیعی از کاربردها مناسبه، از نوشتن یه ایمیل ساده گرفته تا کمک به دیباگ کردن کد. امکاناتی مثل جستجوی وب، تولید تصویر و آپلود فایل هم بهش اضافه شده که کاربردش رو گسترده‌تر کرده. نسخه‌ی رایگانش
+                    برای اکثر کارهای روزمره کافیه، ولی برای استفاده‌ی حرفه‌ای‌تر نسخه‌ی پولی هم داره. اگه دنبال یه دستیار همه‌کاره‌ای برای شروع کار با هوش مصنوعی باشی، معمولاً اولین گزینه‌ای هست که همه پیشنهاد می‌کنن.
+                </p>
+                <p>
+                    <a href="https://chat.openai.com" target="_blank" rel="noopener">وب‌سایت</a> ·
+                    <a href="https://play.google.com/store/apps/details?id=com.openai.chatgpt" target="_blank" rel="noopener">دانلود از گوگل‌پلی</a>
+                </p>
+
+                <h3 id="gemini">Google Gemini</h3>
+                <p>
+                    محصول شرکت گوگله و یکی از قوی‌ترین رقیب‌های ChatGPT به‌حساب میاد. نقطه‌ی قوت اصلیش یکپارچگی کاملیه که با بقیه‌ی سرویس‌های گوگل مثل Docs، Gmail، Sheets و Photos داره؛ یعنی می‌تونی مستقیم داخل ایمیل یا سندت ازش کمک بگیری. Gemini در کار با محتوای چندرسانه‌ای
+                    (متن، تصویر، صدا و حتی ویدیو) خیلی قویه و می‌تونه چند نوع ورودی رو با هم تحلیل کنه. برای کسایی که از قبل با اکوسیستم گوگل کار می‌کنن، استفاده ازش خیلی طبیعی و بدون دردسره. همچنین به‌صورت پیش‌فرض روی خیلی از گوشی‌های اندرویدی نصب یا
+                    در دسترسه. اگه روزمره‌ات پر از کار با ابزارهای گوگله، این گزینه‌ی طبیعی‌ای برای شروعه.
+                </p>
+                <p>
+                    <a href="https://gemini.google.com" target="_blank" rel="noopener">وب‌سایت</a> ·
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.bard" target="_blank" rel="noopener">دانلود از گوگل‌پلی</a>
+                </p>
+
+                <h3 id="claude">Claude</h3>
+                <p>
+                    ساخته‌ی شرکت Anthropic که از همون ابتدا تمرکز زیادی روی دقت، امنیت و رفتار مسئولانه‌ی هوش مصنوعی داشته. یکی از ویژگی‌های برجسته‌ی Claude، توانایی بالاش در پردازش و تحلیل متن‌های خیلی طولانیه؛ مثلاً می‌تونی یه کتاب، قرارداد یا مستندات فنی حجیم رو بهش بدی
+                    و ازش خلاصه یا تحلیل بخوای. برای کارهایی مثل نوشتن حرفه‌ای، ویرایش متن، کدنویسی و کارهایی که به استدلال دقیق و مرحله‌به‌مرحله نیاز دارن، عملکرد خیلی خوبی داره. لحن و پاسخ‌هاش معمولاً محتاطانه و دقیقه، به همین خاطر برای کارهای رسمی
+                    و حساس گزینه‌ی مطمئنی به‌حساب میاد. امکاناتی مثل ساخت فایل، اجرای کد و کار با اسناد مختلف هم بهش اضافه شده که کاربردش رو فراتر از یه چت‌بات ساده برده. اگه دنبال ابزاری هستی که هم برای یادگیری و هم برای کارهای واقعی مثل همین سایتت بهش
+                    اعتماد کنی، Claude گزینه‌ی خوبیه.
+                </p>
+                <p>
+                    <a href="https://claude.ai" target="_blank" rel="noopener">وب‌سایت</a> ·
+                    <a href="https://play.google.com/store/apps/details?id=com.anthropic.claude" target="_blank" rel="noopener">دانلود از گوگل‌پلی</a>
+                </p>
+
+                <h3 id="copilot">Microsoft Copilot</h3>
+                <p>
+                    هوش مصنوعی شرکت مایکروسافته که به‌صورت عمیق با محصولات این شرکت مثل Word، Excel، PowerPoint، Outlook و حتی خود ویندوز یکپارچه شده. توی Word می‌تونه بهت کمک کنه سند بنویسی و ویرایش کنی، توی Excel می‌تونه فرمول بسازه و داده‌هات رو تحلیل کنه، و توی Outlook
+                    می‌تونه ایمیل خلاصه کنه یا پاسخ پیشنهادی بده. این یکپارچگی باعث می‌شه به‌جای رفتن به یه سایت جدا، مستقیم داخل همون نرم‌افزاری که هرروز باهاش کار می‌کنی از هوش مصنوعی استفاده کنی. برای کارهای اداری، دفتری و افزایش سرعت کارهای تکراری
+                    روزمره خیلی کاربردیه. خیلی از سازمان‌ها و شرکت‌ها هم به‌خاطر همین یکپارچگی، Copilot رو به‌عنوان ابزار رسمی هوش مصنوعی خودشون انتخاب کردن. اگه محیط کاری یا تحصیلی‌ت بیشتر حول‌وحوش نرم‌افزارهای مایکروسافته، این گزینه رو حتماً امتحان
+                    کن.
+                </p>
+                <p>
+                    <a href="https://copilot.microsoft.com" target="_blank" rel="noopener">وب‌سایت</a> ·
+                    <a href="https://play.google.com/store/apps/details?id=com.microsoft.copilot" target="_blank" rel="noopener">دانلود از گوگل‌پلی</a>
+                </p>
+
+                <h3 id="perplexity">Perplexity</h3>
+                <p>
+                    یه دستیار هوش مصنوعی با رویکرد جستجومحوره که به‌جای اینکه فقط از دانش داخلی مدل استفاده کنه، هم‌زمان وب رو هم جستجو می‌کنه. تفاوت اصلیش با خیلی از چت‌بات‌های دیگه اینه که برای هر پاسخ، منبع و لینک اصلی اون اطلاعات رو هم نشون می‌ده، پس می‌تونی راحت درستی
+                    جواب رو بررسی کنی. همین ویژگی باعث می‌شه برای تحقیق، فکت‌چک کردن، پیدا کردن اخبار و منابع تازه، و کارهای علمی و دانشگاهی گزینه‌ی خیلی مناسبی باشه. برخلاف بعضی ابزارها که ممکنه اطلاعات قدیمی یا نادرست بدن، Perplexity سعی می‌کنه پاسخ‌هاش
+                    رو به منابع واقعی و به‌روز وصل کنه. رابط کاربریش هم ساده و شبیه یه موتور جستجوی معمولیه، برای همین یادگیریش راحته. اگه دنبال ابزاری هستی که هم جواب بده و هم بتونی منبعش رو چک کنی، این یکی رو حتماً امتحان کن.
+                </p>
+                <p>
+                    <a href="https://perplexity.ai" target="_blank" rel="noopener">وب‌سایت</a> ·
+                    <a href="https://play.google.com/store/apps/details?id=ai.perplexity.app.android" target="_blank" rel="noopener">دانلود از گوگل‌پلی</a>
+                </p>
+
+                <h3 id="جمعبندی">کدومو انتخاب کنم؟</h3>
+                <p>هیچ‌کدوم از این ابزارها «بهترین مطلق» نیستن؛ بستگی به کاری داره که می‌خوای انجام بدی. برای شروع، معمولاً کافیه یکی مثل ChatGPT یا Claude رو امتحان کنی و کم‌کم ببینی کدوم با روش کار تو بهتر جواب می‌ده.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
