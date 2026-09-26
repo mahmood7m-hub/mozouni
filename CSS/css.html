@@ -37,9 +37,23 @@
     <nav class="site-nav">
         <a href="../index.html">صفحه اصلی</a>
         <a href="css.html">CSS</a>
-        <a href="../HTML/html.html">HTML</a>
-        <a href="../GitHub/github.html">Github</a>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
         <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
     </nav>
     <!-- مطالب اصلی -->
     <main>
@@ -47,10 +61,22 @@
         <aside class="useful-links">
             <h2>لینک‌های مفید</h2>
             <ul>
-                <li><a href="HTML/html.html">HTML چیست؟</a></li>
-                <li><a href="CSS/css.html">CSS چیست؟</a></li>
-                <li><a href="GitHub/github.html">GitHub چیست؟</a></li>
-                <li><a href="Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
             </ul>
         </aside>
 
@@ -63,25 +89,27 @@
                 <h2>CSS چیست؟</h2>
                 <p>اگه تا حالا یه سایت دیدی که رنگ داره، فونت خاص داره، یا چیدمانش منظمه، پشت صحنه‌ش CSS بوده. تو این مقاله یاد می‌گیری CSS چیه، چرا لازمه، و مفاهیم پایه‌ای‌ای که برای شروع کار باهاش نیاز داری.</p>
 
-                <h3>فهرست مطالب</h3>
-                <ul>
-                    <li><a href="#css-چیست">CSS دقیقاً چیکار می‌کنه؟</a></li>
-                    <li><a href="#چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</a></li>
-                    <li><a href="#سینتکس-پایه">سینتکس پایه‌ای CSS</a></li>
-                    <li><a href="#روشهای-اتصال">روش‌های اتصال CSS به HTML</a>
-                        <ul>
-                            <li><a href="#استایل-درونخطی">استایل درون‌خطی (Inline)</a></li>
-                            <li><a href="#استایل-داخلی">استایل داخلی (Internal)</a></li>
-                            <li><a href="#استایل-خارجی">استایل خارجی (External)</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#سلکتورها">سلکتورهای پرکاربرد</a></li>
-                    <li><a href="#باکس-مدل">باکس مدل (Box Model)</a></li>
-                    <li><a href="#کاربردها">کجاها از CSS استفاده می‌شه؟</a></li>
-                    <li><a href="#جمعبندی">جمع‌بندی</a></li>
-                </ul>
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#css-چیست">CSS دقیقاً چیکار می‌کنه؟</a></li>
+                        <li><a href="#چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</a></li>
+                        <li><a href="#سینتکس-پایه">سینتکس پایه‌ای CSS</a></li>
+                        <li><a href="#روشهای-اتصال">روش‌های اتصال CSS به HTML</a>
+                            <ul>
+                                <li><a href="#استایل-درونخطی">استایل درون‌خطی (Inline)</a></li>
+                                <li><a href="#استایل-داخلی">استایل داخلی (Internal)</a></li>
+                                <li><a href="#استایل-خارجی">استایل خارجی (External)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#سلکتورها">سلکتورهای پرکاربرد</a></li>
+                        <li><a href="#باکس-مدل">باکس مدل (Box Model)</a></li>
+                        <li><a href="#کاربردها">کجاها از CSS استفاده می‌شه؟</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
 
-                <hr>
+                    <hr>
+                </div>
 
                 <h3 id="css-چیست">CSS دقیقاً چیکار می‌کنه؟</h3>
                 <p><strong>CSS</strong> مخفف <em>Cascading Style Sheets</em> هست. اگه HTML اسکلت و محتوای یه صفحه رو می‌سازه (تیترها، پاراگراف‌ها، تصاویر)، CSS مسئول ظاهرشونه: رنگ، فونت، فاصله‌گذاری، چیدمان، و حتی انیمیشن. بدون CSS، هر صفحه‌ی وبی فقط متن
@@ -162,12 +190,15 @@
 
             </article>
         </section>
-        <!-- تبلیغات  -->
-        <!--
-        <aside class="ads">
-            <h3>تبلیغات</h3>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
         </aside>
-        -->
     </main>
 
     <footer class="site-footer">
@@ -192,6 +223,51 @@
 
     </footer>
     <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
