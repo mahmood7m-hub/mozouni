@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عناصر و ساختار محتوای HTML: لیست‌ها، لینک و تصویر، جدول، فرم و تگ‌های متنی پرکاربرد.">
+    <title>عناصر و ساختار محتوای HTML | Mozouni</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <span class="nav-item">
+            <a href="html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>عناصر و ساختار محتوای HTML</h2>
+                <p>این مقاله بخش دومه از یه مجموعه درباره‌ی HTML. تو <a href="html.html">بخش اول</a> با ساختار سند و تگ‌های سمانتیک آشنا شدی. حالا وقتشه سراغ عناصری بریم که واقعاً هر روز تو ساخت یه صفحه استفاده می‌شن: لیست، لینک، تصویر، جدول و فرم.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#تگهای-متنی">تگ‌های متنی بیشتر</a></li>
+                        <li><a href="#لیستها">لیست‌ها</a></li>
+                        <li><a href="#لینکها">لینک‌ها</a></li>
+                        <li><a href="#تصویر">تصویر</a></li>
+                        <li><a href="#جدول">جدول</a></li>
+                        <li><a href="#فرم">فرم</a>
+                            <ul>
+                                <li><a href="#فرم-ورودیها">انواع input</a></li>
+                                <li><a href="#فرم-select-textarea">select و textarea</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="تگهای-متنی">تگ‌های متنی بیشتر</h3>
+                <p>تو بخش اول با <code>&lt;p&gt;</code> و تیترها آشنا شدی. چند تا تگ متنی دیگه هم هست که زیاد به کارت می‌آد:</p>
+                <ul>
+                    <li><code>&lt;strong&gt;</code>: متن رو پررنگ نشون می‌ده و از نظر معنایی هم می‌گه این بخش مهمه (نه فقط ظاهر)</li>
+                    <li><code>&lt;em&gt;</code>: متن رو کج (ایتالیک) نشون می‌ده و از نظر معنایی تأکید داره</li>
+                    <li><code>&lt;blockquote&gt;</code>: برای نقل‌قول از یه منبع دیگه</li>
+                    <li><code>&lt;code&gt;</code>: برای نمایش کد درون‌خطی — همونی که تو این سایت زیاد دیدی</li>
+                    <li><code>&lt;br&gt;</code>: یه شکست خط، بدون شروع پاراگراف جدید</li>
+                    <li><code>&lt;hr&gt;</code>: یه خط افقی برای جدا کردن بخش‌ها</li>
+                </ul>
+                <p>نکته: <code>&lt;strong&gt;</code> با CSS <code>font-weight: bold</code> فرق داره. اولی هم پررنگه هم از نظر معنا مهمه؛ دومی فقط ظاهرش پررنگه. برای محتوایی که واقعاً مهمه، همیشه <code>&lt;strong&gt;</code> رو ترجیح بده.</p>
+
+                <h3 id="لیستها">لیست‌ها</h3>
+                <p>دو نوع لیست اصلی داری. لیست بدون ترتیب، وقتی ترتیب موارد مهم نیست:</p>
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                <p>و لیست با ترتیب، وقتی شماره یا مرحله مهمه:</p>
+                <pre><code>&lt;ol&gt;
+    &lt;li&gt;اول یه اکانت بساز&lt;/li&gt;
+    &lt;li&gt;بعد یه ریپازیتوری بساز&lt;/li&gt;
+    &lt;li&gt;فایل‌ها رو آپلود کن&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                <p>می‌تونی لیست‌ها رو هم تودرتو کنی، دقیقاً مثل همین «لینک‌های مفید» تو ستون کناری همین سایت:</p>
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;زبان‌های برنامه‌نویسی
+        &lt;ul&gt;
+            &lt;li&gt;JavaScript&lt;/li&gt;
+            &lt;li&gt;Python&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h3 id="لینکها">لینک‌ها</h3>
+                <p>تو بخش اول با تگ <code>&lt;a&gt;</code> و ویژگی <code>href</code> آشنا شدی. چند نکته‌ی تکمیلی:</p>
+                <p><strong>مسیر مطلق در برابر مسیر نسبی:</strong> اگه بخوای به یه سایت دیگه لینک بدی، آدرس کامل رو می‌نویسی (مسیر مطلق):</p>
+                <pre><code>&lt;a href="https://github.com"&gt;گیت‌هاب&lt;/a&gt;</code></pre>
+                <p>ولی اگه بخوای به یه صفحه‌ی دیگه از همین سایت لینک بدی، از مسیر نسبی استفاده می‌کنی — دقیقاً همون‌جوری که تو ناوبر همین سایت هست:</p>
+                <pre><code>&lt;a href="../CSS/css.html"&gt;CSS چیست؟&lt;/a&gt;</code></pre>
+                <p><strong>باز شدن تو تب جدید:</strong> با ویژگی <code>target="_blank"</code> لینک تو یه تب جدید باز می‌شه. وقتی این کار رو می‌کنی، بهتره <code>rel="noopener noreferrer"</code> رو هم اضافه کنی؛ این یه مسئله‌ی امنیتیه که جلوی دسترسی صفحه‌ی
+                    جدید به صفحه‌ی اصلیت رو می‌گیره:</p>
+                <pre><code>&lt;a href="https://github.com" target="_blank" rel="noopener noreferrer"&gt;گیت‌هاب&lt;/a&gt;</code></pre>
+
+                <h3 id="تصویر">تصویر</h3>
+                <p>برای نمایش عکس از تگ <code>&lt;img&gt;</code> استفاده می‌کنی. این تگ برخلاف بقیه، بسته نمی‌شه (خودبسته یا self-closing‌ه):</p>
+                <pre><code>&lt;img src="cat.jpg" alt="یه گربه‌ی نارنجی روی مبل"&gt;</code></pre>
+                <p>ویژگی <code>alt</code> رو هیچ‌وقت خالی یا فراموش نکن. این متن وقتی به کار می‌آد که تصویر لود نشه، و مهم‌تر از اون، صفحه‌خوان‌ها (برای کاربران کم‌بینا) همین متن رو می‌خونن. <code>alt</code> باید توصیف واقعی تصویر باشه، نه چیزی مثل «عکس۱».</p>
+                <p>اگه تصویر یه توضیح (caption) هم لازم داره، از <code>&lt;figure&gt;</code> و <code>&lt;figcaption&gt;</code> استفاده کن:</p>
+                <pre><code>&lt;figure&gt;
+    &lt;img src="cat.jpg" alt="یه گربه‌ی نارنجی روی مبل"&gt;
+    &lt;figcaption&gt;گربه‌ی من، تابستون ۱۴۰۴&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+                <h3 id="جدول">جدول</h3>
+                <p>برای نمایش داده‌های جدولی (مثل یه برنامه‌ی هفتگی یا لیست قیمت) از <code>&lt;table&gt;</code> استفاده می‌کنی:</p>
+                <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;نام&lt;/th&gt;
+        &lt;th&gt;زبان&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;علی&lt;/td&gt;
+        &lt;td&gt;فارسی&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                <ul>
+                    <li><code>&lt;table&gt;</code>: کل جدول</li>
+                    <li><code>&lt;tr&gt;</code> (table row): یه ردیف</li>
+                    <li><code>&lt;th&gt;</code> (table header): سلول سرستون، معمولاً پررنگ نمایش داده می‌شه</li>
+                    <li><code>&lt;td&gt;</code> (table data): یه سلول معمولی</li>
+                </ul>
+                <p>نکته: از جدول فقط برای داده‌ی واقعاً جدولی استفاده کن، نه برای چیدمان کلی صفحه؛ اون کار CSS‌ه (که تو مقاله‌ی <a href="../CSS/css.html">CSS چیست؟</a> باهاش آشنا می‌شی).</p>
+
+                <h3 id="فرم">فرم</h3>
+                <p>فرم راهیه که از کاربر اطلاعات بگیری — مثل همون باکس جستجوی بالای همین سایت. کل فرم داخل تگ <code>&lt;form&gt;</code> قرار می‌گیره:</p>
+                <pre><code>&lt;form&gt;
+    &lt;label for="name"&gt;اسم شما&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;button type="submit"&gt;ارسال&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <p><code>&lt;label&gt;</code> برچسب یه فیلده. ویژگی <code>for</code> باید دقیقاً با <code>id</code> همون فیلد یکی باشه؛ این کار باعث می‌شه با کلیک روی برچسب، فوکوس بره رو فیلد — هم برای کاربر عادی راحت‌تره، هم برای دسترس‌پذیری لازمه.</p>
+
+                <h4 id="فرم-ورودیها">انواع input</h4>
+                <p>ویژگی <code>type</code> روی <code>&lt;input&gt;</code> مشخص می‌کنه چه‌جور ورودی‌ایه:</p>
+                <ul>
+                    <li><code>type="text"</code>: متن معمولی</li>
+                    <li><code>type="email"</code>: ایمیل؛ مرورگر خودش فرمتش رو چک می‌کنه</li>
+                    <li><code>type="password"</code>: رمز عبور؛ کاراکترها به‌جای نمایش، نقطه نشون داده می‌شن</li>
+                    <li><code>type="number"</code>: فقط عدد</li>
+                    <li><code>type="checkbox"</code>: گزینه‌ی تیک‌دار (می‌شه چندتا رو هم‌زمان انتخاب کرد)</li>
+                    <li><code>type="radio"</code>: گزینه‌ی دایره‌ای (فقط یکی از یه گروه قابل انتخابه)</li>
+                    <li><code>type="search"</code>: مخصوص جستجو، دقیقاً همونی که تو هدر همین سایت استفاده شده</li>
+                </ul>
+
+                <h4 id="فرم-select-textarea">select و textarea</h4>
+                <p>برای انتخاب از یه لیست کشویی:</p>
+                <pre><code>&lt;select&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                <p>و برای متن چندخطی (مثل یه پیام یا نظر):</p>
+                <pre><code>&lt;textarea rows="4"&gt;&lt;/textarea&gt;</code></pre>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>با این عناصر — لیست، لینک، تصویر، جدول و فرم — دیگه می‌تونی محتوای واقعی یه صفحه رو بسازی، نه فقط یه اسکلت ساده. <a href="html-advanced.html">بخش بعدی این مجموعه</a> به دسترس‌پذیری، سئوی پایه و چندرسانه‌ای می‌پردازه.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
