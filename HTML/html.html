@@ -37,9 +37,23 @@
     <nav class="site-nav">
         <a href="../index.html">صفحه اصلی</a>
         <a href="../CSS/css.html">CSS</a>
-        <a href="html.html">HTML</a>
-        <a href="../GitHub/github.html">Github</a>
+        <span class="nav-item">
+            <a href="html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
         <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
     </nav>
     <!-- مطالب اصلی -->
     <main>
@@ -47,10 +61,22 @@
         <aside class="useful-links">
             <h2>لینک‌های مفید</h2>
             <ul>
-                <li><a href="HTML/html.html">HTML چیست؟</a></li>
-                <li><a href="CSS/css.html">CSS چیست؟</a></li>
-                <li><a href="GitHub/github.html">GitHub چیست؟</a></li>
-                <li><a href="Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
             </ul>
         </aside>
 
@@ -63,19 +89,22 @@
                 <h2>HTML چیست؟</h2>
                 <p>هر صفحه‌ای که تو مرورگر باز می‌کنی، پایه و اسکلتش HTML‌ه. تو این مقاله یاد می‌گیری HTML دقیقاً چیه، ساختار یه صفحه چطوریه، و چرا تگ‌های سمانتیک اهمیت دارن.</p>
 
-                <h3>فهرست مطالب</h3>
-                <ul>
-                    <li><a href="#html-چیست">HTML دقیقاً چیکار می‌کنه؟</a></li>
-                    <li><a href="#چرا-به-وجود-اومد">چرا HTML به وجود اومد؟</a></li>
-                    <li><a href="#ساختار-سند">ساختار پایه‌ای یه سند HTML</a></li>
-                    <li><a href="#تگ-و-ویژگی">تگ و ویژگی (Attribute)</a></li>
-                    <li><a href="#تگهای-پرکاربرد">تگ‌های پرکاربرد</a></li>
-                    <li><a href="#سمانتیک">چرا تگ‌های سمانتیک مهمن؟</a></li>
-                    <li><a href="#کاربردها">کجاها HTML لازمه؟</a></li>
-                    <li><a href="#جمعبندی">جمع‌بندی</a></li>
-                </ul>
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#html-چیست">HTML دقیقاً چیکار می‌کنه؟</a></li>
+                        <li><a href="#چرا-به-وجود-اومد">چرا HTML به وجود اومد؟</a></li>
+                        <li><a href="#ساختار-سند">ساختار پایه‌ای یه سند HTML</a></li>
+                        <li><a href="#تگ-و-ویژگی">تگ و ویژگی (Attribute)</a></li>
+                        <li><a href="#تگهای-پرکاربرد">تگ‌های پرکاربرد</a></li>
+                        <li><a href="#سمانتیک">چرا تگ‌های سمانتیک مهمن؟</a></li>
+                        <li><a href="#کاربردها">کجاها HTML لازمه؟</a></li>
+                        <li><a href="#more-articles">بخش‌های بیشتر</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
 
-                <hr>
+                    <hr>
+                </div>
 
                 <h3 id="html-چیست">HTML دقیقاً چیکار می‌کنه؟</h3>
                 <p><strong>HTML</strong> مخفف <em>HyperText Markup Language</em> هست. کارش اینه که محتوای یه صفحه‌ی وب رو مشخص کنه: کجا تیتره، کجا پاراگرافه، کجا تصویره، کجا لینکه. HTML خودش مسئول ظاهر (رنگ، فونت) نیست — اون وظیفه‌ی CSS‌ه؛ HTML فقط ساختار
@@ -119,6 +148,7 @@
                     <li><code>&lt;ul&gt;</code> و <code>&lt;li&gt;</code>: لیست و آیتم‌های لیست</li>
                     <li><code>&lt;div&gt;</code> و <code>&lt;span&gt;</code>: کانتینرهای عمومی بدون معنای خاص، برای گروه‌بندی محتوا</li>
                 </ul>
+                <p>تو <a href="html-elements.html">بخش بعدی این مجموعه</a> با تگ‌های متنی، لیست، لینک، تصویر، جدول و فرم با جزئیات بیشتر آشنا می‌شی.</p>
 
                 <h3 id="سمانتیک">چرا تگ‌های سمانتیک مهمن؟</h3>
                 <p>به‌جای این‌که همه‌چیز رو با <code>&lt;div&gt;</code> بسازی، HTML5 یه سری تگ سمانتیک (معنادار) داره که هم برای مرورگر و موتورهای جستجو، هم برای ابزارهای صفحه‌خوان (کاربران کم‌بینا) معنای بیشتری دارن:</p>
@@ -136,6 +166,13 @@
                     <li><strong>اپلیکیشن‌های وب</strong>: فریم‌ورک‌هایی مثل React یا Vue هم در نهایت HTML تولید می‌کنن</li>
                 </ul>
 
+                <h3 id="more-articles">بخش‌های بیشتر</h3>
+                <p>این مقاله بخش اوله از یه مجموعه‌ی سه‌بخشی درباره‌ی HTML:</p>
+                <ul>
+                    <li><a href="html-elements.html">عناصر و ساختار محتوای HTML</a>: لیست‌ها، لینک و تصویر، جدول و فرم</li>
+                    <li><a href="html-advanced.html">HTML حرفه‌ای‌تر</a>: دسترس‌پذیری، سئوی پایه، چندرسانه‌ای و اشتباهات رایج</li>
+                </ul>
+
                 <h3 id="جمعبندی">جمع‌بندی</h3>
                 <p>HTML اولین و ضروری‌ترین قدم برای یادگیری توسعه‌ی وبه. یادگیری ساختار پایه و تگ‌های سمانتیک، پایه‌ای می‌سازه که بعداً با CSS برای ظاهر و جاوااسکریپت برای رفتار، صفحه رو کامل می‌کنی.</p>
 
@@ -143,12 +180,15 @@
 
             </article>
         </section>
-        <!-- تبلیغات  -->
-        <!--
-        <aside class="ads">
-            <h3>تبلیغات</h3>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
         </aside>
-        -->
     </main>
 
     <footer class="site-footer">
@@ -173,6 +213,51 @@
 
     </footer>
     <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, {
+                rootMargin: '0px 0px -70% 0px'
+            });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
