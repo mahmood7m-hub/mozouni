@@ -9,6 +9,7 @@
     <meta name="description" content="Markdown چیست و چرا به وجود اومد؟ آموزش کامل نحوه‌ی نوشتن Markdown همراه با مقایسه با HTML.">
     <title>Markdown چیست؟ | Mozouni</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
     <!-- فونت سایت -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
@@ -275,8 +276,7 @@ ___</code></pre>
                     <!-- هر خبر یه <li> هست. برای خبر جدید، کل یه <li> رو کپی کن. ۳ تا ۵ خبر کافیه. -->
                     <li class="news-item">
                         <h3>GitHub Agentic Workflows: اتوماسیون با Markdown</h3>
-                        <p>گیت‌هاب این قابلیت رو که تو فوریه ۲۰۲۶ به‌صورت پیش‌نمایش فنی معرفی شده بود، وارد مرحله‌ی Public Preview کرد. توش هدف اتوماسیون رو با Markdown و زبان ساده می‌نویسی و ابزار <code>gh aw</code> اون رو به یک workflow استاندارد GitHub
-                            Actions تبدیل می‌کنه.</p>
+                        <p>گیت‌هاب این قابلیت رو که تو فوریه ۲۰۲۶ به‌صورت پیش‌نمایش فنی معرفی شده بود، وارد مرحله‌ی Public Preview کرد. توش هدف اتوماسیون رو با Markdown و زبان ساده می‌نویسی و ابزار <code>gh aw</code> اون رو به یک workflow استاندارد GitHub Actions تبدیل می‌کنه.</p>
                         <p class="news-date"><time datetime="2026-06-11">۲۱ خرداد ۱۴۰۵</time></p>
                         <a class="news-source" href="https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/" target="_blank" rel="noopener noreferrer">مشاهده در سایت اصلی</a>
                     </li>
@@ -329,10 +329,7 @@ ___</code></pre>
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
@@ -352,9 +349,7 @@ ___</code></pre>
                     const link = linkFor.get(entry.target);
                     if (link) link.classList.add('active');
                 });
-            }, {
-                rootMargin: '0px 0px -70% 0px'
-            });
+            }, { rootMargin: '0px 0px -70% 0px' });
 
             tocCard.querySelectorAll('a').forEach((link) => {
                 const id = decodeURIComponent(link.getAttribute('href').slice(1));
