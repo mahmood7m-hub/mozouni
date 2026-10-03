@@ -9,6 +9,7 @@
     <meta name="description" content="کار عملی با Git و GitHub: دستورهای پایه، README و .gitignore، برنچ، Fork، Pull Request و حل Merge Conflict.">
     <title>کار عملی با Git و GitHub | Mozouni</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
     <!-- فونت سایت -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
@@ -87,8 +88,7 @@
                 <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
 
                 <h2>کار عملی با Git و GitHub</h2>
-                <p>این مقاله بخش دومه از سه‌گانه‌ی GitHub. تو <a href="github.html">مقاله‌ی اول</a> با مفاهیم پایه‌ای مثل ریپازیتوری، کامیت و برنچ آشنا شدی. اینجا وقتشه که واقعاً دستت به کیبورد بره و با Git کار کنی: از ساختن یه ریپازیتوری تا حل یه تداخل
-                    ساده.</p>
+                <p>این مقاله بخش دومه از سه‌گانه‌ی GitHub. تو <a href="github.html">مقاله‌ی اول</a> با مفاهیم پایه‌ای مثل ریپازیتوری، کامیت و برنچ آشنا شدی. اینجا وقتشه که واقعاً دستت به کیبورد بره و با Git کار کنی: از ساختن یه ریپازیتوری تا حل یه تداخل ساده.</p>
 
                 <div class="toc-inline">
                     <h3>فهرست مطالب</h3>
@@ -114,8 +114,7 @@
                 </div>
 
                 <h3 id="نصب-git">نصب Git</h3>
-                <p>قبل از هر چیز باید Git رو روی کامپیوترت نصب کنی. از سایت <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer">git-scm.com</a> نسخه‌ی مناسب سیستم‌عاملت رو دانلود کن. بعد از نصب، توی ترمینال (یا Git Bash روی ویندوز) این
-                    دستور رو بزن تا مطمئن بشی درست نصب شده:</p>
+                <p>قبل از هر چیز باید Git رو روی کامپیوترت نصب کنی. از سایت <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer">git-scm.com</a> نسخه‌ی مناسب سیستم‌عاملت رو دانلود کن. بعد از نصب، توی ترمینال (یا Git Bash روی ویندوز) این دستور رو بزن تا مطمئن بشی درست نصب شده:</p>
                 <pre><code>git --version</code></pre>
                 <p>یه بار هم باید خودت رو به Git معرفی کنی، چون این اطلاعات کنار هر کامیتی که می‌زنی ذخیره می‌شه:</p>
                 <pre><code>git config --global user.name "اسم شما"
@@ -151,8 +150,7 @@ git add .</code></pre>
                 <p>یه عادت خوب اینه که قبل از شروع کار روزانه، یه <code>git pull</code> بزنی تا مطمئن بشی از آخرین نسخه شروع می‌کنی.</p>
 
                 <h3 id="readme">فایل README</h3>
-                <p><code>README.md</code> اولین فایلیه که GitHub توی صفحه‌ی اصلی هر ریپازیتوری نشون می‌ده. معمولاً توش می‌نویسی این پروژه چیه، چطور نصبش کنن و چطور ازش استفاده کنن. چون پسوندش <code>.md</code>ه، با Markdown نوشته می‌شه؛ اگه یادت رفته، می‌تونی
-                    مقاله‌ی <a href="../Markdown/Markdown.html">Markdown چیست؟</a> رو یه نگاه بندازی.</p>
+                <p><code>README.md</code> اولین فایلیه که GitHub توی صفحه‌ی اصلی هر ریپازیتوری نشون می‌ده. معمولاً توش می‌نویسی این پروژه چیه، چطور نصبش کنن و چطور ازش استفاده کنن. چون پسوندش <code>.md</code>ه، با Markdown نوشته می‌شه؛ اگه یادت رفته، می‌تونی مقاله‌ی <a href="../Markdown/Markdown.html">Markdown چیست؟</a> رو یه نگاه بندازی.</p>
                 <p>یه README خوب معمولاً این بخش‌ها رو داره:</p>
                 <ul>
                     <li>اسم و یه توضیح کوتاه درباره‌ی پروژه</li>
@@ -162,7 +160,7 @@ git add .</code></pre>
                 </ul>
 
                 <h3 id="gitignore">فایل .gitignore</h3>
-                <p>خیلی وقت‌ها تو پوشه‌ی پروژه‌ت فایل‌هایی هست که نمی‌خوای وارد ریپازیتوری بشن — مثلاً فایل‌های تنظیمات شخصی ادیتور، فایل‌های موقتی سیستم‌عامل، یا پوشه‌ی <code>node_modules</code> تو پروژه‌های جاوااسکریپتی. با ساختن یه فایل به اسم <code>.gitignore</code>                    تو ریشه‌ی پروژه، به Git می‌گی این فایل‌ها یا پوشه‌ها رو نادیده بگیره:</p>
+                <p>خیلی وقت‌ها تو پوشه‌ی پروژه‌ت فایل‌هایی هست که نمی‌خوای وارد ریپازیتوری بشن — مثلاً فایل‌های تنظیمات شخصی ادیتور، فایل‌های موقتی سیستم‌عامل، یا پوشه‌ی <code>node_modules</code> تو پروژه‌های جاوااسکریپتی. با ساختن یه فایل به اسم <code>.gitignore</code> تو ریشه‌ی پروژه، به Git می‌گی این فایل‌ها یا پوشه‌ها رو نادیده بگیره:</p>
                 <pre><code>.DS_Store
 node_modules/
 *.log</code></pre>
@@ -208,8 +206,7 @@ git merge نام-برنچ</code></pre>
                 <p>تداخل ترسناک نیست؛ فقط یعنی Git از تو می‌خواد خودت تصمیم نهایی رو بگیری.</p>
 
                 <h3 id="جمعبندی">جمع‌بندی</h3>
-                <p>با این دستورها (<code>init</code>، <code>clone</code>، <code>status</code>، <code>add</code>، <code>commit</code>، <code>push</code>، <code>pull</code>)، فایل‌های README و <code>.gitignore</code>، و کار با برنچ و Pull Request، دیگه می‌تونی
-                    روزمره با Git و GitHub کار کنی. بخش بعدی این سه‌گانه به انتشار سایتت با GitHub Pages و ابزارهای بیشتر GitHub می‌پردازه.</p>
+                <p>با این دستورها (<code>init</code>، <code>clone</code>، <code>status</code>، <code>add</code>، <code>commit</code>، <code>push</code>، <code>pull</code>)، فایل‌های README و <code>.gitignore</code>، و کار با برنچ و Pull Request، دیگه می‌تونی روزمره با Git و GitHub کار کنی. بخش بعدی این سه‌گانه به انتشار سایتت با GitHub Pages و ابزارهای بیشتر GitHub می‌پردازه.</p>
 
                 <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
 
@@ -256,10 +253,7 @@ git merge نام-برنچ</code></pre>
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
@@ -279,9 +273,7 @@ git merge نام-برنچ</code></pre>
                     const link = linkFor.get(entry.target);
                     if (link) link.classList.add('active');
                 });
-            }, {
-                rootMargin: '0px 0px -70% 0px'
-            });
+            }, { rootMargin: '0px 0px -70% 0px' });
 
             tocCard.querySelectorAll('a').forEach((link) => {
                 const id = decodeURIComponent(link.getAttribute('href').slice(1));
