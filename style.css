@@ -467,6 +467,45 @@ main pre {
     margin-bottom: 6px;
 }
 
+/* کارت برجسته‌ی «افتخار موزونی» - فقط تو صفحه‌ی اصلی استفاده می‌شه */
+
+.highlight-card {
+    background: linear-gradient(135deg, var(--color-bg-medium), var(--color-bg-dark));
+    border: 2px solid var(--color-gold);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 20px 0;
+    box-shadow: 0 0 0 1px var(--color-gold-hover) inset;
+}
+
+.highlight-badge {
+    display: inline-block;
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.highlight-card h2 {
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.highlight-card p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .highlight-card {
+        margin: 16px 12px 0;
+        padding: 16px;
+    }
+}
+
 .news-card>.news-date {
     font-size: 0.8rem;
     opacity: 0.6;
@@ -491,8 +530,6 @@ main pre {
 
 
 /* کارت فهرست مطالب: چسبان */
-
-
 /* بدون جاوااسکریپت یا زیر ۱۱۰۰ پیکسل مخفیه؛ اون موقع فهرست داخل خود مقاله دیده می‌شه */
 
 .toc-card {
@@ -578,9 +615,7 @@ main pre {
     display: inline-block;
 }
 
-
 /* فلش کوچیک که نشون می‌ده این آیتم زیرمنو داره */
-
 .nav-item>a::after {
     content: "▾";
     margin-inline-start: 4px;
@@ -606,17 +641,13 @@ main pre {
     white-space: nowrap;
 }
 
-
 /* با ماوس یا کیبورد (Tab) باز می‌شه */
-
 .nav-item:hover .nav-submenu,
 .nav-item:focus-within .nav-submenu {
     display: block;
 }
 
-
 /* روی موبایل و صفحه‌های لمسی زیرمنو باز نمی‌شه؛ لینک اصلی به صفحه‌ی خودش می‌ره */
-
 @media (hover: none) {
     .nav-item>a::after {
         content: none;
