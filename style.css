@@ -474,7 +474,7 @@ main pre {
     border: 2px solid var(--color-gold);
     border-radius: 8px;
     padding: 20px 24px;
-    margin: 16px 20px 0;
+    margin: 16px 0px 0;
     box-shadow: 0 0 0 1px var(--color-gold-hover) inset;
 }
 
