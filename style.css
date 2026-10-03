@@ -1,269 +1,668 @@
-<!DOCTYPE html>
-<!-- زبان سایت وراستچین کردن سایت -->
-<html lang="fa" dir="rtl">
-<!-- سئوی سایت -->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CSS چیست و چطور کار می‌کنه؟ آموزش مفاهیم پایه‌ای CSS: سلکتور، باکس مدل و انواع اتصال استایل به HTML.">
-    <title>CSS چیست؟ | Mozouni</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../Mozouni.ico">
-    <!-- فونت سایت -->
-    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
-</head>
-
-<body>
-    <!-- این قسمت مربوط به هدر سایت می باشد -->
-    <header class="site-header">
-        <section class="hero">
-            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
-        </section>
-        <!-- لگوی سایت -->
-        <section class="logo">
-            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
-        </section>
-        <!-- قسمت چپ هدر -->
-        <section class="header-actions">
-            <button>ورود</button>
-            <button>ثبت نام</button>
-            <form action="">
-                <label for="search-input" class="visually-hidden">جستجو</label>
-                <input type="search" id="search-input" placeholder="جستجو">
-            </form>
-        </section>
-    </header>
-    <!-- ناوبر  -->
-    <nav class="site-nav">
-        <a href="../index.html">صفحه اصلی</a>
-        <a href="css.html">CSS</a>
-        <span class="nav-item">
-            <a href="../HTML/html.html">HTML</a>
-            <span class="nav-submenu">
-                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
-                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
-            </span>
-        </span>
-        <span class="nav-item">
-            <a href="../GitHub/github.html">Github</a>
-            <span class="nav-submenu">
-                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
-                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
-                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
-            </span>
-        </span>
-        <a href="../Markdown/Markdown.html">Markdown</a>
-        <a href="../AI/ai.html">هوش مصنوعی</a>
-    </nav>
-    <!-- مطالب اصلی -->
-    <main>
-        <!-- لینکهای مفید -->
-        <aside class="useful-links">
-            <h2>لینک‌های مفید</h2>
-            <ul>
-                <li><a href="../HTML/html.html">HTML چیست؟</a>
-                    <ul>
-                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
-                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
-                    </ul>
-                </li>
-                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
-                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
-                    <ul>
-                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
-                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
-                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
-                    </ul>
-                </li>
-                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
-                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
-            </ul>
-        </aside>
-
-        <!-- عنوان بخش اصلی -->
-
-        <section class="section-one">
-            <article class="post-card">
-                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
-
-                <h2>CSS چیست؟</h2>
-                <p>اگه تا حالا یه سایت دیدی که رنگ داره، فونت خاص داره، یا چیدمانش منظمه، پشت صحنه‌ش CSS بوده. تو این مقاله یاد می‌گیری CSS چیه، چرا لازمه، و مفاهیم پایه‌ای‌ای که برای شروع کار باهاش نیاز داری.</p>
-
-                <div class="toc-inline">
-                    <h3>فهرست مطالب</h3>
-                    <ul>
-                        <li><a href="#css-چیست">CSS دقیقاً چیکار می‌کنه؟</a></li>
-                        <li><a href="#چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</a></li>
-                        <li><a href="#سینتکس-پایه">سینتکس پایه‌ای CSS</a></li>
-                        <li><a href="#روشهای-اتصال">روش‌های اتصال CSS به HTML</a>
-                            <ul>
-                                <li><a href="#استایل-درونخطی">استایل درون‌خطی (Inline)</a></li>
-                                <li><a href="#استایل-داخلی">استایل داخلی (Internal)</a></li>
-                                <li><a href="#استایل-خارجی">استایل خارجی (External)</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#سلکتورها">سلکتورهای پرکاربرد</a></li>
-                        <li><a href="#باکس-مدل">باکس مدل (Box Model)</a></li>
-                        <li><a href="#کاربردها">کجاها از CSS استفاده می‌شه؟</a></li>
-                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
-                    </ul>
-
-                    <hr>
-                </div>
-
-                <h3 id="css-چیست">CSS دقیقاً چیکار می‌کنه؟</h3>
-                <p><strong>CSS</strong> مخفف <em>Cascading Style Sheets</em> هست. اگه HTML اسکلت و محتوای یه صفحه رو می‌سازه (تیترها، پاراگراف‌ها، تصاویر)، CSS مسئول ظاهرشونه: رنگ، فونت، فاصله‌گذاری، چیدمان، و حتی انیمیشن. بدون CSS، هر صفحه‌ی وبی فقط متن
-                    سیاه و سفید بدون هیچ نظمی می‌بود.</p>
-
-                <h3 id="چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</h3>
-                <p>تو روزهای اولیه‌ی وب، برای رنگی کردن یا چیدن یه المان، مجبور بودی مستقیم تو خود تگ‌های HTML از ویژگی‌هایی مثل <code>bgcolor</code> یا <code>font</code> استفاده کنی. این روش دو تا مشکل بزرگ داشت:</p>
-                <ul>
-                    <li>محتوا (HTML) و ظاهر (استایل) قاطی می‌شدن و کد به‌شدت شلوغ می‌شد</li>
-                    <li>اگه می‌خواستی رنگ همه‌ی تیترهای سایت رو عوض کنی، باید تک‌تک تگ‌ها رو دستی ویرایش می‌کردی</li>
-                </ul>
-                <p>CSS این مشکل رو حل کرد: محتوا (HTML) از ظاهر (CSS) جدا شد، و با تغییر یه فایل CSS، می‌تونی ظاهر کل سایت رو یه‌جا عوض کنی.</p>
-
-                <h3 id="سینتکس-پایه">سینتکس پایه‌ای CSS</h3>
-                <p>هر قانون CSS از سه بخش تشکیل شده: یه سلکتور (این‌که کدوم المان استایل بگیره)، و داخل آکولاد، یک یا چند جفت ویژگی-مقدار:</p>
-                <pre><code>سلکتور {
-    ویژگی: مقدار;
-}</code></pre>
-                <p>مثلاً:</p>
-                <pre><code>h1 {
-    color: gold;
-    font-size: 32px;
-}</code></pre>
-                <p>این قانون می‌گه: «همه‌ی تگ‌های <code>h1</code> تو صفحه، رنگشون طلایی باشه و اندازه‌ی فونتشون ۳۲ پیکسل».</p>
-
-                <h3 id="روشهای-اتصال">روش‌های اتصال CSS به HTML</h3>
-
-                <h4 id="استایل-درونخطی">استایل درون‌خطی (Inline)</h4>
-                <p>مستقیم رو خود تگ، با ویژگی <code>style</code>:</p>
-                <pre><code>&lt;h1 style="color: gold;"&gt;عنوان&lt;/h1&gt;</code></pre>
-                <p>سریع‌ترین روشه ولی برای پروژه‌های واقعی توصیه نمی‌شه، چون قابل استفاده‌ی مجدد نیست و کد رو شلوغ می‌کنه.</p>
-
-                <h4 id="استایل-داخلی">استایل داخلی (Internal)</h4>
-                <p>داخل تگ <code>&lt;style&gt;</code> تو بخش <code>&lt;head&gt;</code> همون فایل HTML:</p>
-                <pre><code>&lt;head&gt;
-    &lt;style&gt;
-        h1 { color: gold; }
-    &lt;/style&gt;
-&lt;/head&gt;</code></pre>
-                <p>بهتر از inline‌ه، ولی فقط برای همون یه صفحه کار می‌کنه و بین چند صفحه به اشتراک گذاشته نمی‌شه.</p>
-
-                <h4 id="استایل-خارجی">استایل خارجی (External)</h4>
-                <p>یه فایل جدا با پسوند <code>.css</code> می‌سازی و با تگ <code>&lt;link&gt;</code> بهش وصل می‌شی:</p>
-                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
-                <p>این روشیه که تقریباً همیشه باید استفاده کنی — همون‌طور که خود همین سایت هم از یه فایل <code>style.css</code> مشترک برای همه‌ی صفحه‌هاش استفاده می‌کنه.</p>
-
-                <h3 id="سلکتورها">سلکتورهای پرکاربرد</h3>
-                <p>چند تا از رایج‌ترین سلکتورها:</p>
-                <ul>
-                    <li><strong>سلکتور تگ</strong>: <code>p { }</code> — همه‌ی تگ‌های <code>p</code> رو انتخاب می‌کنه</li>
-                    <li><strong>سلکتور کلاس</strong>: <code>.post-card { }</code> — هر المانی که <code>class="post-card"</code> داشته باشه</li>
-                    <li><strong>سلکتور آیدی</strong>: <code>#back-to-top { }</code> — المانی که <code>id="back-to-top"</code> داره (هر آیدی فقط یه بار تو صفحه استفاده می‌شه)</li>
-                    <li><strong>سلکتور فرزند/تودرتو</strong>: <code>nav a { }</code> — همه‌ی تگ‌های <code>a</code> که داخل یه <code>nav</code> هستن</li>
-                </ul>
-
-                <h3 id="باکس-مدل">باکس مدل (Box Model)</h3>
-                <p>هر المان تو CSS مثل یه جعبه در نظر گرفته می‌شه که از چهار لایه تشکیل شده:</p>
-                <ul>
-                    <li><strong>Content</strong>: خود محتوا (متن یا تصویر)</li>
-                    <li><strong>Padding</strong>: فاصله‌ی داخلی بین محتوا و لبه‌ی جعبه</li>
-                    <li><strong>Border</strong>: کادر دور جعبه</li>
-                    <li><strong>Margin</strong>: فاصله‌ی بیرونی بین این جعبه و جعبه‌های اطرافش</li>
-                </ul>
-                <p>درک درست باکس مدل یکی از مهم‌ترین پایه‌های CSS‌ه — بیشتر گیج‌شدن‌های تازه‌کارها سر همین فاصله‌گذاری‌هاست.</p>
-
-                <h3 id="کاربردها">کجاها از CSS استفاده می‌شه؟</h3>
-                <ul>
-                    <li><strong>رنگ‌بندی و تایپوگرافی</strong>: تعیین رنگ، فونت و اندازه‌ی متن</li>
-                    <li><strong>چیدمان صفحه</strong>: با ابزارهایی مثل Flexbox و Grid</li>
-                    <li><strong>ریسپانسیو بودن</strong>: با Media Query، سایت رو برای موبایل و دسکتاپ تطبیق می‌دی</li>
-                    <li><strong>انیمیشن و ترنزیشن</strong>: افکت‌های ساده‌ی حرکتی بدون نیاز به جاوااسکریپت</li>
-                </ul>
-
-                <h3 id="جمعبندی">جمع‌بندی</h3>
-                <p>CSS ابزاریه که به HTML جون می‌ده — بدونش، هیچ سایتی ظاهر قابل‌قبولی نداشت. یادگیری سلکتورها و باکس مدل، پایه‌ی محکمی برای رفتن سراغ مفاهیم پیشرفته‌تر مثل Flexbox و Grid بهت می‌ده.</p>
-
-                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
-
-            </article>
-        </section>
-
-        <!-- ستون چپ: فهرست مطالب چسبان -->
-        <aside class="side-panel">
-
-            <nav class="side-card toc-card" aria-labelledby="toc-title">
-                <h2 id="toc-title">فهرست مطالب</h2>
-            </nav>
-
-        </aside>
-    </main>
-
-    <footer class="site-footer">
-
-        <div class="footer-sections">
-
-            <div class="footer-section" id="about">
-                <h2>درباره ما</h2>
-                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
-            </div>
-
-            <div class="footer-section" id="contact">
-                <h2>تماس با ما</h2>
-                <p>ایمیل: mahmood7m@gmail.com</p>
-            </div>
-
-        </div>
+/* قسمت آموزش مرزبندی  */
 
 
-        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+/* 
+header {
+    outline: 2px solid red;
+}
+main {
+    outline: 2px solid blue;
+}
+section {
+    outline: 2px solid green;
+}
+aside {
+    outline: 2px solid orange;
+}
+footer {
+    outline: 2px solid purple;
+} */
 
 
-    </footer>
-    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+/* ------------------------------------------- */
 
-    <script>
-        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
 
-        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
-        const inlineList = document.querySelector('.toc-inline ul');
-        const tocCard = document.querySelector('.toc-card');
+/* متغیرهای رنگی سایت - اینجا رنگ‌ها رو یه بار تعریف می‌کنیم و همه جا استفاده می‌کنیم */
 
-        if (inlineList && tocCard) {
-            tocCard.append(inlineList.cloneNode(true));
-            document.body.classList.add('toc-ready');
+:root {
+    --color-bg-dark: #1A1710;
+    --color-bg-medium: #242018;
+    --color-text-light: #F2E8D2;
+    --color-gold: #C7A24A;
+    --color-gold-hover: #D8B45B;
+    --color-border: #3A3428;
+}
 
-            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
-            const linkFor = new Map();
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
-                    const link = linkFor.get(entry.target);
-                    if (link) link.classList.add('active');
-                });
-            }, { rootMargin: '0px 0px -70% 0px' });
 
-            tocCard.querySelectorAll('a').forEach((link) => {
-                const id = decodeURIComponent(link.getAttribute('href').slice(1));
-                const target = document.getElementById(id);
-                if (target) {
-                    linkFor.set(target, link);
-                    observer.observe(target);
-                }
-            });
-        }
-    </script>
-</body>
+/* قسمت اصلی */
 
-</html>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-bg-dark);
+    /* رنگ پایه تیره کل سایت */
+    color: var(--color-text-light);
+    /* رنگ متن روشن برای خوانایی */
+    line-height: 1.7;
+    direction: rtl;
+    font-family: "Vazirmatn", sans-serif;
+}
+
+
+/* هدر درست و استاندارد */
+
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* به‌جای gap ثابت، فضا رو خودش پخش می‌کنه */
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--color-bg-medium);
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.hero {
+    width: 250px;
+    height: auto;
+}
+
+.learn-title {
+    color: var(--color-gold);
+}
+
+.build-title {
+    color: var(--color-text-light);
+}
+
+
+/* لوگو */
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.header-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    /* چون سایت rtl هست، این سمت راست صفحه رو نشون میده */
+}
+
+.header-actions button {
+    background: var(--color-gold);
+    color: var(--color-bg-medium);
+    border: none;
+    padding: 6px 16px;
+    margin-inline-start: 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.header-actions button:hover {
+    background: var(--color-gold-hover);
+}
+
+.header-actions form {
+    margin-inline-start: 12px;
+}
+
+.header-actions input[type="search"] {
+    display: inline-block;
+    background: var(--color-bg-medium);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-family: inherit;
+}
+
+.header-actions input[type="search"]::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.6;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.site-nav {
+    width: 100%;
+    background: var(--color-bg-medium);
+    text-align: right;
+    padding: 10px 0;
+    border: 2px solid var(--color-text-light);
+}
+
+.site-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 5px 15px;
+}
+
+.site-nav a:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* کادر و پس‌زمینه‌ی مشخص، مثل .article-card */
+
+.post-card {
+    display: block;
+    width: 100%;
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    text-align: right;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.post-card a {
+    display: inline-block;
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 5px 15px;
+}
+
+.post-card a:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* اصلاح شد: قبلاً .hr بود که هیچ‌وقت به تگ <hr> اعمال نمی‌شد */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 15px 0;
+}
+
+
+/* لینک‌ها و متن‌های عمومی داخل main */
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 75px;
+    flex-wrap: wrap;
+    background: var(--color-bg-medium);
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main a {
+    color: var(--color-gold);
+}
+
+main a:hover {
+    color: var(--color-gold-hover);
+}
+
+main code,
+main pre {
+    background: var(--color-bg-medium);
+    color: var(--color-text-light);
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+main pre {
+    padding: 12px;
+    overflow-x: auto;
+}
+
+
+/* اصلاح شد: حالا مثل .article-card یه کادر، پس‌زمینه و لیست بدون بولت داره */
+
+.useful-links {
+    width: 20%;
+    min-width: 200px;
+    flex: 1 1 200px;
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 16px;
+    max-width: 350px;
+}
+
+.useful-links h2 {
+    margin-bottom: 10px;
+}
+
+.useful-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.useful-links a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.useful-links a:hover {
+    color: var(--color-gold-hover);
+}
+
+.section-one {
+    flex: 3 1 500px;
+}
+
+.ads {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+
+/* footerسایت */
+
+.site-footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color: var(--color-text-light);
+    margin-top: 20px;
+    background: var(--color-bg-medium);
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    direction: rtl;
+    /* چون سایت فارسی است */
+}
+
+.footer-section {
+    width: 25%;
+    min-width: 180px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    /* چون سایت rtl هست، این سمت راستِ بصری صفحه‌ست */
+    display: none;
+    /* اول مخفیه، وقتی اسکرول کردی نشون داده میشه */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background: var(--color-gold-hover);
+}
+
+
+/* صفحه اصلی: لیست کارت‌های مقاله */
+
+.page-title {
+    margin-bottom: 15px;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.article-card h3 {
+    margin-bottom: 8px;
+}
+
+.article-card h3 a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.article-card h3 a:hover {
+    color: var(--color-gold-hover);
+}
+
+.article-card p {
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* لینک بازگشت به صفحه اصلی، بالا و پایین مقاله */
+
+.back-to-home {
+    margin-bottom: 15px;
+}
+
+.back-to-home a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+.back-to-home a:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* ریسپانسیو برای موبایل و صفحه‌های باریک */
+
+@media (max-width: 768px) {
+    .site-header {
+        justify-content: center;
+        text-align: center;
+    }
+    main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .useful-links,
+    .section-one,
+    .ads {
+        width: 100%;
+        flex: none;
+    }
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================
+   ستون چپ: تازه‌ها + فهرست مطالب چسبان
+   این بلوک رو بذار «آخر» فایل style.css (بعد از بخش @media)
+   ========================================================== */
+
+
+/* خود ستون: هم‌قد main می‌شه تا فهرست چسبان جا برای حرکت داشته باشه */
+
+.side-panel {
+    flex: 1 1 200px;
+    max-width: 350px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* کادر مشترک کارت‌های ستون (مثل .useful-links و .article-card) */
+
+.side-card {
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.side-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+
+/* کارت تازه‌ها */
+
+.news-list {
+    list-style: none;
+}
+
+.news-item+.news-item {
+    border-top: 1px solid var(--color-border);
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
+.news-item h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+/* کارت برجسته‌ی «افتخار موزونی» - فقط تو صفحه‌ی اصلی استفاده می‌شه */
+
+.highlight-card {
+    background: linear-gradient(135deg, var(--color-bg-medium), var(--color-bg-dark));
+    border: 2px solid var(--color-gold);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 20px 0;
+    box-shadow: 0 0 0 1px var(--color-gold-hover) inset;
+}
+
+.highlight-badge {
+    display: inline-block;
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.highlight-card h2 {
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.highlight-card p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .highlight-card {
+        margin: 16px 12px 0;
+        padding: 16px;
+    }
+}
+
+.news-card>.news-date {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.news-item .news-date {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.news-item .news-source {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.news-item .news-source:hover {
+    color: var(--color-gold-hover);
+}
+
+
+/* کارت فهرست مطالب: چسبان */
+/* بدون جاوااسکریپت یا زیر ۱۱۰۰ پیکسل مخفیه؛ اون موقع فهرست داخل خود مقاله دیده می‌شه */
+
+.toc-card {
+    display: none;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.toc-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.toc-card ul ul {
+    margin-top: 6px;
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid var(--color-border);
+}
+
+.toc-card a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.92rem;
+}
+
+.toc-card a:hover {
+    color: var(--color-gold-hover);
+}
+
+.toc-card a.active {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+
+/* حالت سه‌ستونه (صفحه‌ی عریض): فهرست کنار صفحه، فهرست داخل مقاله مخفی */
+
+@media (min-width: 1101px) {
+    .toc-ready .toc-card {
+        display: block;
+    }
+    .toc-ready .toc-inline {
+        display: none;
+    }
+}
+
+
+/* صفحه‌ی متوسط: ستون چپ می‌ره زیر مقاله و کل عرض رو می‌گیره */
+
+@media (max-width: 1100px) {
+    .side-panel {
+        flex: 1 1 100%;
+        max-width: none;
+        align-self: auto;
+    }
+}
+
+
+/* موبایل */
+
+@media (max-width: 768px) {
+    .side-panel {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================
+   زیرمنو در ناوبر + لیست تودرتو در «لینک‌های مفید»
+   این بلوک رو بذار «آخر» فایل style.css
+   ========================================================== */
+
+
+/* ---------- زیرمنوی ناوبر ---------- */
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+/* فلش کوچیک که نشون می‌ده این آیتم زیرمنو داره */
+.nav-item>a::after {
+    content: "▾";
+    margin-inline-start: 4px;
+    font-size: 0.75em;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: var(--color-bg-medium);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 6px 0;
+    z-index: 10;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 8px 15px;
+    white-space: nowrap;
+}
+
+/* با ماوس یا کیبورد (Tab) باز می‌شه */
+.nav-item:hover .nav-submenu,
+.nav-item:focus-within .nav-submenu {
+    display: block;
+}
+
+/* روی موبایل و صفحه‌های لمسی زیرمنو باز نمی‌شه؛ لینک اصلی به صفحه‌ی خودش می‌ره */
+@media (hover: none) {
+    .nav-item>a::after {
+        content: none;
+    }
+    .nav-submenu {
+        display: none !important;
+    }
+}
+
+
+/* ---------- لیست تودرتو در لینک‌های مفید ---------- */
+
+.useful-links ul ul {
+    margin-top: 8px;
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid var(--color-border);
+    font-size: 0.92rem;
+}
