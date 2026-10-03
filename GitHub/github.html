@@ -9,6 +9,7 @@
     <meta name="description" content="GitHub چیست و چه فرقی با Git داره؟ آموزش مفاهیم پایه‌ای گیت‌هاب: ریپازیتوری، کامیت، برنچ و GitHub Pages.">
     <title>GitHub چیست؟ | Mozouni</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
     <!-- فونت سایت -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
@@ -128,8 +129,7 @@
                     <li>دو نفر نمی‌تونستن هم‌زمان روی یه فایل کار کنن بدون اینکه کار همدیگه رو پاک کنن</li>
                 </ul>
                 <p><strong>Git</strong> دقیقاً برای حل همین مشکل ساخته شد: با ثبت هر تغییر به‌صورت یه کامیت، و امکان کار هم‌زمان چند نفر روی برنچ‌های جدا بدون از بین رفتن کار همدیگه.</p>
-                <p>ولی Git به‌تنهایی فقط روی کامپیوتر خودت اجرا می‌شه؛ هنوز یه جای مرکزی برای اشتراک‌گذاری و دیدن پروژه بین چند نفر لازم بود. اینجاست که <strong>GitHub</strong> وارد می‌شه: یه نسخه‌ی آنلاین از همون تاریخچه‌ای که Git می‌سازه، به‌علاوه‌ی امکاناتی
-                    مثل بررسی تغییرات دیگران، بحث درباره‌ی پروژه (Issue) و درخواست ادغام تغییرات (Pull Request) که تو ادامه‌ی این مقاله باهاشون آشنا می‌شی.</p>
+                <p>ولی Git به‌تنهایی فقط روی کامپیوتر خودت اجرا می‌شه؛ هنوز یه جای مرکزی برای اشتراک‌گذاری و دیدن پروژه بین چند نفر لازم بود. اینجاست که <strong>GitHub</strong> وارد می‌شه: یه نسخه‌ی آنلاین از همون تاریخچه‌ای که Git می‌سازه، به‌علاوه‌ی امکاناتی مثل بررسی تغییرات دیگران، بحث درباره‌ی پروژه (Issue) و درخواست ادغام تغییرات (Pull Request) که تو ادامه‌ی این مقاله باهاشون آشنا می‌شی.</p>
 
                 <h3 id="مفاهیم-پایه">مفاهیم پایه‌ای GitHub</h3>
 
@@ -199,8 +199,7 @@
                     <!-- هر خبر یه <li> هست. برای خبر جدید، کل یه <li> رو کپی کن. ۳ تا ۵ خبر کافیه. -->
                     <li class="news-item">
                         <h3>GitHub Agentic Workflows وارد Public Preview شد</h3>
-                        <p>گیت‌هاب این قابلیت رو که تو فوریه ۲۰۲۶ به‌صورت پیش‌نمایش فنی معرفی شده بود، وارد مرحله‌ی Public Preview کرد. توش هدف اتوماسیون رو با Markdown و زبان ساده می‌نویسی و ابزار <code>gh aw</code> اون رو به یک workflow استاندارد GitHub
-                            Actions تبدیل می‌کنه.</p>
+                        <p>گیت‌هاب این قابلیت رو که تو فوریه ۲۰۲۶ به‌صورت پیش‌نمایش فنی معرفی شده بود، وارد مرحله‌ی Public Preview کرد. توش هدف اتوماسیون رو با Markdown و زبان ساده می‌نویسی و ابزار <code>gh aw</code> اون رو به یک workflow استاندارد GitHub Actions تبدیل می‌کنه.</p>
                         <p class="news-date"><time datetime="2026-06-11">۲۱ خرداد ۱۴۰۵</time></p>
                         <a class="news-source" href="https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/" target="_blank" rel="noopener noreferrer">مشاهده در سایت اصلی</a>
                         <p><a class="news-source" href="agentic-workflows.html">مقاله‌ی کامل در همین سایت</a></p>
@@ -254,10 +253,7 @@
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
@@ -277,9 +273,7 @@
                     const link = linkFor.get(entry.target);
                     if (link) link.classList.add('active');
                 });
-            }, {
-                rootMargin: '0px 0px -70% 0px'
-            });
+            }, { rootMargin: '0px 0px -70% 0px' });
 
             tocCard.querySelectorAll('a').forEach((link) => {
                 const id = decodeURIComponent(link.getAttribute('href').slice(1));
