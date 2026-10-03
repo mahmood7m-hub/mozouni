@@ -9,6 +9,7 @@
     <meta name="description" content="HTML حرفه‌ای‌تر: دسترس‌پذیری، سئوی پایه، چندرسانه‌ای (audio، video، iframe) و اشتباهات رایج در HTML.">
     <title>HTML حرفه‌ای‌تر | Mozouni</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
     <!-- فونت سایت -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
@@ -87,8 +88,7 @@
                 <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
 
                 <h2>HTML حرفه‌ای‌تر</h2>
-                <p>این مقاله بخش سوم و آخر مجموعه‌ی HTML‌ه. تو <a href="html.html">بخش اول</a> با ساختار سند و تو <a href="html-elements.html">بخش دوم</a> با عناصر پرکاربرد آشنا شدی. حالا چند تا مهارت که فرق یه صفحه‌ی معمولی رو با یه صفحه‌ی حرفه‌ای مشخص
-                    می‌کنه: دسترس‌پذیری، سئو، چندرسانه‌ای و دوری از اشتباهات رایج.</p>
+                <p>این مقاله بخش سوم و آخر مجموعه‌ی HTML‌ه. تو <a href="html.html">بخش اول</a> با ساختار سند و تو <a href="html-elements.html">بخش دوم</a> با عناصر پرکاربرد آشنا شدی. حالا چند تا مهارت که فرق یه صفحه‌ی معمولی رو با یه صفحه‌ی حرفه‌ای مشخص می‌کنه: دسترس‌پذیری، سئو، چندرسانه‌ای و دوری از اشتباهات رایج.</p>
 
                 <div class="toc-inline">
                     <h3>فهرست مطالب</h3>
@@ -111,11 +111,11 @@
                     <li><code>&lt;aside&gt;</code>: محتوای جانبی، مرتبط ولی نه بخش اصلی — دقیقاً همین ستون «لینک‌های مفید» کنار همین مقاله</li>
                     <li><code>&lt;figure&gt;</code> و <code>&lt;figcaption&gt;</code>: تصویر یا نمودار همراه با توضیح، که تو بخش قبل باهاشون آشنا شدی</li>
                     <li><code>&lt;time&gt;</code>: برای نمایش تاریخ یا زمان به شکلی که هم انسان و هم ماشین بفهمن:
-                        <pre><code>&lt;time datetime="2026-09-23"&gt;۱ مهر ۱۴۰۵&lt;/time&gt;</code></pre> ویژگی <code>datetime</code> فرمت استاندارد تاریخه؛ متن داخل تگ می‌تونه هر چیزی باشه که برای خواننده خواناتره.
+                        <pre><code>&lt;time datetime="2026-09-23"&gt;۱ مهر ۱۴۰۵&lt;/time&gt;</code></pre>
+                        ویژگی <code>datetime</code> فرمت استاندارد تاریخه؛ متن داخل تگ می‌تونه هر چیزی باشه که برای خواننده خواناتره.
                     </li>
                 </ul>
-                <p><strong>فرق <code>section</code> و <code>div</code>:</strong> اگه بخشی از محتوا معنای مستقلی داره و می‌تونه تیتر خودش رو داشته باشه، از <code>section</code> استفاده کن. اگه فقط برای گروه‌بندی یا استایل‌دهی بدون معنای خاص لازمه (مثلاً یه
-                    wrapper برای CSS)، همون <code>div</code> کافیه.</p>
+                <p><strong>فرق <code>section</code> و <code>div</code>:</strong> اگه بخشی از محتوا معنای مستقلی داره و می‌تونه تیتر خودش رو داشته باشه، از <code>section</code> استفاده کن. اگه فقط برای گروه‌بندی یا استایل‌دهی بدون معنای خاص لازمه (مثلاً یه wrapper برای CSS)، همون <code>div</code> کافیه.</p>
 
                 <h3 id="دسترسپذیری">دسترس‌پذیری (Accessibility)</h3>
                 <p>دسترس‌پذیری یعنی صفحه‌ت برای همه قابل استفاده باشه، از جمله کسایی که از صفحه‌خوان (screen reader) استفاده می‌کنن، یا فقط با کیبورد (بدون ماوس) تو سایت حرکت می‌کنن. چند تا اصل ساده:</p>
@@ -126,8 +126,7 @@
                     <li><strong>aria-label:</strong> وقتی یه دکمه یا لینک فقط آیکون داره و متن قابل‌خوندن نداره، با <code>aria-label</code> توضیحش می‌دی:
                         <pre><code>&lt;button aria-label="بستن پنجره"&gt;×&lt;/button&gt;</code></pre>
                     </li>
-                    <li><strong>دسترسی با کیبورد:</strong> عناصر تعاملی (لینک، دکمه، فیلد فرم) باید بدون ماوس هم با کلید Tab قابل دسترسی باشن. اگه از تگ‌های استاندارد HTML استفاده کنی (به‌جای ساختن دکمه با <code>div</code>)، این ویژگی خودش رایگان به دستت
-                        می‌رسه.</li>
+                    <li><strong>دسترسی با کیبورد:</strong> عناصر تعاملی (لینک، دکمه، فیلد فرم) باید بدون ماوس هم با کلید Tab قابل دسترسی باشن. اگه از تگ‌های استاندارد HTML استفاده کنی (به‌جای ساختن دکمه با <code>div</code>)، این ویژگی خودش رایگان به دستت می‌رسه.</li>
                 </ul>
                 <p>کلاس <code>visually-hidden</code> که تو هدر همین سایت برای برچسب باکس جستجو استفاده شده، دقیقاً همین کار رو می‌کنه: یه متن رو از چشم کاربر عادی مخفی می‌کنه ولی صفحه‌خوان همچنان می‌خونتش.</p>
 
@@ -161,10 +160,10 @@
                 <h3 id="اشتباهات-رایج">اشتباهات رایج</h3>
                 <p>چند تا اشتباه که خیلی از تازه‌کارها (و گاهی حرفه‌ای‌ها) باهاش دست‌وپنجه نرم می‌کنن:</p>
                 <ul>
-                    <li><strong>فراموش کردن بستن تگ:</strong> هر تگی که خودبسته نیست (مثل <code>&lt;img&gt;</code> یا <code>&lt;br&gt;</code>) باید بسته بشه. یه <code>&lt;div&gt;</code> باز بدون <code>&lt;/div&gt;</code> می‌تونه کل چیدمان بعدی صفحه رو به
-                        هم بریزه.</li>
+                    <li><strong>فراموش کردن بستن تگ:</strong> هر تگی که خودبسته نیست (مثل <code>&lt;img&gt;</code> یا <code>&lt;br&gt;</code>) باید بسته بشه. یه <code>&lt;div&gt;</code> باز بدون <code>&lt;/div&gt;</code> می‌تونه کل چیدمان بعدی صفحه رو به هم بریزه.</li>
                     <li><strong>تودرتوی غلط:</strong> تگ‌ها باید به همون ترتیبی که باز شدن بسته بشن. این درسته:
-                        <pre><code>&lt;p&gt;&lt;strong&gt;متن&lt;/strong&gt;&lt;/p&gt;</code></pre> این غلطه:
+                        <pre><code>&lt;p&gt;&lt;strong&gt;متن&lt;/strong&gt;&lt;/p&gt;</code></pre>
+                        این غلطه:
                         <pre><code>&lt;p&gt;&lt;strong&gt;متن&lt;/p&gt;&lt;/strong&gt;</code></pre>
                     </li>
                     <li><strong>استفاده از چند <code>&lt;h1&gt;</code> بدون دلیل:</strong> معمولاً هر صفحه فقط یه <code>&lt;h1&gt;</code> اصلی داره (عنوان کلی صفحه)؛ بقیه‌ی تیترها از <code>h2</code> به پایین.</li>
@@ -174,8 +173,7 @@
                 <p>اگه شک داری کد HTML‌ت درسته یا نه، می‌تونی از ابزار رایگان <a href="https://validator.w3.org" target="_blank" rel="noopener noreferrer">W3C Markup Validator</a> استفاده کنی؛ آدرس یا فایل صفحه‌ت رو بهش می‌دی و خطاهای ساختاری رو نشونت می‌ده.</p>
 
                 <h3 id="جمعبندی">جمع‌بندی</h3>
-                <p>با این سه مقاله، هم ساختار پایه‌ی HTML رو یاد گرفتی، هم عناصر پرکاربردش رو، و هم حالا می‌دونی چطور یه صفحه‌ی دسترس‌پذیر، سئوپسند و بدون اشتباه‌های رایج بسازی. قدم بعدی طبیعی، یادگیری <a href="../CSS/css.html">CSS</a>‌ه تا همین ساختار رو
-                    ظاهر و چیدمان بدی.</p>
+                <p>با این سه مقاله، هم ساختار پایه‌ی HTML رو یاد گرفتی، هم عناصر پرکاربردش رو، و هم حالا می‌دونی چطور یه صفحه‌ی دسترس‌پذیر، سئوپسند و بدون اشتباه‌های رایج بسازی. قدم بعدی طبیعی، یادگیری <a href="../CSS/css.html">CSS</a>‌ه تا همین ساختار رو ظاهر و چیدمان بدی.</p>
 
                 <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
 
@@ -222,10 +220,7 @@
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
@@ -245,9 +240,7 @@
                     const link = linkFor.get(entry.target);
                     if (link) link.classList.add('active');
                 });
-            }, {
-                rootMargin: '0px 0px -70% 0px'
-            });
+            }, { rootMargin: '0px 0px -70% 0px' });
 
             tocCard.querySelectorAll('a').forEach((link) => {
                 const id = decodeURIComponent(link.getAttribute('href').slice(1));
