@@ -9,6 +9,7 @@
     <meta name="description" content="عناصر و ساختار محتوای HTML: لیست‌ها، لینک و تصویر، جدول، فرم و تگ‌های متنی پرکاربرد.">
     <title>عناصر و ساختار محتوای HTML | Mozouni</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
     <!-- فونت سایت -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
@@ -150,8 +151,7 @@
                 <pre><code>&lt;a href="https://github.com"&gt;گیت‌هاب&lt;/a&gt;</code></pre>
                 <p>ولی اگه بخوای به یه صفحه‌ی دیگه از همین سایت لینک بدی، از مسیر نسبی استفاده می‌کنی — دقیقاً همون‌جوری که تو ناوبر همین سایت هست:</p>
                 <pre><code>&lt;a href="../CSS/css.html"&gt;CSS چیست؟&lt;/a&gt;</code></pre>
-                <p><strong>باز شدن تو تب جدید:</strong> با ویژگی <code>target="_blank"</code> لینک تو یه تب جدید باز می‌شه. وقتی این کار رو می‌کنی، بهتره <code>rel="noopener noreferrer"</code> رو هم اضافه کنی؛ این یه مسئله‌ی امنیتیه که جلوی دسترسی صفحه‌ی
-                    جدید به صفحه‌ی اصلیت رو می‌گیره:</p>
+                <p><strong>باز شدن تو تب جدید:</strong> با ویژگی <code>target="_blank"</code> لینک تو یه تب جدید باز می‌شه. وقتی این کار رو می‌کنی، بهتره <code>rel="noopener noreferrer"</code> رو هم اضافه کنی؛ این یه مسئله‌ی امنیتیه که جلوی دسترسی صفحه‌ی جدید به صفحه‌ی اصلیت رو می‌گیره:</p>
                 <pre><code>&lt;a href="https://github.com" target="_blank" rel="noopener noreferrer"&gt;گیت‌هاب&lt;/a&gt;</code></pre>
 
                 <h3 id="تصویر">تصویر</h3>
@@ -262,10 +262,7 @@
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
@@ -285,9 +282,7 @@
                     const link = linkFor.get(entry.target);
                     if (link) link.classList.add('active');
                 });
-            }, {
-                rootMargin: '0px 0px -70% 0px'
-            });
+            }, { rootMargin: '0px 0px -70% 0px' });
 
             tocCard.querySelectorAll('a').forEach((link) => {
                 const id = decodeURIComponent(link.getAttribute('href').slice(1));
