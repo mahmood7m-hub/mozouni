@@ -6,10 +6,6 @@ on:
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
-on:
-  schedule:
-    - cron: '0 0 * * 0'
-  workflow_dispatch:
 
 permissions:
   contents: read
