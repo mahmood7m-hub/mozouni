@@ -10,6 +10,9 @@ on:
 permissions:
   contents: read
 
+tools:
+  edit:
+
 safe-outputs:
   create-pull-request:
     max: 1
