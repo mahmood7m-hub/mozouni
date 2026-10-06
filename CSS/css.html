@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS چیست و چطور کار می‌کنه؟ آموزش مفاهیم پایه‌ای CSS: سلکتور، باکس مدل و انواع اتصال استایل به HTML.">
+    <title>CSS چیست؟ | Mozouni</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../Mozouni.ico">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="css.html">CSS</a>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <a href="../AI/ai.html">هوش مصنوعی</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a></li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>CSS چیست؟</h2>
+                <p>اگه تا حالا یه سایت دیدی که رنگ داره، فونت خاص داره، یا چیدمانش منظمه، پشت صحنه‌ش CSS بوده. تو این مقاله یاد می‌گیری CSS چیه، چرا لازمه، و مفاهیم پایه‌ای‌ای که برای شروع کار باهاش نیاز داری.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#css-چیست">CSS دقیقاً چیکار می‌کنه؟</a></li>
+                        <li><a href="#چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</a></li>
+                        <li><a href="#سینتکس-پایه">سینتکس پایه‌ای CSS</a></li>
+                        <li><a href="#روشهای-اتصال">روش‌های اتصال CSS به HTML</a>
+                            <ul>
+                                <li><a href="#استایل-درونخطی">استایل درون‌خطی (Inline)</a></li>
+                                <li><a href="#استایل-داخلی">استایل داخلی (Internal)</a></li>
+                                <li><a href="#استایل-خارجی">استایل خارجی (External)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#سلکتورها">سلکتورهای پرکاربرد</a></li>
+                        <li><a href="#باکس-مدل">باکس مدل (Box Model)</a></li>
+                        <li><a href="#کاربردها">کجاها از CSS استفاده می‌شه؟</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="css-چیست">CSS دقیقاً چیکار می‌کنه؟</h3>
+                <p><strong>CSS</strong> مخفف <em>Cascading Style Sheets</em> هست. اگه HTML اسکلت و محتوای یه صفحه رو می‌سازه (تیترها، پاراگراف‌ها، تصاویر)، CSS مسئول ظاهرشونه: رنگ، فونت، فاصله‌گذاری، چیدمان، و حتی انیمیشن. بدون CSS، هر صفحه‌ی وبی فقط متن
+                    سیاه و سفید بدون هیچ نظمی می‌بود.</p>
+
+                <h3 id="چرا-به-وجود-اومد">چرا CSS به وجود اومد؟</h3>
+                <p>تو روزهای اولیه‌ی وب، برای رنگی کردن یا چیدن یه المان، مجبور بودی مستقیم تو خود تگ‌های HTML از ویژگی‌هایی مثل <code>bgcolor</code> یا <code>font</code> استفاده کنی. این روش دو تا مشکل بزرگ داشت:</p>
+                <ul>
+                    <li>محتوا (HTML) و ظاهر (استایل) قاطی می‌شدن و کد به‌شدت شلوغ می‌شد</li>
+                    <li>اگه می‌خواستی رنگ همه‌ی تیترهای سایت رو عوض کنی، باید تک‌تک تگ‌ها رو دستی ویرایش می‌کردی</li>
+                </ul>
+                <p>CSS این مشکل رو حل کرد: محتوا (HTML) از ظاهر (CSS) جدا شد، و با تغییر یه فایل CSS، می‌تونی ظاهر کل سایت رو یه‌جا عوض کنی.</p>
+
+                <h3 id="سینتکس-پایه">سینتکس پایه‌ای CSS</h3>
+                <p>هر قانون CSS از سه بخش تشکیل شده: یه سلکتور (این‌که کدوم المان استایل بگیره)، و داخل آکولاد، یک یا چند جفت ویژگی-مقدار:</p>
+                <pre><code>سلکتور {
+    ویژگی: مقدار;
+}</code></pre>
+                <p>مثلاً:</p>
+                <pre><code>h1 {
+    color: gold;
+    font-size: 32px;
+}</code></pre>
+                <p>این قانون می‌گه: «همه‌ی تگ‌های <code>h1</code> تو صفحه، رنگشون طلایی باشه و اندازه‌ی فونتشون ۳۲ پیکسل».</p>
+
+                <h3 id="روشهای-اتصال">روش‌های اتصال CSS به HTML</h3>
+
+                <h4 id="استایل-درونخطی">استایل درون‌خطی (Inline)</h4>
+                <p>مستقیم رو خود تگ، با ویژگی <code>style</code>:</p>
+                <pre><code>&lt;h1 style="color: gold;"&gt;عنوان&lt;/h1&gt;</code></pre>
+                <p>سریع‌ترین روشه ولی برای پروژه‌های واقعی توصیه نمی‌شه، چون قابل استفاده‌ی مجدد نیست و کد رو شلوغ می‌کنه.</p>
+
+                <h4 id="استایل-داخلی">استایل داخلی (Internal)</h4>
+                <p>داخل تگ <code>&lt;style&gt;</code> تو بخش <code>&lt;head&gt;</code> همون فایل HTML:</p>
+                <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        h1 { color: gold; }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                <p>بهتر از inline‌ه، ولی فقط برای همون یه صفحه کار می‌کنه و بین چند صفحه به اشتراک گذاشته نمی‌شه.</p>
+
+                <h4 id="استایل-خارجی">استایل خارجی (External)</h4>
+                <p>یه فایل جدا با پسوند <code>.css</code> می‌سازی و با تگ <code>&lt;link&gt;</code> بهش وصل می‌شی:</p>
+                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+                <p>این روشیه که تقریباً همیشه باید استفاده کنی — همون‌طور که خود همین سایت هم از یه فایل <code>style.css</code> مشترک برای همه‌ی صفحه‌هاش استفاده می‌کنه.</p>
+
+                <h3 id="سلکتورها">سلکتورهای پرکاربرد</h3>
+                <p>چند تا از رایج‌ترین سلکتورها:</p>
+                <ul>
+                    <li><strong>سلکتور تگ</strong>: <code>p { }</code> — همه‌ی تگ‌های <code>p</code> رو انتخاب می‌کنه</li>
+                    <li><strong>سلکتور کلاس</strong>: <code>.post-card { }</code> — هر المانی که <code>class="post-card"</code> داشته باشه</li>
+                    <li><strong>سلکتور آیدی</strong>: <code>#back-to-top { }</code> — المانی که <code>id="back-to-top"</code> داره (هر آیدی فقط یه بار تو صفحه استفاده می‌شه)</li>
+                    <li><strong>سلکتور فرزند/تودرتو</strong>: <code>nav a { }</code> — همه‌ی تگ‌های <code>a</code> که داخل یه <code>nav</code> هستن</li>
+                </ul>
+
+                <h3 id="باکس-مدل">باکس مدل (Box Model)</h3>
+                <p>هر المان تو CSS مثل یه جعبه در نظر گرفته می‌شه که از چهار لایه تشکیل شده:</p>
+                <ul>
+                    <li><strong>Content</strong>: خود محتوا (متن یا تصویر)</li>
+                    <li><strong>Padding</strong>: فاصله‌ی داخلی بین محتوا و لبه‌ی جعبه</li>
+                    <li><strong>Border</strong>: کادر دور جعبه</li>
+                    <li><strong>Margin</strong>: فاصله‌ی بیرونی بین این جعبه و جعبه‌های اطرافش</li>
+                </ul>
+                <p>درک درست باکس مدل یکی از مهم‌ترین پایه‌های CSS‌ه — بیشتر گیج‌شدن‌های تازه‌کارها سر همین فاصله‌گذاری‌هاست.</p>
+
+                <h3 id="کاربردها">کجاها از CSS استفاده می‌شه؟</h3>
+                <ul>
+                    <li><strong>رنگ‌بندی و تایپوگرافی</strong>: تعیین رنگ، فونت و اندازه‌ی متن</li>
+                    <li><strong>چیدمان صفحه</strong>: با ابزارهایی مثل Flexbox و Grid</li>
+                    <li><strong>ریسپانسیو بودن</strong>: با Media Query، سایت رو برای موبایل و دسکتاپ تطبیق می‌دی</li>
+                    <li><strong>انیمیشن و ترنزیشن</strong>: افکت‌های ساده‌ی حرکتی بدون نیاز به جاوااسکریپت</li>
+                </ul>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>CSS ابزاریه که به HTML جون می‌ده — بدونش، هیچ سایتی ظاهر قابل‌قبولی نداشت. یادگیری سلکتورها و باکس مدل، پایه‌ی محکمی برای رفتن سراغ مفاهیم پیشرفته‌تر مثل Flexbox و Grid بهت می‌ده.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا (اگه تو بقیه‌ی صفحه‌ها اسکریپتی برای این دکمه داری، همون رو بذار)
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ، پس فهرست رو فقط یه جا نگه می‌داری
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            // بخشی که الان تو صفحه‌ست رو تو فهرست پررنگ می‌کنه
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, { rootMargin: '0px 0px -70% 0px' });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

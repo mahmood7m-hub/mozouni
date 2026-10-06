@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="دستیار هوش مصنوعی موزونی: یه چت‌بات واقعی که با کلید API شخصی خودتون مستقیم از مرورگر به Claude وصل می‌شه.">
+    <title>دستیار هوش مصنوعی | Mozouni</title>
+    <link rel="icon" href="../Mozouni.ico">
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <span class="nav-item">
+            <a href="ai.html">هوش مصنوعی</a>
+            <span class="nav-submenu">
+                <a href="ai-assistant.html">دستیار هوش مصنوعی</a>
+            </span>
+        </span>
+        <a href="../CSS/css.html">CSS</a>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a>
+                    <ul>
+                        <li><a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>دستیار هوش مصنوعی موزونی</h2>
+                <p class="chat-intro">این یه چت‌بات واقعیه، نه یه نمونه‌ی ساختگی. مستقیم از همین مرورگر، با Claude (مدل هوش مصنوعی شرکت Anthropic) صحبت می‌کنی. تو <a href="ai.html">مقاله‌ی قبلی</a> با چند تا ابزار هوش مصنوعی معروف آشنا شدی؛ این صفحه یکی از همون‌ها رو مستقیم تو سایت در اختیارت می‌ذاره.</p>
+
+                <div class="chat-key-card">
+                    <h3>برای استفاده، کلید API شخصی‌ت رو وارد کن</h3>
+                    <p>چون این سایت یه سایت استاتیکه (روی GitHub Pages) و سرور جداگانه‌ای نداره، نمی‌تونه یه کلید مشترک برای همه نگه داره. به‌جاش، هر کاربر با <strong>کلید API شخصی خودش</strong> مستقیم به Claude وصل می‌شه. کلید فقط تو همین مرورگر خودت (localStorage) ذخیره می‌شه و به هیچ سروری جز Anthropic فرستاده نمی‌شه.</p>
+                    <p>کلید نداری؟ از <a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener noreferrer">کنسول Anthropic</a> یه حساب بساز و یه کلید API بگیر (هزینه‌ش بر اساس تعرفه‌ی فعلی Anthropic و میزان استفاده‌ته).</p>
+                    <div class="chat-key-row">
+                        <label for="chat-api-key" class="visually-hidden">کلید API</label>
+                        <input type="password" id="chat-api-key" placeholder="sk-ant-...">
+                        <button id="chat-save-key">ذخیره و شروع</button>
+                        <button id="chat-clear-key" class="chat-btn-secondary">حذف کلید</button>
+                    </div>
+                    <p class="chat-key-status" id="chat-key-status">هنوز کلیدی ذخیره نشده.</p>
+                </div>
+
+                <div class="chat-panel" id="chat-panel">
+                    <div class="chat-toolbar">
+                        <div>
+                            <label for="chat-model" class="visually-hidden">انتخاب مدل</label>
+                            <select id="chat-model">
+                                <option value="claude-haiku-4-5-20251001">سریع و اقتصادی (Haiku)</option>
+                                <option value="claude-sonnet-5">قوی‌تر (Sonnet)</option>
+                            </select>
+                        </div>
+                        <div class="chat-toolbar-actions">
+                            <button id="chat-clear-conversation" class="chat-btn-secondary">پاک کردن گفتگو</button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <p class="chat-empty" id="chat-empty-state">گفتگو خالیه — یه پیام بنویس و شروع کن.</p>
+                    </div>
+
+                    <div class="chat-input-row">
+                        <label for="chat-input" class="visually-hidden">پیام شما</label>
+                        <textarea id="chat-input" placeholder="پیامت رو بنویس... (Enter برای ارسال، Shift+Enter برای خط جدید)"></textarea>
+                        <button id="chat-send">ارسال</button>
+                    </div>
+                </div>
+
+                <div class="chat-warning">
+                    <h4>قبل از استفاده بدون</h4>
+                    <ul>
+                        <li>کلید API مثل یه رمز عبوره. هیچ‌وقت اون رو تو کد یه سایت عمومی ننویس یا با کسی به اشتراک نذار؛ همین‌جا هم فقط تو مرورگر خودت ذخیره می‌شه، جای دیگه‌ای فرستاده نمی‌شه.</li>
+                        <li>استفاده از Claude API رایگان نیست؛ طبق تعرفه‌ی Anthropic و تعداد توکن مصرفی هزینه داره. برای شروع، یه سقف هزینه‌ی کم تو حساب Anthropic‌ت تنظیم کن.</li>
+                        <li>چون کلید تو مرورگر ذخیره می‌شه، روی کامپیوتر مشترک یا عمومی ازش استفاده نکن، و بعد از کار، دکمه‌ی «حذف کلید» رو بزن.</li>
+                        <li>گفتگو فقط تو همین صفحه و همین مرورگر نگه داشته می‌شه؛ با بستن یا رفرش صفحه، گفتگوی قبلی از بین می‌ره.</li>
+                    </ul>
+                </div>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+    <script>
+        // ===== دستیار هوش مصنوعی =====
+        const STORAGE_KEY = 'mozouni_claude_api_key';
+
+        const keyInput = document.getElementById('chat-api-key');
+        const saveKeyBtn = document.getElementById('chat-save-key');
+        const clearKeyBtn = document.getElementById('chat-clear-key');
+        const keyStatus = document.getElementById('chat-key-status');
+        const chatPanel = document.getElementById('chat-panel');
+        const messagesEl = document.getElementById('chat-messages');
+        const emptyState = document.getElementById('chat-empty-state');
+        const inputEl = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('chat-send');
+        const modelSelect = document.getElementById('chat-model');
+        const clearConversationBtn = document.getElementById('chat-clear-conversation');
+
+        let conversation = []; // {role: 'user'|'assistant', content: '...'}
+
+        function maskKey(key) {
+            if (key.length <= 10) return '••••••••';
+            return key.slice(0, 7) + '…' + key.slice(-4);
+        }
+
+        function refreshKeyUI() {
+            const key = localStorage.getItem(STORAGE_KEY);
+            if (key) {
+                keyStatus.textContent = 'کلید ذخیره‌شده: ' + maskKey(key);
+                chatPanel.classList.add('active');
+            } else {
+                keyStatus.textContent = 'هنوز کلیدی ذخیره نشده.';
+                chatPanel.classList.remove('active');
+            }
+        }
+
+        saveKeyBtn.addEventListener('click', () => {
+            const value = keyInput.value.trim();
+            if (!value) return;
+            try {
+                localStorage.setItem(STORAGE_KEY, value);
+            } catch (e) {
+                keyStatus.textContent = 'ذخیره‌ی کلید تو این مرورگر ممکن نشد.';
+                return;
+            }
+            keyInput.value = '';
+            refreshKeyUI();
+        });
+
+        clearKeyBtn.addEventListener('click', () => {
+            localStorage.removeItem(STORAGE_KEY);
+            refreshKeyUI();
+        });
+
+        function addMessage(role, text) {
+            if (emptyState) emptyState.remove();
+            const div = document.createElement('div');
+            div.className = 'chat-message ' + role;
+            const roleLabel = document.createElement('span');
+            roleLabel.className = 'chat-role';
+            roleLabel.textContent = role === 'user' ? 'شما' : (role === 'assistant' ? 'دستیار' : 'خطا');
+            const body = document.createElement('span');
+            body.textContent = text;
+            div.appendChild(roleLabel);
+            div.appendChild(body);
+            messagesEl.appendChild(div);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const text = inputEl.value.trim();
+            if (!text) return;
+            const key = localStorage.getItem(STORAGE_KEY);
+            if (!key) {
+                keyStatus.textContent = 'اول باید یه کلید API ذخیره کنی.';
+                return;
+            }
+
+            addMessage('user', text);
+            conversation.push({ role: 'user', content: text });
+            inputEl.value = '';
+            sendBtn.disabled = true;
+            inputEl.disabled = true;
+
+            try {
+                const response = await fetch('https://api.anthropic.com/v1/messages', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': key,
+                        'anthropic-version': '2023-06-01',
+                        'anthropic-dangerous-direct-browser-access': 'true'
+                    },
+                    body: JSON.stringify({
+                        model: modelSelect.value,
+                        max_tokens: 1024,
+                        system: 'شما دستیار هوش مصنوعی سایت آموزشی موزونی (mozouni.ir) هستید. به زبان فارسی، دوستانه، مختصر و مفید پاسخ بده، مگر این‌که کاربر به زبان دیگه‌ای بنویسه.',
+                        messages: conversation
+                    })
+                });
+
+                if (!response.ok) {
+                    let detail = '';
+                    try {
+                        const errJson = await response.json();
+                        detail = errJson?.error?.message || '';
+                    } catch (e) {}
+
+                    if (response.status === 401) {
+                        addMessage('error', 'کلید API نامعتبره. یه کلید درست وارد کن.');
+                    } else if (response.status === 429) {
+                        addMessage('error', 'محدودیت نرخ درخواست. چند لحظه صبر کن و دوباره امتحان کن.');
+                    } else {
+                        addMessage('error', 'خطا: ' + (detail || ('کد ' + response.status)));
+                    }
+                    conversation.pop();
+                    return;
+                }
+
+                const data = await response.json();
+                const text = (data.content || [])
+                    .filter(block => block.type === 'text')
+                    .map(block => block.text)
+                    .join('\n');
+
+                addMessage('assistant', text || '(پاسخی دریافت نشد)');
+                conversation.push({ role: 'assistant', content: text });
+
+            } catch (err) {
+                addMessage('error', 'ارتباط با Claude برقرار نشد. اتصال اینترنت یا کلید رو چک کن.');
+                conversation.pop();
+            } finally {
+                sendBtn.disabled = false;
+                inputEl.disabled = false;
+                inputEl.focus();
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        inputEl.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        clearConversationBtn.addEventListener('click', () => {
+            conversation = [];
+            messagesEl.innerHTML = '<p class="chat-empty" id="chat-empty-state">گفتگو خالیه — یه پیام بنویس و شروع کن.</p>';
+        });
+
+        refreshKeyUI();
+    </script>
+</body>
+
+</html>
