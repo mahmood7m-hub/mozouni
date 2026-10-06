@@ -1,4 +1,11 @@
 ---
+engine:
+  id: copilot
+  model: gpt-4o
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 on:
   schedule:
     - cron: '0 0 * * 0'
