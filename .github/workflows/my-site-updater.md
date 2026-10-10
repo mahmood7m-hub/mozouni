@@ -8,6 +8,7 @@ permissions:
   contents: read
 
 engine: copilot
+model: gpt-5-mini   # پلن رایگان Copilot فقط به همین مدل دسترسی داره
 
 safe-outputs:
   create-pull-request:
