@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 engine: copilot
-model: gpt-5-mini   # پلن رایگان Copilot فقط به همین مدل دسترسی داره
+model: auto   # پلن رایگان Copilot فقط «انتخاب خودکار مدل» رو پشتیبانی می‌کنه؛ مشخص کردن مدل صریح تو Actions با خطا مواجه می‌شه (باگ شناخته‌شده‌ی gh-aw)
 
 safe-outputs:
   create-pull-request:
