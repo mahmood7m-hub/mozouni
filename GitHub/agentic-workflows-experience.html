@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تجربه‌ی واقعی راه‌اندازی یک Agentic Workflow روی موزونی: محدودیت تحریم برای Gemini و باگ Copilot Free در GitHub Actions.">
+    <title>تجربه‌ی واقعی: راه‌اندازی Agentic Workflow روی موزونی | Mozouni</title>
+    <link rel="icon" href="../Mozouni.ico">
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <a href="../CSS/css.html">CSS</a>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="github-practice.html">کار عملی با Git</a>
+                <a href="github-publish.html">انتشار و ابزارها</a>
+                <a href="agentic-workflows.html">Agentic Workflows</a>
+                <a href="agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <span class="nav-item">
+            <a href="../AI/ai.html">هوش مصنوعی</a>
+            <span class="nav-submenu">
+                <a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a>
+            </span>
+        </span>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a></li>
+                <li><a href="github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                        <li><a href="agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a>
+                    <ul>
+                        <li><a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>تجربه‌ی واقعی: راه‌اندازی Agentic Workflow روی موزونی</h2>
+                <p>این مقاله بخش پنجم و آخر مجموعه‌ی GitHub‌ه، و با بقیه‌ی مقاله‌ها یه فرق اساسی داره: اینجا تئوری نیست. این دقیقاً چیزیه که موقع تلاش برای خودکار کردن نگهداری همین سایت باهاش روبه‌رو شدیم — با همه‌ی دست‌اندازهاش. اگه <a href="agentic-workflows.html">مقاله‌ی GitHub Agentic Workflows</a> رو خوندی و فکر می‌کنی راه‌اندازیش ساده‌ست، این مقاله نشونت می‌ده واقعیت همیشه اون‌قدرها هم صاف نیست.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#هدف">هدف چی بود؟</a></li>
+                        <li><a href="#راهاندازی">راه‌اندازی اولیه</a></li>
+                        <li><a href="#مانع-اول">مانع اول: Gemini و تحریم</a></li>
+                        <li><a href="#مانع-دوم">مانع دوم: باگ Copilot Free تو Actions</a></li>
+                        <li><a href="#وضعیت-فعلی">الان کجا ایستادیم؟</a></li>
+                        <li><a href="#درسها">چیزهایی که یاد گرفتیم</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="هدف">هدف چی بود؟</h3>
+                <p>تو صفحه‌ی <a href="../AI/ai.html">هوش مصنوعی‌های کاربردی</a>، چند تا ابزار معرفی شدن، هر کدوم با یه لینک به وب‌سایت و اپلیکیشنش. لینک‌ها با گذر زمان خراب می‌شن یا عوض می‌شن، و چک کردن دستیشون هر چند وقت یه‌بار، یه کار تکراریه که دقیقاً مناسب خودکارسازیه. ایده این بود: یه Agentic Workflow بسازیم که هفته‌ای یه بار خودش این لینک‌ها رو چک کنه و اگه چیزی خراب بود، یه Pull Request پیش‌نویس برای بررسی بسازه — نه بیشتر، نه کمتر. قصدمون این بود که از یه کار ساده شروع کنیم، نه یه چیز پیچیده.</p>
+
+                <h3 id="راهاندازی">راه‌اندازی اولیه</h3>
+                <p>مراحل دقیقاً همونی بود که تو <a href="agentic-workflows.html">مقاله‌ی قبلی</a> توضیح دادیم: نصب افزونه‌ی <code>gh aw</code>، نوشتن یه فایل Markdown با frontmatter مشخص (trigger هفتگی، دسترسی فقط‌خواندنی، و <code>safe-outputs</code> محدود به ساختن یه Pull Request پیش‌نویس)، و کامپایل کردنش با <code>gh aw compile</code> تا فایل اجرایی (<code>.lock.yml</code>) ساخته بشه. این بخش بدون مشکل جلو رفت و اولین Workflow با موفقیت کامپایل و منتشر شد.</p>
+
+                <h3 id="مانع-اول">مانع اول: Gemini و تحریم</h3>
+                <p>اولین تصمیم این بود که از <strong>Gemini</strong> به‌عنوان Agent استفاده کنیم، چون سطح رایگان سخاوتمندی داره. ولی وقتی خواستیم از <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">Google AI Studio</a> کلید API بگیریم، با یه خطای ۴۰۳ مواجه شدیم: <em>«Your client does not have permission to get URL / from this server»</em>.</p>
+                <p>دلیلش چیز پیچیده‌ای نبود: گوگل، طبق تحریم‌های آمریکا (OFAC)، دسترسی به Google AI Studio و Gemini API رو برای کاربرهای ایران مسدود کرده. این یه تصمیم از طرف خود شرکته، نه یه مشکل فنی که با تنظیمات یا VPN قابل دور زدنه (و اصلاً پیشنهاد نمی‌کنیم دنبال دور زدن تحریم بگردی). نکته‌ی جالب اینه که همین محدودیت برای Claude و ChatGPT هم صدق می‌کنه؛ یعنی از بین Agentهای معرفی‌شده تو مستندات رسمی <code>gh-aw</code> (Copilot، Claude، Codex، Gemini)، عملاً فقط <strong>GitHub Copilot</strong> برای یه کاربر ایرانی در دسترسه — چون خود GitHub سال‌ها پیش یه مجوز رسمی از وزارت خزانه‌داری آمریکا گرفته که اجازه می‌ده توسعه‌دهنده‌های ایرانی ازش استفاده کنن.</p>
+
+                <h3 id="مانع-دوم">مانع دوم: باگ Copilot Free تو Actions</h3>
+                <p>پس برگشتیم سراغ Copilot، که از اول هم گزینه‌ی منطقی‌تری بود (رایگان، و قبلاً هم ثابت شده بود که برای کاربر ایرانی کار می‌کنه). طبق <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models" target="_blank" rel="noopener noreferrer">مستندات رسمی</a>، پلن Free فقط به یه مدل مشخص (GPT-5 mini) دسترسی داره، پس همون رو تو frontmatter مشخص کردیم. نتیجه یه خطای عجیب بود:</p>
+                <pre><code>400 The requested model is not supported.
+model not supported — not retrying (the requested model
+is unavailable for this subscription tier; specify a
+supported model in the workflow frontmatter)</code></pre>
+                <p>خودِ لاگ گفته بود «یه مدل پشتیبانی‌شده مشخص کن»، در حالی که دقیقاً همون مدلی که مستندات گفته بودن رو مشخص کرده بودیم! حتی گذاشتن <code>model: auto</code> (برای این‌که Copilot خودش انتخاب کنه) هم همون خطا رو داد.</p>
+                <p>بعد از کمی جستجو، معلوم شد این یه <a href="https://github.com/github/gh-aw/issues/46531" target="_blank" rel="noopener noreferrer">باگ شناخته‌شده و گزارش‌شده</a> تو خود پروژه‌ی <code>gh-aw</code>ـه: رو اکانت‌های Copilot Free، که فقط اجازه‌ی «انتخاب خودکار مدل» رو دارن، وقتی Workflow از <strong>داخل GitHub Actions</strong> اجرا می‌شه، CLI هر مدلی که صریح بهش داده بشه رو رد می‌کنه — حتی اگه همون مدلی باشه که خودش به‌طور خودکار انتخاب می‌کنه. جالب اینه که دقیقاً همون نسخه‌ی CLI، رو یه کامپیوتر شخصی و بدون Actions، بدون مشکل و خودکار کار می‌کنه. یعنی مشکل فقط مخصوص اجرا شدن داخل Actionsه.</p>
+
+                <h3 id="وضعیت-فعلی">الان کجا ایستادیم؟</h3>
+                <p>فعلاً این Workflow رو از تب Actions **غیرفعال** کردیم، نه حذف. همه‌ی فایل‌هاش (فایل Markdown و نسخه‌ی کامپایل‌شده) سر جاشون موندن، آماده‌ی فعال شدن دوباره. دو تا مسیر پیش رومونه:</p>
+                <ul>
+                    <li><strong>صبر کردن:</strong> پروژه‌ی <code>gh-aw</code> فعاله و هر هفته آپدیت می‌گیره؛ امکان داره این باگ به‌زودی رفع بشه.</li>
+                    <li><strong>ارتقا به Copilot Pro:</strong> طبق گزارش همون باگ، این محدودیت فقط مخصوص پلن Freeـه؛ پلن‌های پولی این مشکل رو ندارن.</li>
+                </ul>
+
+                <h3 id="درسها">چیزهایی که یاد گرفتیم</h3>
+                <ul>
+                    <li><strong>مستندات همیشه کل داستان رو نمی‌گن.</strong> هم Google و هم GitHub جایی رسماً ننوشته بودن «این برای کاربر ایرانی کار نمی‌کنه» یا «این مدل تو Actions با خطا مواجه می‌شه»؛ این‌ها رو فقط با امتحان کردن و خوندن لاگ خام فهمیدیم.</li>
+                    <li><strong>لاگ خطا رو کامل بخون، نه فقط خط آخرش.</strong> پیام سطح بالا («۴۰۰، مدل پشتیبانی نمی‌شه») به‌تنهایی گمراه‌کننده بود؛ دلیل واقعی چند خط پایین‌تر، تو جزئیات فنی لاگ بود.</li>
+                    <li><strong>بعضی مشکلات اصلاً به تو ربطی ندارن.</strong> بعد از چندین بار تغییر تنظیمات، معلوم شد مشکل از یه باگ تو خود ابزاره، نه از کاری که ما اشتباه کرده باشیم. تشخیص این فرق، جلوی کلی وقت تلف‌شده رو می‌گیره.</li>
+                    <li><strong>شروع از یه کار ساده، تصمیم درستی بود.</strong> اگه از یه Workflow پیچیده‌تر شروع کرده بودیم، پیدا کردن ریشه‌ی مشکل خیلی سخت‌تر می‌شد.</li>
+                </ul>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>خودکارسازی با هوش مصنوعی روی کاغذ ساده به نظر می‌رسه، ولی وقتی پاش به شرایط واقعی (محدودیت جغرافیایی، پلن رایگان، باگ‌های تازه) باز می‌شه، همیشه یه چیزی سر راهته. این لزوماً چیز بدی نیست؛ بخشی از همون «ساختن» ـه که اسم سایت ازش می‌گه. هر وقت این Workflow بالاخره روشن بشه، همین‌جا به‌روزش می‌کنیم.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: وضعیت فعلی + فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <section class="side-card news-card" aria-labelledby="status-title">
+                <h2 id="status-title">وضعیت فعلی</h2>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <h3>غیرفعال، در انتظار رفع باگ</h3>
+                        <p>Workflow از تب Actions غیرفعال شده. منتظر رفع <a href="https://github.com/github/gh-aw/issues/46531" target="_blank" rel="noopener noreferrer">باگ شماره‌ی ۴۶۵۳۱</a> تو پروژه‌ی gh-aw هستیم.</p>
+                        <p class="news-date">آخرین بررسی: مهر ۱۴۰۵</p>
+                    </li>
+                </ul>
+            </section>
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, { rootMargin: '0px 0px -70% 0px' });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
