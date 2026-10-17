@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="جاوااسکریپت چیست و چطور کار می‌کنه؟ آموزش مفاهیم پایه‌ای: متغیرها، توابع، شرط و حلقه، و اولین قدم با DOM.">
+    <title>جاوااسکریپت چیست؟ | Mozouni</title>
+    <link rel="icon" href="../Mozouni.ico">
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <span class="nav-item">
+            <a href="../CSS/css.html">CSS</a>
+            <span class="nav-submenu">
+                <a href="../CSS/css-layout.html">چیدمان با Flexbox و Grid</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <a href="js.html">جاوااسکریپت</a>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+                <a href="../GitHub/agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <span class="nav-item">
+            <a href="../AI/ai.html">هوش مصنوعی</a>
+            <span class="nav-submenu">
+                <a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a>
+            </span>
+        </span>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="../CSS/css.html">CSS چیست؟</a>
+                    <ul>
+                        <li><a href="../CSS/css-layout.html">چیدمان با Flexbox و Grid</a></li>
+                    </ul>
+                </li>
+                <li><a href="js.html">جاوااسکریپت چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                        <li><a href="../GitHub/agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a>
+                    <ul>
+                        <li><a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>جاوااسکریپت چیست؟</h2>
+                <p>تا اینجا با HTML ساختار صفحه رو ساختی و با CSS ظاهرش دادی. ولی هیچ‌کدوم از این دو تا نمی‌تونن به یه کلیک واکنش نشون بدن، یه عدد رو حساب کنن، یا محتوای صفحه رو بدون رفرش کردن عوض کنن. این دقیقاً کاریه که <strong>جاوااسکریپت</strong> انجام می‌ده — همون زبانی که باعث می‌شه یه صفحه‌ی وب «زنده» باشه.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#js-چیست">جاوااسکریپت دقیقاً چیکار می‌کنه؟</a></li>
+                        <li><a href="#اتصال">اتصال جاوااسکریپت به HTML</a></li>
+                        <li><a href="#متغیرها">متغیرها: let، const و var</a></li>
+                        <li><a href="#انواع-داده">انواع داده‌ی پایه</a></li>
+                        <li><a href="#توابع">توابع (Function)</a></li>
+                        <li><a href="#شرط-حلقه">شرط و حلقه</a></li>
+                        <li><a href="#dom">DOM چیست؟</a></li>
+                        <li><a href="#نمونه-سایت">نمونه‌ی واقعی: دکمه‌ی بازگشت به بالا تو همین سایت</a></li>
+                        <li><a href="#کاربردها">کجاها جاوااسکریپت لازمه؟</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="js-چیست">جاوااسکریپت دقیقاً چیکار می‌کنه؟</h3>
+                <p>اگه HTML اسکلت و CSS ظاهره، جاوااسکریپت <strong>رفتاره</strong>. با جاوااسکریپت می‌تونی به رویدادها واکنش نشون بدی (مثل کلیک یا تایپ کردن)، محتوای صفحه رو بدون رفرش عوض کنی، با سرور ارتباط برقرار کنی (مثلاً برای گرفتن اطلاعات جدید)، یا محاسبات انجام بدی. همون اسکریپت‌هایی که تو همین سایت برای فهرست مطالب چسبان یا دکمه‌ی بازگشت به بالا نوشتیم، همه جاوااسکریپتن.</p>
+                <p>برخلاف اسمش، جاوااسکریپت ربطی به زبان Java نداره؛ فقط یه اسم تجاریه که تو دهه‌ی ۹۰ میلادی برای جذب توجه انتخاب شد.</p>
+
+                <h3 id="اتصال">اتصال جاوااسکریپت به HTML</h3>
+                <p>دقیقاً مثل CSS، سه راه برای اضافه کردن جاوااسکریپت به یه صفحه هست:</p>
+                <p><strong>درون‌خطی (Inline)</strong> — مستقیم رو یه تگ، با ویژگی مثل <code>onclick</code>:</p>
+                <pre><code>&lt;button onclick="alert('سلام')"&gt;کلیک کن&lt;/button&gt;</code></pre>
+                <p><strong>داخلی (Internal)</strong> — داخل تگ <code>&lt;script&gt;</code> تو خود فایل HTML:</p>
+                <pre><code>&lt;script&gt;
+    console.log('سلام دنیا');
+&lt;/script&gt;</code></pre>
+                <p><strong>خارجی (External)</strong> — یه فایل جدا با پسوند <code>.js</code>، که معمولاً بهترین روشه:</p>
+                <pre><code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+                <p>یه نکته‌ی مهم: معمولاً تگ <code>&lt;script&gt;</code> رو درست قبل از <code>&lt;/body&gt;</code> می‌ذاری (دقیقاً مثل اسکریپت‌های همین سایت)، نه تو <code>&lt;head&gt;</code>. این کار باعث می‌شه مرورگر اول کل HTML صفحه رو بخونه و نمایش بده، بعد بره سراغ اجرای جاوااسکریپت — یعنی کاربر زودتر محتوا رو می‌بینه.</p>
+
+                <h3 id="متغیرها">متغیرها: let، const و var</h3>
+                <p>متغیر یه جعبه‌ست که یه مقدار رو نگه می‌داره. جاوااسکریپت سه تا کلیدواژه برای ساختن متغیر داره:</p>
+                <pre><code>let name = "علی";        // می‌تونه بعداً تغییر کنه
+const PI = 3.14;         // هیچ‌وقت تغییر نمی‌کنه
+var oldWay = "قدیمی";    // روش قدیمی، دیگه توصیه نمی‌شه</code></pre>
+                <ul>
+                    <li><code>let</code>: وقتی مقدار متغیر قراره بعداً عوض بشه.</li>
+                    <li><code>const</code>: وقتی مقدار ثابته و نباید عوض بشه (پیش‌فرض خوبیه؛ اگه بعداً نیاز به تغییر دیدی، به <code>let</code> تبدیلش کن).</li>
+                    <li><code>var</code>: روش قدیمی‌تر که رفتار عجیب‌وغریبی با دامنه‌ی متغیر داره. تو کد جدید دیگه ازش استفاده نمی‌شه.</li>
+                </ul>
+
+                <h3 id="انواع-داده">انواع داده‌ی پایه</h3>
+                <ul>
+                    <li><strong>رشته (String):</strong> متن، داخل گیومه: <code>"سلام"</code> یا <code>'سلام'</code></li>
+                    <li><strong>عدد (Number):</strong> <code>42</code> یا <code>3.14</code> (برخلاف خیلی از زبان‌ها، جاوااسکریپت بین عدد صحیح و اعشاری فرق نمی‌ذاره)</li>
+                    <li><strong>بولین (Boolean):</strong> فقط <code>true</code> یا <code>false</code></li>
+                    <li><strong>آرایه (Array):</strong> یه لیست مرتب: <code>["HTML", "CSS", "JS"]</code></li>
+                    <li><strong>شیء (Object):</strong> مجموعه‌ای از جفت‌های کلید-مقدار: <code>{ name: "علی", age: 25 }</code></li>
+                </ul>
+
+                <h3 id="توابع">توابع (Function)</h3>
+                <p>تابع یه بلوک کده که می‌تونی چندین بار صداش بزنی، بدون این‌که دوباره بنویسیش. دو تا سینتکس رایج:</p>
+                <pre><code>// تعریف ساده
+function greet(name) {
+    return "سلام " + name;
+}
+
+// تابع پیکانی (Arrow Function) — نوشتار کوتاه‌تر
+const greet = (name) => {
+    return "سلام " + name;
+};</code></pre>
+                <p>توابع پیکانی امروز خیلی رایج‌ترن، خصوصاً برای توابع کوتاه.</p>
+
+                <h3 id="شرط-حلقه">شرط و حلقه</h3>
+                <p>برای تصمیم‌گیری، از <code>if</code> و <code>else</code> استفاده می‌کنی:</p>
+                <pre><code>if (age >= 18) {
+    console.log("بزرگسال");
+} else {
+    console.log("نوجوان");
+}</code></pre>
+                <p>و برای تکرار یه کار، از حلقه‌ها. رایج‌ترینش <code>for</code>ـه:</p>
+                <pre><code>for (let i = 0; i < 5; i++) {
+    console.log(i);
+}</code></pre>
+
+                <h3 id="dom">DOM چیست؟</h3>
+                <p>DOM (مخفف Document Object Model) یعنی نسخه‌ای از صفحه‌ی HTML‌ت که جاوااسکریپت می‌تونه بهش دسترسی داشته باشه و تغییرش بده. با DOM می‌تونی یه عنصر رو پیدا کنی، متنش رو عوض کنی، یا به رویدادهاش (مثل کلیک) گوش بدی:</p>
+                <pre><code>// پیدا کردن یه عنصر با کلاس یا id
+const button = document.querySelector('#my-button');
+
+// گوش دادن به رویداد کلیک
+button.addEventListener('click', () => {
+    console.log('دکمه کلیک شد!');
+});
+
+// تغییر متن یه عنصر
+document.querySelector('h1').textContent = 'عنوان جدید';</code></pre>
+                <p>این سه تا متد (<code>querySelector</code>، <code>addEventListener</code>، <code>textContent</code>) احتمالاً بیشترین استفاده رو تو کارهای روزمره‌ی جاوااسکریپت دارن.</p>
+
+                <h3 id="نمونه-سایت">نمونه‌ی واقعی: دکمه‌ی بازگشت به بالا تو همین سایت</h3>
+                <p>بیا یه نمونه‌ی واقعی از خود همین سایت رو با هم بخونیم. این دقیقاً همون کدیه که دکمه‌ی ↑ پایین صفحه رو فعال می‌کنه:</p>
+                <pre><code>const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});</code></pre>
+                <p>خط به خط:</p>
+                <ul>
+                    <li><strong>خط ۱:</strong> دکمه رو با <code>id</code>ش پیدا می‌کنه و تو یه متغیر ذخیره می‌کنه.</li>
+                    <li><strong>خط ۳-۵:</strong> هر بار که کاربر صفحه رو اسکرول می‌کنه، چک می‌کنه آیا بیشتر از ۳۰۰ پیکسل پایین رفته یا نه؛ اگه آره دکمه رو نشون می‌ده، وگرنه مخفیش می‌کنه.</li>
+                    <li><strong>خط ۷-۹:</strong> وقتی روی دکمه کلیک می‌شه، صفحه رو با یه حرکت نرم (<code>smooth</code>) به بالا برمی‌گردونه.</li>
+                </ul>
+                <p>همین چند خط ساده، دقیقاً نشون می‌ده جاوااسکریپت چطور یه صفحه‌ی ایستا رو به چیزی تعاملی تبدیل می‌کنه.</p>
+
+                <h3 id="کاربردها">کجاها جاوااسکریپت لازمه؟</h3>
+                <ul>
+                    <li><strong>اعتبارسنجی فرم‌ها:</strong> چک کردن ورودی کاربر قبل از ارسال</li>
+                    <li><strong>محتوای پویا:</strong> نمایش/مخفی کردن بخش‌ها، منوهای کشویی، تب‌ها</li>
+                    <li><strong>ارتباط با سرور:</strong> گرفتن داده بدون رفرش صفحه (با fetch API)</li>
+                    <li><strong>اپلیکیشن‌های وب کامل:</strong> فریم‌ورک‌هایی مثل React و Vue، که خودشون هم در نهایت جاوااسکریپتن</li>
+                </ul>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>جاوااسکریپت سومین پایه‌ی اصلی وبه، بعد از HTML و CSS. با متغیرها، توابع، و دسترسی به DOM، می‌تونی صفحه‌ای که ساختی رو واقعاً زنده کنی. این فقط قدم اوله؛ بخش‌های بعدی این مجموعه (فرم‌ها، رویدادهای پیشرفته‌تر، و کار با API) به‌زودی اضافه می‌شن.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, { rootMargin: '0px 0px -70% 0px' });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

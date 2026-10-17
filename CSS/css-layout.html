@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- زبان سایت وراستچین کردن سایت -->
+<html lang="fa" dir="rtl">
+<!-- سئوی سایت -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="چیدمان مدرن در CSS: Flexbox و Grid. محور اصلی و عرضی، justify-content و align-items، grid-template-columns و واحد fr.">
+    <title>چیدمان با Flexbox و Grid | Mozouni</title>
+    <link rel="icon" href="../Mozouni.ico">
+    <link rel="stylesheet" href="../style.css">
+    <!-- فونت سایت -->
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- این قسمت مربوط به هدر سایت می باشد -->
+    <header class="site-header">
+        <section class="hero">
+            <h1><span class="learn-title">یاد بگیریم، </span><span class="build-title">بسازیم</span></h1>
+        </section>
+        <!-- لگوی سایت -->
+        <section class="logo">
+            <a href="../index.html"><img src="../Mozouni.ico" alt="لوگوی سایت"></a>
+        </section>
+        <!-- قسمت چپ هدر -->
+        <section class="header-actions">
+            <button>ورود</button>
+            <button>ثبت نام</button>
+            <form action="">
+                <label for="search-input" class="visually-hidden">جستجو</label>
+                <input type="search" id="search-input" placeholder="جستجو">
+            </form>
+        </section>
+    </header>
+    <!-- ناوبر  -->
+    <nav class="site-nav">
+        <a href="../index.html">صفحه اصلی</a>
+        <span class="nav-item">
+            <a href="css.html">CSS</a>
+            <span class="nav-submenu">
+                <a href="css-layout.html">چیدمان با Flexbox و Grid</a>
+            </span>
+        </span>
+        <span class="nav-item">
+            <a href="../HTML/html.html">HTML</a>
+            <span class="nav-submenu">
+                <a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a>
+                <a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a>
+            </span>
+        </span>
+        <a href="../JS/js.html">جاوااسکریپت</a>
+        <span class="nav-item">
+            <a href="../GitHub/github.html">Github</a>
+            <span class="nav-submenu">
+                <a href="../GitHub/github-practice.html">کار عملی با Git</a>
+                <a href="../GitHub/github-publish.html">انتشار و ابزارها</a>
+                <a href="../GitHub/agentic-workflows.html">Agentic Workflows</a>
+                <a href="../GitHub/agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a>
+            </span>
+        </span>
+        <a href="../Markdown/Markdown.html">Markdown</a>
+        <span class="nav-item">
+            <a href="../AI/ai.html">هوش مصنوعی</a>
+            <span class="nav-submenu">
+                <a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a>
+            </span>
+        </span>
+    </nav>
+    <!-- مطالب اصلی -->
+    <main>
+        <!-- لینکهای مفید -->
+        <aside class="useful-links">
+            <h2>لینک‌های مفید</h2>
+            <ul>
+                <li><a href="../HTML/html.html">HTML چیست؟</a>
+                    <ul>
+                        <li><a href="../HTML/html-elements.html">عناصر و ساختار محتوا</a></li>
+                        <li><a href="../HTML/html-advanced.html">HTML حرفه‌ای‌تر</a></li>
+                    </ul>
+                </li>
+                <li><a href="css.html">CSS چیست؟</a>
+                    <ul>
+                        <li><a href="css-layout.html">چیدمان با Flexbox و Grid</a></li>
+                    </ul>
+                </li>
+                <li><a href="../JS/js.html">جاوااسکریپت چیست؟</a></li>
+                <li><a href="../GitHub/github.html">GitHub چیست؟</a>
+                    <ul>
+                        <li><a href="../GitHub/github-practice.html">کار عملی با Git</a></li>
+                        <li><a href="../GitHub/github-publish.html">انتشار و ابزارها</a></li>
+                        <li><a href="../GitHub/agentic-workflows.html">GitHub Agentic Workflows</a></li>
+                        <li><a href="../GitHub/agentic-workflows-experience.html">تجربه‌ی واقعی راه‌اندازی</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Markdown/Markdown.html">Markdown چیست؟</a></li>
+                <li><a href="../AI/ai.html">هوش مصنوعی چیست؟</a>
+                    <ul>
+                        <li><a href="../AI/ai-assistant.html">دستیار هوش مصنوعی</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- عنوان بخش اصلی -->
+
+        <section class="section-one">
+            <article class="post-card">
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+                <h2>چیدمان با Flexbox و Grid</h2>
+                <p>این مقاله بخش دومه از مجموعه‌ی CSS. تو <a href="css.html">بخش اول</a> با باکس مدل و سلکتورهای پایه آشنا شدی. حالا وقتشه یاد بگیری چطور چند تا عنصر رو کنار هم یا زیر هم بچینی، وسط‌چین کنی، یا یه چیدمان واقعاً ریسپانسیو بسازی — دقیقاً همون کاری که Flexbox و Grid براش ساخته شدن.</p>
+
+                <div class="toc-inline">
+                    <h3>فهرست مطالب</h3>
+                    <ul>
+                        <li><a href="#چرا-لازمه">چرا به Flexbox و Grid نیاز داریم؟</a></li>
+                        <li><a href="#flexbox">Flexbox چیست؟</a>
+                            <ul>
+                                <li><a href="#flex-فعالسازی">فعال‌سازی و محورها</a></li>
+                                <li><a href="#flex-جهت">جهت چیدمان: flex-direction</a></li>
+                                <li><a href="#flex-تراز">تراز کردن: justify-content و align-items</a></li>
+                                <li><a href="#flex-wrap">شکستن خط: flex-wrap</a></li>
+                                <li><a href="#flex-آیتم">کنترل اندازه‌ی آیتم‌ها: flex-grow و flex-shrink</a></li>
+                                <li><a href="#flex-gap">فاصله‌ی یکدست: gap</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#grid">CSS Grid چیست؟</a>
+                            <ul>
+                                <li><a href="#grid-فعالسازی">فعال‌سازی و ستون‌ها</a></li>
+                                <li><a href="#grid-fr">واحد fr و repeat()</a></li>
+                                <li><a href="#grid-جایگذاری">جایگذاری دستی: grid-column و grid-row</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#کدوم">Flexbox یا Grid، کدوم رو کی استفاده کنیم؟</a></li>
+                        <li><a href="#نمونه-سایت">نمونه‌ی واقعی: چیدمان همین سایت</a></li>
+                        <li><a href="#جمعبندی">جمع‌بندی</a></li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <h3 id="چرا-لازمه">چرا به Flexbox و Grid نیاز داریم؟</h3>
+                <p>قبل از این دو تا، چیدمان صفحات وب معمولاً با <code>float</code> یا جدول‌های HTML انجام می‌شد — روش‌هایی که اصلاً برای این کار ساخته نشده بودن و کدشون به‌سرعت پیچیده می‌شد. وسط‌چین کردن عمودی یه عنصر ساده، با <code>float</code> تبدیل می‌شد به یه مشکل بزرگ. Flexbox و Grid دقیقاً برای حل همین مشکل طراحی شدن: چیدمان یک‌بعدی (یه ردیف یا یه ستون) با Flexbox، و چیدمان دوبعدی (هم‌زمان ردیف و ستون) با Grid.</p>
+
+                <h3 id="flexbox">Flexbox چیست؟</h3>
+                <p>Flexbox مخفف <em>Flexible Box</em>ـه. وقتی می‌خوای چند تا عنصر رو تو یه ردیف یا یه ستون بچینی، فاصله‌شون رو کنترل کنی، یا تراز کنی، Flexbox ابزار اصلیته.</p>
+
+                <h4 id="flex-فعالسازی">فعال‌سازی و محورها</h4>
+                <p>با دادن <code>display: flex</code> به یه عنصر والد، همه‌ی فرزندهای مستقیمش تبدیل به «آیتم‌های flex» می‌شن:</p>
+                <pre><code>.container {
+    display: flex;
+}</code></pre>
+                <p>Flexbox دو تا محور داره: <strong>محور اصلی (main axis)</strong> که جهت چیدمانه، و <strong>محور عرضی (cross axis)</strong> که عمود بر اونه. پیش‌فرض محور اصلی افقیه، ولی این قابل تغییره (بخش بعد).</p>
+
+                <h4 id="flex-جهت">جهت چیدمان: flex-direction</h4>
+                <pre><code>.container {
+    display: flex;
+    flex-direction: row;    /* پیش‌فرض: افقی */
+    /* یا column برای عمودی */
+}</code></pre>
+                <p>وقتی <code>flex-direction</code> رو <code>column</code> می‌ذاری، محور اصلی عمودی می‌شه و همه‌چیز (مثل <code>justify-content</code> تو بخش بعد) بر همون اساس عمل می‌کنه.</p>
+
+                <h4 id="flex-تراز">تراز کردن: justify-content و align-items</h4>
+                <p>این دو تا ویژگی، قلب Flexboxن:</p>
+                <ul>
+                    <li><code>justify-content</code>: تراز کردن آیتم‌ها <strong>رو محور اصلی</strong> (مثلاً افقی، اگه <code>row</code> باشه). مقادیر رایج: <code>flex-start</code>، <code>center</code>، <code>space-between</code>، <code>space-around</code>.</li>
+                    <li><code>align-items</code>: تراز کردن آیتم‌ها <strong>رو محور عرضی</strong> (مثلاً عمودی، اگه <code>row</code> باشه). مقادیر رایج: <code>flex-start</code>، <code>center</code>، <code>stretch</code>.</li>
+                </ul>
+                <pre><code>.container {
+    display: flex;
+    justify-content: center;  /* وسط‌چین افقی */
+    align-items: center;      /* وسط‌چین عمودی */
+}</code></pre>
+                <p>همین دو خط، چیزی که سال‌ها «وسط‌چین کردن عمودی» رو به یه چالش معروف تبدیل کرده بود، حل می‌کنه.</p>
+
+                <h4 id="flex-wrap">شکستن خط: flex-wrap</h4>
+                <p>پیش‌فرض Flexbox همه‌ی آیتم‌ها رو تو یه خط نگه می‌داره، حتی اگه جا نشن (و فشرده‌شون می‌کنه). با این ویژگی می‌تونی بذاری خودشون به خط بعد برن:</p>
+                <pre><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+}</code></pre>
+
+                <h4 id="flex-آیتم">کنترل اندازه‌ی آیتم‌ها: flex-grow و flex-shrink</h4>
+                <p>این ویژگی‌ها رو خود آیتم‌ها (نه والد) تنظیم می‌کنی:</p>
+                <ul>
+                    <li><code>flex-grow</code>: اگه فضای خالی اضافه باشه، این آیتم چقدر نسبت به بقیه رشد کنه (پیش‌فرض ۰، یعنی رشد نکنه).</li>
+                    <li><code>flex-shrink</code>: اگه فضا کم باشه، این آیتم چقدر جمع بشه (پیش‌فرض ۱).</li>
+                </ul>
+                <pre><code>.item {
+    flex-grow: 1;  /* این آیتم فضای اضافه رو پر کنه */
+}</code></pre>
+                <p>یه الگوی خیلی رایج اینه که به‌جای نوشتن جدا، از shorthand <code>flex</code> استفاده کنی: <code>flex: 1 1 200px;</code> یعنی «رشد کن، جمع شو، و حداقل اندازه‌ت ۲۰۰ پیکسل باشه».</p>
+
+                <h4 id="flex-gap">فاصله‌ی یکدست: gap</h4>
+                <p>قبلاً برای فاصله بین آیتم‌های flex مجبور بودی از margin استفاده کنی که حساب‌وکتابش سخت بود. حالا کافیه:</p>
+                <pre><code>.container {
+    display: flex;
+    gap: 20px;
+}</code></pre>
+                <p>این دقیقاً همون چیزیه که تو چیدمان ستون‌های همین سایت (مثل فاصله‌ی بین «لینک‌های مفید»، محتوای اصلی، و ستون چپ) استفاده شده.</p>
+
+                <h3 id="grid">CSS Grid چیست؟</h3>
+                <p>اگه Flexbox برای چیدمان یک‌بعدیه، Grid برای چیدمان دوبعدیه — وقتی هم‌زمان به ردیف و ستون نیاز داری، مثل یه جدول واقعی ولی خیلی انعطاف‌پذیرتر.</p>
+
+                <h4 id="grid-فعالسازی">فعال‌سازی و ستون‌ها</h4>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    gap: 20px;
+}</code></pre>
+                <p>این کد یه چیدمان سه‌ستونه می‌سازه، هر ستون ۲۰۰ پیکسل، با ۲۰ پیکسل فاصله بینشون.</p>
+
+                <h4 id="grid-fr">واحد fr و repeat()</h4>
+                <p>نوشتن عرض ثابت برای هر ستون، ریسپانسیو نیست. واحد <code>fr</code> (fraction) بهت اجازه می‌ده سهم نسبی هر ستون رو از فضای موجود مشخص کنی:</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* سه ستون مساوی */
+}</code></pre>
+                <p>برای این‌که مجبور نباشی <code>1fr</code> رو چند بار تکرار کنی، از <code>repeat()</code> استفاده می‌کنی:</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}</code></pre>
+                <p>یه ترکیب خیلی قدرتمند، <code>repeat(auto-fit, minmax(200px, 1fr))</code>ـه: ستون‌ها خودشون تعداد مناسب رو بسته به عرض صفحه تشخیص می‌دن، هر کدوم حداقل ۲۰۰ پیکسل.</p>
+
+                <h4 id="grid-جایگذاری">جایگذاری دستی: grid-column و grid-row</h4>
+                <p>می‌تونی مشخص کنی یه آیتم دقیقاً چند تا ستون یا ردیف رو اشغال کنه:</p>
+                <pre><code>.featured-item {
+    grid-column: span 2;  /* دو ستون رو با هم بگیره */
+}</code></pre>
+
+                <h3 id="کدوم">Flexbox یا Grid، کدوم رو کی استفاده کنیم؟</h3>
+                <ul>
+                    <li><strong>Flexbox:</strong> وقتی چیدمانت یک‌بعدیه — یه ردیف از دکمه‌ها، آیتم‌های یه منو، یا ستون‌هایی که باید کنار هم بشینن و بسته به فضا خودشون رو تنظیم کنن (دقیقاً مثل چیدمان <code>main</code> تو همین سایت).</li>
+                    <li><strong>Grid:</strong> وقتی هم‌زمان به کنترل ردیف و ستون نیاز داری — مثلاً یه گالری تصاویر، یا چیدمان کلی یه صفحه با هدر، ساید‌بار، محتوا و فوتر.</li>
+                </ul>
+                <p>این دو تا رقیب هم نیستن؛ خیلی وقت‌ها تو یه پروژه هر دو رو با هم استفاده می‌کنی — مثلاً چیدمان کلی صفحه با Grid، و چیدمان داخل هر کارت با Flexbox.</p>
+
+                <h3 id="نمونه-سایت">نمونه‌ی واقعی: چیدمان همین سایت</h3>
+                <p>اگه به <code>style.css</code> همین سایت نگاه کنی، می‌بینی از Flexbox زیاد استفاده شده، نه Grid:</p>
+                <pre><code>main {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+    flex-wrap: wrap;
+}</code></pre>
+                <p>این دقیقاً همون الگوییه که چیدمان ستون‌های «لینک‌های مفید»، محتوای اصلی، و ستون چپ رو می‌سازه — با <code>flex-wrap: wrap</code> که تو صفحه‌ی باریک (موبایل)، ستون‌ها به‌جای فشرده شدن، زیر هم می‌رن.</p>
+
+                <h3 id="جمعبندی">جمع‌بندی</h3>
+                <p>Flexbox برای چیدمان یک‌بعدی و Grid برای چیدمان دوبعدی ساخته شدن. با <code>justify-content</code>، <code>align-items</code> و <code>gap</code> تو Flexbox، و <code>grid-template-columns</code> و واحد <code>fr</code> تو Grid، می‌تونی تقریباً هر چیدمانی که تو ذهنته رو بدون تریک‌های قدیمی بسازی. قدم بعدی طبیعی بعد از CSS، یادگیری <a href="../JS/js.html">جاوااسکریپت</a>‌ه تا به صفحه‌ت رفتار هم اضافه کنی.</p>
+
+                <p class="back-to-home"><a href="../index.html">← بازگشت به صفحه اصلی</a></p>
+
+            </article>
+        </section>
+
+        <!-- ستون چپ: فهرست مطالب چسبان -->
+        <aside class="side-panel">
+
+            <nav class="side-card toc-card" aria-labelledby="toc-title">
+                <h2 id="toc-title">فهرست مطالب</h2>
+            </nav>
+
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-sections">
+
+            <div class="footer-section" id="about">
+                <h2>درباره ما</h2>
+                <p>اینجا بعداً متن کامل‌تری درباره خودمان می‌نویسیم.</p>
+            </div>
+
+            <div class="footer-section" id="contact">
+                <h2>تماس با ما</h2>
+                <p>ایمیل: mahmood7m@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <small class="footer-copyright">همه حقوق برای محمود موزونی محفوظ است ©</small>
+
+
+    </footer>
+    <button id="back-to-top" aria-label="بازگشت به بالا">↑</button>
+
+    <script>
+        // دکمه‌ی بازگشت به بالا
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // فهرست داخل مقاله رو کپی می‌کنه تو ستون چپ
+        const inlineList = document.querySelector('.toc-inline ul');
+        const tocCard = document.querySelector('.toc-card');
+
+        if (inlineList && tocCard) {
+            tocCard.append(inlineList.cloneNode(true));
+            document.body.classList.add('toc-ready');
+
+            const linkFor = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    tocCard.querySelectorAll('a.active').forEach((a) => a.classList.remove('active'));
+                    const link = linkFor.get(entry.target);
+                    if (link) link.classList.add('active');
+                });
+            }, { rootMargin: '0px 0px -70% 0px' });
+
+            tocCard.querySelectorAll('a').forEach((link) => {
+                const id = decodeURIComponent(link.getAttribute('href').slice(1));
+                const target = document.getElementById(id);
+                if (target) {
+                    linkFor.set(target, link);
+                    observer.observe(target);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
